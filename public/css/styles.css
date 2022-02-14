@@ -68,3 +68,14 @@
     top: 11%;
     display: flex;
 }
+
+
+/*superior permissions*/
+
+.content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 95%;
+    margin: auto;
+    color: white;
+}
