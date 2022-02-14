@@ -74,8 +74,8 @@
             <div class="d-flex">
                 <button class="btn btn-primary text-white text-wrap">Registrar usuario</button>
                 <button class="btn btn-secondary text-white text-wrap">Ver reservaciones<button>
-                        <button class="btn btn-warning text-white text-wrap">Administrar fechas</button>
-                        <button class="btn btn-warning text-white text-wrap">Administrar horas</button>
+                        <button class="btn btn-warning text-dark text-wrap">Administrar fechas</button>
+                        <button class="btn btn-warning text-dark text-wrap">Administrar horas</button>
             </div>
             <hr>
             <br><br>
@@ -142,6 +142,44 @@
         <div class="section">
             <h2>Trabajadores registrados</h2>
             <hr><br>
+            <div>
+                <table class="table table-dark table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID usuario</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo electrónico</th>
+                            <th scope="col">Numero celular</th>
+                            <th scope="col">Numero telefonico</th>
+                            <th scope="col">rol</th>
+                            <th scope="col">Operación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        foreach ($value as $user) {
+                            if ($user['rol'] == "TRABAJADOR") {
+                                echo '
+                            <tr>
+                            <th scope="row">' . $user['id_users'] . '</th>
+                                <td>' . $user['p_nombre'] . ' ' . $user['s_nombre'] . ' ' . $user['p_apellido'] . '</td>
+                                <td>' . $user['email'] . '</td>
+                                <td>' . $user['num_celular'] . '</td>
+                                <td>' . $user['num_telefono'] . '</td>
+                                <td>' . $user['rol'] . '</td>
+                                <td>
+                                    <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
+                                    <button class="btn btn-danger"><a href="?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
+                                </td>
+                            </tr>
+                            ';
+                            }
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerUser">
                 Registrar usuario
             </button>
