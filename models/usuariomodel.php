@@ -95,8 +95,8 @@ class usuarioModel extends Model
     public function users($rol) {
         $query = "SELECT id_users, p_nombre, s_nombre, p_apellido, email, 
         num_celular, num_telefono, rol FROM users U INNER JOIN roles R 
-        ON R.id_rol = $rol INNER JOIN contactos C 
-        ON U.contactos_id_contacto = C.id_contacto AND U.roles_id_rol = $rol";
+        ON R.id_rol = U.roles_id_rol INNER JOIN contactos C 
+        ON U.contactos_id_contacto = C.id_contacto AND U.roles_id_rol = U.roles_id_rol";
 
         $resultado = mysqli_query($this->db, $query);
 

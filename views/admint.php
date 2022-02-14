@@ -114,19 +114,22 @@
                         <?php
 
                         foreach ($value as $user) {
-                            echo '
+                            if ($user['rol'] == "CLIENTE") {
+                                echo '
                             <tr>
-                            <th scope="row">'.$user['id_users'].'</th>
-                                <td>'.$user['p_nombre'].' '.$user['s_nombre'].' '.$user['p_apellido'].'</td>
-                                <td>'.$user['email'].'</td>
-                                <td>'.$user['num_celular'].'</td>
-                                <td>'.$user['num_telefono'].'</td>
-                                <td>'.$user['rol'].'</td>
+                            <th scope="row">' . $user['id_users'] . '</th>
+                                <td>' . $user['p_nombre'] . ' ' . $user['s_nombre'] . ' ' . $user['p_apellido'] . '</td>
+                                <td>' . $user['email'] . '</td>
+                                <td>' . $user['num_celular'] . '</td>
+                                <td>' . $user['num_telefono'] . '</td>
+                                <td>' . $user['rol'] . '</td>
                                 <td>
-                                    <button class="btn btn-primary">Actualizar</button><button class="btn btn-danger">Eliminar</button>
+                                    <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
+                                    <button class="btn btn-danger"><a href="?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
                                 </td>
                             </tr>
                             ';
+                            }
                         }
                         ?>
                     </tbody>

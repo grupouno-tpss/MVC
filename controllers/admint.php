@@ -12,6 +12,7 @@ class admint extends Controller
     public function users($rol) {
         $this->loadModel('usuario');
 
-        return $this->nameClass->users($rol);
+        $data = $this->nameClass->users($rol);
+        return $data;
     }
 }
