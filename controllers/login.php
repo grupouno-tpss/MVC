@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 
 class login extends Controller
@@ -18,6 +19,6 @@ class login extends Controller
             $_REQUEST['user'],
             $_REQUEST['password']
         );
-       header('Location: '.constant('URL').'/options');
+        echo "<script>location.href ='".constant('URL')."/options'</script>";
     }
 }

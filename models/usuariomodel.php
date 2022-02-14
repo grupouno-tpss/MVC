@@ -31,7 +31,6 @@ class usuarioModel extends Model
 
         while ($row = mysqli_fetch_assoc($result)) {
             if ($row) {
-                session_start();
                 $_SESSION['user'] = $row['email'];
                 $_SESSION['user_id'] = $row['id_users'];
                 echo $row['email'];
