@@ -34,7 +34,7 @@ class usuarioModel extends Model
                 $_SESSION['user'] = $row['email'];
                 $_SESSION['user_id'] = $row['id_users'];
                 echo $row['email'];
-            }else{
+            } else {
                 session_destroy();
                 echo "no hay usuario";
             }
@@ -43,6 +43,7 @@ class usuarioModel extends Model
 
     public function insertar(
         $id,
+        $rol,
         $_p_nombre,
         $_s_nombre,
         $_p_apellido,
@@ -52,7 +53,18 @@ class usuarioModel extends Model
         $_tel_celular,
         $contraseña,
     ) {
-        echo "Hey, el modelo de usuario esta presente jsjs";
+
+        echo "Hey, el modelo de usuario esta presente jsjs" . "<br>";
+        echo $id . "<br>";
+        echo $rol . "<br>";
+        echo $_p_nombre . "<br>";
+        echo $_s_nombre . "<br>";
+        echo $_p_apellido . "<br>";
+        echo $_s_apellido . "<br>";
+        echo $_email . "<br>";
+        echo $_telefono . "<br>";
+        echo $_tel_celular . "<br>";
+        echo $contraseña . "<br>";
 
         $contacto = "INSERT INTO `contactos`(`id_contacto`, `num_telefono`, 
         `num_celular`) VALUES ($id, $_telefono, $_tel_celular)";
@@ -60,13 +72,17 @@ class usuarioModel extends Model
         $usuario = "INSERT INTO `users`(`id_users`, `email`, `password`, 
         `p_nombre`, `s_nombre`, `p_apellido`, `s_apellido`, `roles_id_rol`, 
         `contactos_id_contacto`) VALUES ($id, '$_email','$contraseña',
-        '$_p_nombre','$_s_nombre','$_p_apellido','$_s_apellido', 1, $id)";
+        '$_p_nombre','$_s_nombre','$_p_apellido','$_s_apellido', $rol, $id)";
 
         mysqli_query($this->db, $contacto);
         mysqli_query($this->db, $usuario);
 
         echo "<script>alert('Se ha registrado el usuario')</script>";
-        header('Location: ' . constant('URL') . '/registrarse');
+        if ($rol == 1) {
+            header('Location: ' . constant('URL') . '/registrarse');
+        } else {
+            header('Location: ' . constant('URL') . '/admint');
+        }
     }
 
     public function eliminar()
@@ -74,5 +90,19 @@ class usuarioModel extends Model
     }
     public function actualizar()
     {
+    }
+
+    public function users($rol) {
+        $query = "SELECT id_users, p_nombre, s_nombre, p_apellido, email, 
+        num_celular, num_telefono, rol FROM users U INNER JOIN roles R 
+        ON R.id_rol = $rol INNER JOIN contactos C 
+        ON U.contactos_id_contacto = C.id_contacto AND U.roles_id_rol = $rol";
+
+        $resultado = mysqli_query($this->db, $query);
+
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $dataUsers[] = $row;
+        }
+        return $dataUsers;
     }
 }
