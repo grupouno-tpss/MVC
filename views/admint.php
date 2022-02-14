@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <h1>Hola Diego</h1>
     <?php
     include "layouts/nav.php";
     ?>
