@@ -33,9 +33,9 @@
 <h3>Ingresar</h3>
             <form action="<?php echo constant('URL')?>/login/consultUser" method="post">
                 <label for="">Ingrese el correo electrónico</label>
-                <input type="text" class="form-control" id="" name="user" placeholder="example@gmail.com" required>
+                <input type="email" class="form-control" id="" name="user" placeholder="example@gmail.com" required>
                 <label for="">Ingrese la contraseña</label>
-                <input type="text" class="form-control" id="" name="password" required>
+                <input type="password" class="form-control" id="" name="password" required>
                 <br>
                 <input type="submit" class="btn btn-primary">
             </form>
