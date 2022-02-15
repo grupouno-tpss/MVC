@@ -19,10 +19,6 @@
 <body>
     <?php
     include "layouts/nav.php";
-
-    foreach ($value as $user) {
-        echo $user['p_nombre'];
-    }
     ?>
 
     <!--Ventanas modales-->

@@ -32,8 +32,9 @@ class reservaModel extends Model
         VALUES ($id,'$especificacion')";
 
         $reserve = "INSERT INTO `reservations`(`id_reservation`, `amount_people`,
+        `status`,
          `dates_id_date`, `schedules_id_schedule`, `users_id_users`, 
-         `details_id_detail`) VALUES ($id, $cantPersonas, $id,
+         `details_id_detail`) VALUES ($id, $cantPersonas, 'AVAILABLE', $id,
          $hora, " . $_SESSION['user_id'] . ", $id)";
 
         mysqli_query($this->db, $date);
