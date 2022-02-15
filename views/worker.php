@@ -24,9 +24,42 @@
     <div class="content">
         <h2>Reservaciones</h2>
         <hr><br>
-        
+        <table class="table table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID reserva</th>
+                    <th scope="col">Titular reserva</th>
+                    <th scope="col">Cantidad de personas</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Operaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($value as $reserve) {
+                    echo '<tr>
+                                <th scope="row">' . $reserve['id_reservation'] . '</th>
+                                <td>' . $reserve['p_nombre'] . ' ' . $reserve['p_apellido'] . '</td>
+                                <td>' . $reserve['amount_people'] . '</td>
+                                <td>' . $reserve['date'] . '</td>
+                                <td>' . $reserve['schedule'] . '</td>
+                                <td>' . $reserve['detail'] . '</td>
+                                <td>' . $reserve['email'] . '</td>
+                                <td>
+                                <button class="btn btn-primary">Actualizar</button>
+                                <button class="btn btn-danger">Cancelar reserva</button>
+                                <button class="btn btn-secondary">Archivar</button>
+                                </td>
+                            </tr>';
+                }
+                ?>
+            </tbody>
+            </table>
     </div>
-   
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

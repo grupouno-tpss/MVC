@@ -74,7 +74,7 @@ class reservaModel extends Model
         mysqli_query($this->db, $query);
         echo "<script>alert('Se ha agregado una fecha no disponible')</script>";
     }
-    public function reservations()
+    public function reservationsUser()
     {
         $reservations = "SELECT id_reservation, amount_people, date, 
         schedule, p_nombre, p_apellido, email, detail FROM reservations R 
@@ -82,6 +82,22 @@ class reservaModel extends Model
         ON D.id_date = R.dates_id_date INNER JOIN schedules S 
         ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
         ON E.id_detail = R.details_id_detail WHERE R.users_id_users = " . $_SESSION['user_id'] . "";
+
+        $result = mysqli_query($this->db, $reservations);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $this->reserve[] = $row;
+        }
+        return $this->reserve;
+    }
+    public function reservations()
+    {
+        $reservations = "SELECT id_reservation, amount_people, date, 
+        schedule, p_nombre, p_apellido, email, detail FROM reservations R 
+        INNER JOIN users U ON U.id_users = U.id_users INNER JOIN dates D 
+        ON D.id_date = R.dates_id_date INNER JOIN schedules S 
+        ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
+        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = U.id_users";
 
         $result = mysqli_query($this->db, $reservations);
 

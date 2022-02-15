@@ -13,6 +13,6 @@ class reservaciones extends Controller
 
     public function reservations()
     {
-        return $this->nameClass->reservations();
+        return $this->nameClass->reservationsUser();
     }
 }

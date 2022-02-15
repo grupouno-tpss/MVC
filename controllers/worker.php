@@ -6,10 +6,14 @@ class worker extends Controller
     {
         parent::__construct();
 
-        $this->view->render('worker', null);
+        $reservations = $this->reservations();
+
+        $this->view->render('worker', $reservations);
     }
 
     public function reservations () {
         $this->loadModel('reserva');
+
+        return $this->nameClass->reservations();
     }
 }
