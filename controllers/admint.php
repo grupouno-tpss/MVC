@@ -15,4 +15,10 @@ class admint extends Controller
         $data = $this->nameClass->users($rol);
         return $data;
     }
+
+    public function deleteUser(){
+
+        $this->nameClass->delete($_GET['user']);
+    }
+
 }

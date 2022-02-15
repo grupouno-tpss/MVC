@@ -85,8 +85,13 @@ class usuarioModel extends Model
         }
     }
 
-    public function eliminar()
+    public function delete($id)
     {
+        $queryReserve = "DELETE FROM `reservations` WHERE users_id_users = $id";
+        $queryUser = "DELETE FROM `users` WHERE id_users = $id";
+        mysqli_query($this->db, $queryReserve);
+        mysqli_query($this->db, $queryUser);
+        echo "Se ha eliminado el usuario";
     }
     public function actualizar()
     {

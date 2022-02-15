@@ -81,6 +81,8 @@
                     <form action="">
                         <label for="">Ingrese la fecha a cambiar de estado a "NO DISPONIBLE"</label>
                         <input type="date" class="form-control">
+                        <br>
+                        <input type="submit" class="btn btn-primary">
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -147,7 +149,7 @@
                                 <td>' . $user['rol'] . '</td>
                                 <td>
                                     <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
-                                    <button class="btn btn-danger"><a href="?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
+                                    <button class="btn btn-danger"><a href="'.constant('URL').'/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
                                 </td>
                             </tr>
                             ';
@@ -192,7 +194,7 @@
                                 <td>' . $user['rol'] . '</td>
                                 <td>
                                     <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
-                                    <button class="btn btn-danger"><a href="?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
+                                    <button class="btn btn-danger"><a href="'.constant('URL').'/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
                                 </td>
                             </tr>
                             ';
