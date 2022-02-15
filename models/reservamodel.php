@@ -36,12 +36,11 @@ class reservaModel extends Model
          `details_id_detail`) VALUES ($id, $cantPersonas, $id,
          $hora, " . $_SESSION['user_id'] . ", $id)";
 
-         mysqli_query($this->db, $date);
+        mysqli_query($this->db, $date);
         echo "Reservación hecha";
 
-         mysqli_query($this->db, $detail);
-         mysqli_query($this->db, $reserve);
-
+        mysqli_query($this->db, $detail);
+        mysqli_query($this->db, $reserve);
     }
 
     public function dates()
@@ -54,17 +53,38 @@ class reservaModel extends Model
         }
         return $this->hours;
     }
-    public function reservations(){
+
+    public function datesNotAvailable()
+    {
+        $schedule = "SELECT * FROM dates WHERE status = 'NOT AVAILABLE'";
+        $resultado = mysqli_query($this->db, $schedule);
+
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $this->hours[] = $row;
+        }
+        return $this->hours;
+    }
+
+    public function insertDate($explodeDate, $date)
+    {
+        $query = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
+        VALUES ($explodeDate[0].$explodeDate[2],'$date','NOT AVAILABLE')";
+
+        mysqli_query($this->db, $query);
+        echo "<script>alert('Se ha agregado una fecha no disponible')</script>";
+    }
+    public function reservations()
+    {
         $reservations = "SELECT id_reservation, amount_people, date, 
         schedule, p_nombre, p_apellido, email, detail FROM reservations R 
-        INNER JOIN users U ON U.id_users = ".$_SESSION['user_id']." INNER JOIN dates D 
+        INNER JOIN users U ON U.id_users = " . $_SESSION['user_id'] . " INNER JOIN dates D 
         ON D.id_date = R.dates_id_date INNER JOIN schedules S 
         ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
-        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = ".$_SESSION['user_id']."";
+        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = " . $_SESSION['user_id'] . "";
 
         $result = mysqli_query($this->db, $reservations);
 
-        while ($row = mysqli_fetch_assoc($result)){
+        while ($row = mysqli_fetch_assoc($result)) {
             $this->reserve[] = $row;
         }
         return $this->reserve;

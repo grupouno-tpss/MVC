@@ -6,6 +6,8 @@ class admint extends Controller
     {
         parent::__construct();
         $users = $this->users(1);
+        $dates = $this->datesNotAvailable();
+        $this->view->dates = $dates;
         $this->view->render('admint', $users);
     }
 
@@ -19,6 +21,23 @@ class admint extends Controller
     public function deleteUser(){
 
         $this->nameClass->delete($_GET['user']);
+    }
+
+    public function date () {
+        extract($_REQUEST);
+        $explodeDate = explode('-', $_REQUEST['date']);
+        $date = $explodeDate[0] . '/'.$explodeDate[1].'/'.$explodeDate[2];
+
+        $this->loadModel('reserva');
+
+        $this->nameClass->insertDate($explodeDate, $date);
+
+        echo "<script>alert('".$date."')</script>";
+    }
+
+    public function datesNotAvailable (){
+        $this->loadModel('reserva');
+        return $this->nameClass->datesNotAvailable();
     }
 
 }

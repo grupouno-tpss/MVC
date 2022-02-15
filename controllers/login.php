@@ -19,6 +19,5 @@ class login extends Controller
             $_REQUEST['user'],
             $_REQUEST['password']
         );
-        echo "<script>location.href ='".constant('URL')."/options'</script>";
     }
 }

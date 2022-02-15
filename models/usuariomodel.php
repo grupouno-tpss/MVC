@@ -34,9 +34,11 @@ class usuarioModel extends Model
                 $_SESSION['user'] = $row['email'];
                 $_SESSION['user_id'] = $row['id_users'];
                 echo $row['email'];
+                echo "<script>location.href ='" . constant('URL') . "/options'</script>";
             } else {
                 session_destroy();
                 echo "no hay usuario";
+                echo "<script>location.href ='" . constant('URL') . "/login'</script>";
             }
         }
     }
@@ -97,7 +99,8 @@ class usuarioModel extends Model
     {
     }
 
-    public function users($rol) {
+    public function users($rol)
+    {
         $query = "SELECT id_users, p_nombre, s_nombre, p_apellido, email, 
         num_celular, num_telefono, rol FROM users U INNER JOIN roles R 
         ON R.id_rol = U.roles_id_rol INNER JOIN contactos C 

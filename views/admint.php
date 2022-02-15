@@ -78,9 +78,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="<?php echo constant('URL')?>/admint/date">
                         <label for="">Ingrese la fecha a cambiar de estado a "NO DISPONIBLE"</label>
-                        <input type="date" class="form-control">
+                        <input type="date" class="form-control" name="date">
                         <br>
                         <input type="submit" class="btn btn-primary">
                     </form>
@@ -211,6 +211,11 @@
 
         <!--Fechas no disponibles-->
         <div class="section">
+            <?php 
+                foreach ($value as $date) {
+                    echo [$date['date']]."<br>";
+                }
+            ?>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fecha">
                 Crear fechas
             </button>
