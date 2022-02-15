@@ -37,7 +37,7 @@
                 <label for="">Ingrese la contraseña</label>
                 <input type="password" class="form-control" id="" name="password" required>
                 <br>
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" class="btn btn-primary" value="Ingresar">
             </form>
             </div>
             </center>

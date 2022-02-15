@@ -50,9 +50,9 @@
                                 <td>' . $reserve['detail'] . '</td>
                                 <td>' . $reserve['email'] . '</td>
                                 <td>
-                                <button class="btn btn-primary">Actualizar</button>
-                                <button class="btn btn-danger">Cancelar reserva</button>
-                                <button class="btn btn-secondary">Archivar</button>
+                                <button class="btn btn-primary"><a href="'.constant('URL').'/worker/updateR?r='.$reserve['id_reservation'].'">Actualizar</a></button>
+                                <button class="btn btn-danger"><a href="'.constant('URL').'/worker">Cancelar reserva</a></button>
+                                <button class="btn btn-secondary"><a href="'.constant('URL').'/worker">Archivar</a></button>
                                 </td>
                             </tr>';
                     }
@@ -112,7 +112,7 @@
     foreach ($value as $date) {
         $explodeDate = explode('-', $date['date']);
         if ($explodeDate == null) {
-            
+
         } else {
             echo "<script>
             console.log('" . $explodeDate[2] . "/" . $explodeDate[1] . "/" . $explodeDate[0] . "');

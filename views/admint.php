@@ -211,11 +211,6 @@
 
         <!--Fechas no disponibles-->
         <div class="section">
-            <?php 
-                foreach ($value as $date) {
-                    echo [$date['date']]."<br>";
-                }
-            ?>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fecha">
                 Crear fechas
             </button>
