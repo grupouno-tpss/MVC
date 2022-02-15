@@ -41,6 +41,7 @@ class reservaModel extends Model
 
         mysqli_query($this->db, $detail);
         mysqli_query($this->db, $reserve);
+        echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 
     public function dates()

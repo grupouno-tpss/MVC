@@ -81,7 +81,7 @@ class usuarioModel extends Model
 
         echo "<script>alert('Se ha registrado el usuario')</script>";
         if ($rol == 1) {
-            header('Location: ' . constant('URL') . '/registrarse');
+            header('Location: ' . constant('URL') . '/login');
         } else {
             header('Location: ' . constant('URL') . '/admint');
         }

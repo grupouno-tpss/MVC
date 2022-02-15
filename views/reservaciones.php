@@ -34,12 +34,10 @@
 <body>
     <?php
     include "layouts/nav.php";
-
-    foreach ($value as $reserve) {
-        echo $reserve['id_reservation'] . "<br>";
-    }
     ?>
     <div class="container">
+        <h2>Reservaciones</h2>
+        <hr><br>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -58,7 +56,7 @@
                 foreach ($value as $reserve) {
                     echo '<tr>
                                 <th scope="row">' . $reserve['id_reservation'] . '</th>
-                                <td>' . $reserve['p_nombre'] . ' '.$reserve['p_apellido'].'</td>
+                                <td>' . $reserve['p_nombre'] . ' ' . $reserve['p_apellido'] . '</td>
                                 <td>' . $reserve['amount_people'] . '</td>
                                 <td>' . $reserve['date'] . '</td>
                                 <td>' . $reserve['schedule'] . '</td>
