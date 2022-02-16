@@ -4,6 +4,10 @@ session_start();
         public $menus;
         public function __construct()
         {
+            
+        }
+
+        public function render () {
             parent::__construct();
             $this->loadModel('reserva');
             $hours = $this->schedules();
@@ -15,6 +19,7 @@ session_start();
             extract($_REQUEST);
 
             $idGenerated = rand();
+            $this->loadModel('reserva');
             $this->nameClass->insertReserve(
                 $idGenerated,
                 $_REQUEST['fecha'], 

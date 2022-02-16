@@ -15,6 +15,8 @@ class App
             if (isset($url[1])) {
                 $controller->{$url[1]}();
                 die();
+            } else {
+                $controller->render();
             }
             // } else {
             //     $controller->render();

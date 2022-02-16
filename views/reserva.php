@@ -127,9 +127,9 @@
         let menus = [];
 
         function asignar() {
-            document.getElementById('sendReserve').addEventListener("click", (e) =>{
-                e.preventDefault();
-            });
+            // document.getElementById('sendReserve').addEventListener("click", (e) =>{
+            //     e.preventDefault();
+            // });
             console.log(dataReserva[0]);
             document.getElementById("fechaSend").value = dataReserva[0];
             document.getElementById("horaSend").value = dataReserva[1];

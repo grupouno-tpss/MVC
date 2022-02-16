@@ -17,6 +17,7 @@ class reservaModel extends Model
         $especificacion,
         $menu
     ) {
+        echo "Jpñaflaksdlñfkasd";
 
         echo $id . "<br>";
         echo $fecha . "<br>";

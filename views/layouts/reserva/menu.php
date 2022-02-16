@@ -12,7 +12,7 @@
             <div class="card-body">
                 <h5 class="card-title">' . $menu['title_menu'] . '</h5>
                 <p class="card-text">' . $menu['description_menu'] . '</p>
-                <button class="btn btn-primary" onclick="addMenu('.$menu['id_menu'].')">Añadir al carrito</button>
+                <button class="btn btn-primary" onclick="addMenu('.$menu['id_menu'].'); asignar(); alert(`Se ha agregado el menú al carrito de compras`);">Añadir al carrito</button>
             </div>
         </div>
             
