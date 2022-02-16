@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-02-2022 a las 21:33:59
+-- Tiempo de generación: 16-02-2022 a las 21:13:30
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -40,6 +40,7 @@ CREATE TABLE `contactos` (
 INSERT INTO `contactos` (`id_contacto`, `num_telefono`, `num_celular`) VALUES
 (231941234, '32454335', '324654'),
 (383403847, '32454335', '324654'),
+(457513813, '32454335', '324654'),
 (628976969, '32454335', '324654'),
 (1612171322, '45345', '5435');
 
@@ -60,24 +61,25 @@ CREATE TABLE `dates` (
 --
 
 INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
-(33181183, '0000-00-00', 'NOT AVAILABLE'),
-(66220436, '0000-00-00', 'DISPONIBLE'),
-(129923815, '2022-02-28', 'DISPONIBLE'),
-(545637664, '0000-00-00', 'DISPONIBLE'),
-(564926662, '2022-02-27', 'DISPONIBLE'),
-(598536154, '0000-00-00', 'DISPONIBLE'),
-(1121982723, '0000-00-00', 'DISPONIBLE'),
-(1303337524, '0000-00-00', 'DISPONIBLE'),
-(1375645494, '0000-00-00', 'DISPONIBLE'),
-(1440554512, '0000-00-00', 'DISPONIBLE'),
-(1553654556, '0000-00-00', 'DISPONIBLE'),
-(1717870534, '0000-00-00', 'DISPONIBLE'),
-(1758254297, '0000-00-00', 'DISPONIBLE'),
-(1960921179, '0000-00-00', 'DISPONIBLE'),
-(1963077339, '0000-00-00', 'DISPONIBLE'),
-(1989253137, '0000-00-00', 'DISPONIBLE'),
-(2107199814, '0000-00-00', 'DISPONIBLE'),
-(2146882582, '0000-00-00', 'DISPONIBLE');
+(127750032, '2022-02-27', 'AVAILABLE'),
+(142805129, '0000-00-00', 'AVAILABLE'),
+(167798704, '2022-02-27', 'AVAILABLE'),
+(322421313, '0000-00-00', 'AVAILABLE'),
+(416101879, '2022-02-27', 'DISPONIBLE'),
+(494015758, '0000-00-00', 'AVAILABLE'),
+(540206956, '2022-02-27', 'AVAILABLE'),
+(583955245, '2022-02-27', 'AVAILABLE'),
+(693708409, '2022-02-27', 'AVAILABLE'),
+(761319632, '2022-02-01', 'AVAILABLE'),
+(886666732, '2022-02-27', 'AVAILABLE'),
+(990965086, '2022-02-27', 'AVAILABLE'),
+(1100417561, '0000-00-00', 'AVAILABLE'),
+(1142908134, '0000-00-00', 'AVAILABLE'),
+(1264032189, '0000-00-00', 'AVAILABLE'),
+(1326771938, '0000-00-00', 'AVAILABLE'),
+(1702783497, '0000-00-00', 'AVAILABLE'),
+(1792643572, '2022-02-27', 'AVAILABLE'),
+(2072428118, '0000-00-00', 'AVAILABLE');
 
 -- --------------------------------------------------------
 
@@ -95,24 +97,36 @@ CREATE TABLE `details` (
 --
 
 INSERT INTO `details` (`id_detail`, `detail`) VALUES
-(33181183, ''),
-(66220436, 'Holi'),
-(129923815, 'dfasdfas'),
-(545637664, ''),
-(564926662, 'dfasdfas'),
-(598536154, 'Holi'),
-(1121982723, ''),
-(1303337524, ''),
-(1375645494, 'Holi'),
-(1440554512, ''),
-(1553654556, ''),
+(127750032, 'HOLA A TODOOOS'),
+(142805129, ''),
+(167798704, 'HOLA A TODOOOS'),
+(322421313, ''),
+(416101879, ''),
+(494015758, ''),
+(540206956, ''),
+(583955245, ''),
+(693708409, ''),
+(761319632, ''),
+(886666732, ''),
+(990965086, ''),
+(1100417561, ''),
+(1142908134, ''),
+(1264032189, ''),
+(1326771938, ''),
+(1702783497, ''),
 (1717870534, ''),
-(1758254297, 'Holi'),
+(1758254297, ''),
+(1791620972, ''),
+(1792643572, 'HOLA A TODOOOS'),
+(1889884882, ''),
 (1960921179, ''),
 (1963077339, ''),
-(1989253137, 'Holi'),
-(2107199814, 'Holi'),
-(2146882582, 'Holi');
+(1989253137, ''),
+(2072428118, ''),
+(2081762740, ''),
+(2107199814, ''),
+(2121236418, ''),
+(2146882582, '');
 
 -- --------------------------------------------------------
 
@@ -124,8 +138,19 @@ CREATE TABLE `menus` (
   `id_menu` int(11) NOT NULL,
   `title_menu` varchar(70) NOT NULL,
   `description_menu` varchar(250) NOT NULL,
-  `price_menu` varchar(45) DEFAULT NULL
+  `price_menu` varchar(45) DEFAULT NULL,
+  `img_menu` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `menus`
+--
+
+INSERT INTO `menus` (`id_menu`, `title_menu`, `description_menu`, `price_menu`, `img_menu`) VALUES
+(1, 'ONIGIRI', 'Riquísima bola de arroz rellena de diferentes ingredientes como el salmón o la ciruela encurtida. Normalmente tiene una forma triangular y está envuelto en una pequeña tira de alga nori.', '50000', 'https://www.sal-pimienta.com/wp-content/uploads/2020/05/27_onigiri-blog-500x500.jpg'),
+(2, 'SASHIM', 'Es una delicia japonesa que consiste principalmente en marisco o pescado crudo. Se sirve junto a él salsa de soja, wasabi, y un aderezo simple como rábano daikon rallado.', '50000', 'https://www.196flavors.com/wp-content/uploads/2019/12/sashimi-1-FP.jpeg'),
+(3, 'UDON', 'Es un tipo de fideo grueso hecho de harina. Fue importado a Japón desde China en el siglo VI. Son normalmente servidos en un caldo a base de dashi, salsa de soja, y mirin. Según los ingredientes con los que se acompañe se diferencia entre los distint', '50000', 'https://www.196flavors.com/wp-content/uploads/2019/11/yaki-udon-1-FP.jpg'),
+(4, 'SOBA', 'Este término se utiliza para referirse a los fideos finos  elaborados con harina de alforfón. Se sirven fríos con una salsa o caldo en que se los sumerge, o en caldo caliente como elramen. Por otra parte, es muy común en Japón referirse a los fideos ', '50000', 'https://i2.wp.com/golososdelmundo.com/wp-content/uploads/2017/07/zaru-soba.jpg?fit=1024%2C683');
 
 -- --------------------------------------------------------
 
@@ -137,6 +162,16 @@ CREATE TABLE `menus_has_menu_categories` (
   `menus_id_menu` int(11) NOT NULL,
   `menu_categories_id_menu_categories` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `menus_has_menu_categories`
+--
+
+INSERT INTO `menus_has_menu_categories` (`menus_id_menu`, `menu_categories_id_menu_categories`) VALUES
+(1, 2),
+(2, 2),
+(3, 1),
+(4, 3);
 
 -- --------------------------------------------------------
 
@@ -179,10 +214,12 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id_reservation`, `amount_people`, `status`, `dates_id_date`, `schedules_id_schedule`, `users_id_users`, `details_id_detail`) VALUES
-(564926662, 3, 'AVAILABLE', 564926662, 3, 231941234, 564926662),
-(598536154, 3, NULL, 598536154, 3, 383403847, 598536154),
-(2107199814, 3, NULL, 2107199814, 3, 383403847, 2107199814),
-(2146882582, 3, NULL, 2146882582, 2, 231941234, 2146882582);
+(127750032, 3, 'NOT ACTIVE', 127750032, 3, 383403847, 127750032),
+(167798704, 6, 'ACTIVE', 167798704, 4, 383403847, 167798704),
+(693708409, 7, 'ACTIVE', 693708409, 1, 231941234, 693708409),
+(761319632, 3, 'NOT ACTIVE', 127750032, 1, 383403847, 761319632),
+(990965086, 3, 'NOT ACTIVE', 127750032, 1, 383403847, 990965086),
+(1792643572, 3, 'NOT ACTIVE', 1792643572, 1, 231941234, 1792643572);
 
 -- --------------------------------------------------------
 
@@ -194,6 +231,28 @@ CREATE TABLE `reservations_has_menus` (
   `reservations_id_reservation` int(11) NOT NULL,
   `menus_id_menu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reservations_has_menus`
+--
+
+INSERT INTO `reservations_has_menus` (`reservations_id_reservation`, `menus_id_menu`) VALUES
+(127750032, 2),
+(127750032, 3),
+(167798704, 1),
+(167798704, 2),
+(167798704, 3),
+(167798704, 4),
+(693708409, 2),
+(693708409, 3),
+(693708409, 4),
+(761319632, 2),
+(990965086, 1),
+(990965086, 2),
+(990965086, 3),
+(990965086, 4),
+(1792643572, 2),
+(1792643572, 3);
 
 -- --------------------------------------------------------
 
@@ -288,6 +347,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_users`, `email`, `password`, `p_nombre`, `s_nombre`, `p_apellido`, `s_apellido`, `roles_id_rol`, `contactos_id_contacto`) VALUES
 (231941234, 'jhostriana11@misena.edu.co', '1022322859', 'Jhojann', 'Estiven ', 'Triana ', 'Quiroga', 1, 231941234),
 (383403847, 'stivenjhojan011@gmail.com', '1022322859', 'Pinky', 'Estiven ', 'Triana ', 'Quiroga', 1, 383403847),
+(457513813, 'cualquiera@gmail.com', '1022322859', 'Jhojann', 'Alberto', 'Pelaez', 'Quiroga', 1, 457513813),
 (1612171322, 'diego@gmail.com', '1022322859', 'Pinky', 'Estiven ', 'Casallas', '', 2, 1612171322);
 
 --
