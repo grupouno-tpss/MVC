@@ -40,7 +40,7 @@
 
 
     <!--Modal de "modificar reserva"-->
-    <form action="" method="post">
+    <form action="<?php echo constant('URL') ?>/reservaciones/updateReservation" method="post">
         <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
@@ -49,19 +49,27 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <input type="text" id="IDreserva" name="IDreserva" hidden>
                         <label for="">Fecha</label>
-                        <input type="date" class="form-control" id="date" name="">
+                        <input type="date" class="form-control" id="date" name="date">
                         <label for="">Hora</label>
-                        <input type="time" class="form-control" id="schedule" name="">
+                        <select class="form-select" aria-label="Default select example" name="schedule">
+                            <?php
+                                foreach ($this->value4 as $hour) {
+                                    echo '<option value="'.$hour['id_schedule'].'">'.$hour['schedule'].'</option>';
+                                }
+                            ?>
+                        </select>
                         <label for="">Cantidad de personas</label>
-                        <input type="text" class="form-control" id="amount_people" name="">
+                        <input type="text" class="form-control" id="amount_people" name="amount_people">
                         <label for="">Detalle de la reserva</label>
-                        <input type="text" class="form-control" id="detail" name="">
+                        <input type="text" class="form-control" id="detail" name="detail">
                         <label for="">Titular de la reserva</label>
                         <input type="text" class="form-control" id="name" name="" disabled>
                         <label for="">Correo electrónico</label>
-                        <input type="text" class="form-control" id="email" name="">
+                        <input type="text" class="form-control" id="email" name="email">
                         <br>
+                        <input type="text" id="inputMenu" name="menu" hidden>
                         <label for="">Menus escogidos (opcional)</label>
                         <div class="bg-secondary p-3 text-white" id="menu"></div>
                         <br>
@@ -77,7 +85,8 @@
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalToggleLabel2">Escoger menús</h5>
+                        <h5 class="modal-title" id="exampleModalToggleLabel2">Escoger menús <div id="selectMenu">Menus seleccionados: </div>
+                        </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -90,7 +99,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">' . $menu['title_menu'] . '</h5>
                                 <p class="card-text">' . $menu['description_menu'] . '</p>
-                            <button class="btn btn-primary" onclick="addMenu(' . $menu['id_menu'] . '); asignar(); alert(`Se ha agregado el menú al carrito de compras`);">Añadir al carrito</button>
+                            <button type="button" class="btn btn-primary" id="' . $menu['id_menu'] . '" onclick="addMenu(' . $menu['id_menu'] . ')">Añadir al carrito</button>
                              </div>
                             </div>';
                             }
@@ -143,7 +152,7 @@
                         <button type="button" onclick="udpateReservation(' . $reserve['id_reservation'] . ', `' . $reserve['p_nombre'] .  $reserve['p_apellido'] . '`, ' . $reserve['amount_people'] . ', `' . $reserve['date'] . '`, `' . $reserve['schedule'] . '`,`' . $reserve['email'] . '`)" 
                         class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Actualizar reservación</button>
                         
-                        <button class="btn btn-danger"><a href="' . constant('URL') . '/update_reservation?cancel=' . $reserve['id_reservation'] . '" class="link-light">Cancelar reserva</a></button>
+                        <button class="btn btn-danger"><a href="' . constant('URL') . '/reservaciones/changeStatus?cancel=' . $reserve['id_reservation'] . '" class="link-light">Cancelar reserva</a></button>
                         </td>
                     </tr>';
                 }
@@ -168,11 +177,22 @@
         function udpateReservation(id, name, amount_people, date, schedule, email) {
 
             document.getElementById('updateTitle').innerHTML = "Actualizar reservación " + id;
+            document.getElementById('IDreserva').value = id;
             document.getElementById('name').value = name;
             document.getElementById('amount_people').value = amount_people;
             document.getElementById('date').value = date;
             document.getElementById('schedule').value = schedule;
             document.getElementById('email').value = email;
+        }
+
+        let menus = [];
+
+        function addMenu(id) {
+            menus.push(id);
+            document.getElementById('selectMenu').append("Menu " + id + " - ");
+            document.getElementById(id).classList.add("btn-success");
+            document.getElementById('inputMenu').value = menus.toString();
+            console.log(document.getElementById('inputMenu').value);
         }
     </script>
 </body>

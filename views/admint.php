@@ -163,38 +163,48 @@
             <h2>Trabajadores registrados</h2>
             <hr><br>
             <div>
-                <table class="table table-dark table-bordered">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">ID usuario</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Correo electrónico</th>
-                            <th scope="col">Numero celular</th>
-                            <th scope="col">Numero telefonico</th>
-                            <th scope="col">rol</th>
-                            <th scope="col">Operación</th>
+                            <th scope="col" onclick="alert('Hola')">ID reserva</th>
+                            <th scope="col">Titular reserva</th>
+                            <th scope="col">Cantidad de personas</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Detalle</th>
+                            <th scope="col">Menus</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Operaciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
+                        foreach ($value as $reserve) {
 
-                        foreach ($value as $user) {
-                            if ($user['rol'] == "TRABAJADOR") {
-                                echo '
-                            <tr>
-                            <th scope="row">' . $user['id_users'] . '</th>
-                                <td>' . $user['p_nombre'] . ' ' . $user['s_nombre'] . ' ' . $user['p_apellido'] . '</td>
-                                <td>' . $user['email'] . '</td>
-                                <td>' . $user['num_celular'] . '</td>
-                                <td>' . $user['num_telefono'] . '</td>
-                                <td>' . $user['rol'] . '</td>
-                                <td>
-                                    <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
-                                    <button class="btn btn-danger"><a href="' . constant('URL') . '/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
-                                </td>
-                            </tr>
-                            ';
-                            }
+                            echo '<tr>
+                        <th scope="row">' . $reserve['id_reservation'] . '</th>
+                        <td>' . $reserve['p_nombre'] . ' ' . $reserve['p_apellido'] . '</td>
+                        <td>' . $reserve['amount_people'] . '</td>
+                        <td>' . $reserve['date'] . '</td>
+                        <td>' . $reserve['schedule'] . '</td>
+                        <td>' . $reserve['detail'] . '</td>
+                        <td id="' . $reserve['id_reservation'] . '"></td>
+                        <td>' . $reserve['email'] . '</td>
+                        <td>
+                        <button type="button" onclick="udpateReservation(' . $reserve['id_reservation'] . ', `' . $reserve['p_nombre'] .  $reserve['p_apellido'] . '`, ' . $reserve['amount_people'] . ', `' . $reserve['date'] . '`, `' . $reserve['schedule'] . '`,`' . $reserve['email'] . '`)" 
+                        class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Actualizar reservación</button>
+                        
+                        <button class="btn btn-danger"><a href="' . constant('URL') . '/reservaciones/changeStatus?cancel=' . $reserve['id_reservation'] . '" class="link-light">Cancelar reserva</a></button>
+                        </td>
+                    </tr>';
+                        }
+
+                        foreach ($this->value2 as $menu) {
+                            echo "<script>
+                            console.log(document.getElementById('" . $menu['id_reservation'] . "'));
+                            document.getElementById('" . $menu['id_reservation'] . "').append('" . $menu['title_menu'] . "', '  -  ');     
+                            document.getElementById('menu').append('" . $menu['title_menu'] . "', '  -  ');                   
+                        </script>";
                         }
                         ?>
                     </tbody>

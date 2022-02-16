@@ -108,18 +108,19 @@ class reservaModel extends Model
         $result = mysqli_query($this->db, $reservations);
 
         while ($row = mysqli_fetch_assoc($result)) {
-            $this->reserve[] = $row;
+            $reservation[] = $row;
         }
-        return $this->reserve;
+        return $reservation;
     }
     public function reservations()
     {
         $reservations = "SELECT id_reservation, amount_people, date, 
-        schedule, p_nombre, p_apellido, email, detail, id_menu, title_menu, description_menu, price_menu, img_menu FROM reservations R 
+        schedule, p_nombre, p_apellido, email, detail FROM reservations R 
         INNER JOIN users U ON U.id_users = U.id_users INNER JOIN dates D 
         ON D.id_date = R.dates_id_date INNER JOIN schedules S 
         ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
-        ON E.id_detail = R.details_id_detail INNER JOIN reservations_has_menus RM ON RM.reservations_id_reservation = R.id_reservation INNER JOIN menus MN ON MN.id_menu = RM.menus_id_menu  WHERE R.users_id_users = U.id_users AND R.status = 'ACTIVE'";
+        ON E.id_detail = R.details_id_detail  WHERE R.users_id_users = U.id_users 
+        AND R.status = 'ACTIVE'";
 
         $result = mysqli_query($this->db, $reservations);
 
@@ -127,6 +128,29 @@ class reservaModel extends Model
             $this->reserve[] = $row;
         }
         return $this->reserve;
+    }
+
+    public function updateReservation ($id, $date, $amount_people, $hour, $detail) {
+        $dates = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
+        VALUES ($id, '$date','AVAILABLE')";
+
+        $details = "UPDATE `details` SET `detail`='$detail'
+        WHERE id_detail = $id";
+
+        $queryUpdate = "UPDATE `reservations` 
+        SET `amount_people`=$amount_people,
+        `status`='ACTIVE',`dates_id_date`=$id,
+        `schedules_id_schedule`=$hour,`users_id_users`=".$_SESSION['user_id']." WHERE id_reservation = $id";
+
+
+        mysqli_query($this->db, $details);
+        mysqli_query($this->db, $queryUpdate);
+    }
+
+    public function changeStatus ($id) {
+        $query = "UPDATE `reservations` SET `status`='NOT ACTIVE' WHERE id_reservation = $id";
+        mysqli_query($this->db, $query);
+        echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 }
 
