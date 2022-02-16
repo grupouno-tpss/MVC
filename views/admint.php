@@ -74,7 +74,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo constant('URL')?>/admint/date">
+                    <form action="<?php echo constant('URL') ?>/admint/date">
                         <label for="">Ingrese la fecha a cambiar de estado a "NO DISPONIBLE"</label>
                         <input type="date" class="form-control" name="date">
                         <br>
@@ -142,10 +142,10 @@
                                 <td>' . $user['email'] . '</td>
                                 <td>' . $user['num_celular'] . '</td>
                                 <td>' . $user['num_telefono'] . '</td>
-                                <td>' . $user['date'] . '</td>
+                                <td>' . $user['rol'] . '</td>
                                 <td>
                                     <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
-                                    <button class="btn btn-danger"><a href="'.constant('URL').'/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
+                                    <button class="btn btn-danger"><a href="' . constant('URL') . '/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
                                 </td>
                             </tr>
                             ';
@@ -190,7 +190,7 @@
                                 <td>' . $user['rol'] . '</td>
                                 <td>
                                     <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
-                                    <button class="btn btn-danger"><a href="'.constant('URL').'/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
+                                    <button class="btn btn-danger"><a href="' . constant('URL') . '/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
                                 </td>
                             </tr>
                             ';
@@ -207,10 +207,26 @@
 
         <!--Fechas no disponibles-->
         <div class="section">
+            <h2>Fechas</h2>
+            <hr><br>
+            <div class="alert alert-info d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <div>
+                    En esta sección encontrará las fechas que no se encuentran disponibles respecto al servicio de reservación que se quiere prestar.
+                    Solo se debe utilizar la función "agregar fecha" en caso de que se quiera restringir una o mas fechas a los usuarios que quieran hacer reservaciones.
+                </div>
+            </div>
             <?php
-                foreach($this->value2 as $date){
-                    echo $date['date'];
-                }
+            foreach ($this->value2 as $date) {
+                echo '
+                        <div class="d-flex">
+                            <div>' . $date['date'] . '</div>
+                            <div>X</div>
+                        </div>
+                    ';
+            }
             ?>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fecha">
                 Crear fechas

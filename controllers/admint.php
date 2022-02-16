@@ -28,7 +28,6 @@ class admint extends Controller
         $explodeDate = explode('-', $_REQUEST['date']);
         $date = $explodeDate[0] . '/'.$explodeDate[1].'/'.$explodeDate[2];
 
-        $this->loadModel('reserva');
 
         $this->nameClass->insertDate($explodeDate, $date);
 
