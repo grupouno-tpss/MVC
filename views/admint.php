@@ -142,7 +142,7 @@
                                 <td>' . $user['email'] . '</td>
                                 <td>' . $user['num_celular'] . '</td>
                                 <td>' . $user['num_telefono'] . '</td>
-                                <td>' . $user['rol'] . '</td>
+                                <td>' . $user['date'] . '</td>
                                 <td>
                                     <button class="btn btn-primary"><a href="?user=' . $user['id_users'] . '" class="link-light">Actualizar</a></button>
                                     <button class="btn btn-danger"><a href="'.constant('URL').'/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light">Eliminar</a></button>
@@ -207,6 +207,11 @@
 
         <!--Fechas no disponibles-->
         <div class="section">
+            <?php
+                foreach($this->value2 as $date){
+                    echo $date['date'];
+                }
+            ?>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fecha">
                 Crear fechas
             </button>

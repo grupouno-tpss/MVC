@@ -16,4 +16,10 @@ class worker extends Controller
 
         return $this->nameClass->reservations();
     }
+
+    public function archivar() {
+        extract($_REQUEST);
+        $this->nameClass->statusReserve($a);
+        echo "<script>alert('archivar')</script>";
+    }
 }

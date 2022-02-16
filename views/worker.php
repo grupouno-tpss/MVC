@@ -50,9 +50,9 @@
                                 <td>' . $reserve['detail'] . '</td>
                                 <td>' . $reserve['email'] . '</td>
                                 <td>
-                                <button class="btn btn-primary"><a href="'.constant('URL').'/worker/updateR?r='.$reserve['id_reservation'].'">Actualizar</a></button>
-                                <button class="btn btn-danger"><a href="'.constant('URL').'/worker">Cancelar reserva</a></button>
-                                <button class="btn btn-secondary"><a href="'.constant('URL').'/worker">Archivar</a></button>
+                                <button class="btn btn-primary"><a href="'.constant('URL').'/worker/updateR?r='.$reserve['id_reservation'].'" class="link-light">Actualizar</a></button>
+                                <button class="btn btn-danger"><a href="'.constant('URL').'/worker" class="link-light">Cancelar reserva</a></button>
+                                <button class="btn btn-secondary"><a href="'.constant('URL').'/worker/archivar?a='.$reserve['id_reservation'].'" class="link-light">Completar reserva</a></button>
                                 </td>
                             </tr>';
                     }

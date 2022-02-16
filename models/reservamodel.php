@@ -45,6 +45,15 @@ class reservaModel extends Model
         echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 
+    public function statusReserve($id){
+        $query = "UPDATE `reservations` SET `status`='NOT AVAILABLE' 
+        WHERE id_reservation = $id";
+
+        mysqli_query($this->db, $query);
+        echo "<script>alert('Estado cambiado')</script>";
+        echo "<script>location.href ='" . constant('URL') . "/worker'</script>";
+    }
+
     public function dates()
     {
         $schedule = "SELECT * FROM schedules";
@@ -98,7 +107,7 @@ class reservaModel extends Model
         INNER JOIN users U ON U.id_users = U.id_users INNER JOIN dates D 
         ON D.id_date = R.dates_id_date INNER JOIN schedules S 
         ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
-        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = U.id_users";
+        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = U.id_users AND R.status = 'AVAILABLE'";
 
         $result = mysqli_query($this->db, $reservations);
 

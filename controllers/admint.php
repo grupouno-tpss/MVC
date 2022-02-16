@@ -7,7 +7,7 @@ class admint extends Controller
         parent::__construct();
         $users = $this->users(1);
         $dates = $this->datesNotAvailable();
-        $this->view->dates = $dates;
+        $this->view->value2 = $dates;
         $this->view->render('admint', $users);
     }
 
