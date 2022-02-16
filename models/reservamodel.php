@@ -49,7 +49,7 @@ class reservaModel extends Model
         foreach ($menuExplode as $menus) {
             $query = "INSERT INTO `reservations_has_menus`(`reservations_id_reservation`, `menus_id_menu`)
             VALUES ($id, $menus)";
-            echo "<br>".$query."<br>";
+            echo "<br>" . $query . "<br>";
             mysqli_query($this->db, $query);
         }
         echo "Reservación hecha";
@@ -57,7 +57,8 @@ class reservaModel extends Model
         echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 
-    public function statusReserve($id){
+    public function statusReserve($id)
+    {
         $query = "UPDATE `reservations` SET `status`='NOT ACTIVE' 
         WHERE id_reservation = $id";
 
@@ -130,24 +131,48 @@ class reservaModel extends Model
         return $this->reserve;
     }
 
-    public function updateReservation ($id, $date, $amount_people, $hour, $detail) {
+    public function updateReservation($id, $date, $amount_people, $hour, $detail, $menu)
+    {
         $dates = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
         VALUES ($id, '$date','AVAILABLE')";
 
         $details = "UPDATE `details` SET `detail`='$detail'
         WHERE id_detail = $id";
+        $explodeMenu = explode(',', $menu);
+
+        $deleteMenus = "DELETE FROM `reservations_has_menus` 
+        WHERE reservations_id_reservation = $id";
+
+        // foreach ($explodeMenu as $itemMenu) {
+        //     $menu = "UPDATE `reservations_has_menus` 
+        //     SET `reservations_id_reservation`=$id,
+        //     `menus_id_menu`=$itemMenu 
+        //     WHERE 1";
+
+        //     mysqli_query($this->db, $menu);
+        // }
 
         $queryUpdate = "UPDATE `reservations` 
         SET `amount_people`=$amount_people,
         `status`='ACTIVE',`dates_id_date`=$id,
-        `schedules_id_schedule`=$hour,`users_id_users`=".$_SESSION['user_id']." WHERE id_reservation = $id";
+        `schedules_id_schedule`=$hour,`users_id_users`=" . $_SESSION['user_id'] . " WHERE id_reservation = $id";
 
+        mysqli_query($this->db, $deleteMenus);
 
+        foreach ($explodeMenu as $insertMenu) {
+            $queryMenu = "INSERT INTO 
+            `reservations_has_menus`(`reservations_id_reservation`, 
+            `menus_id_menu`) 
+            VALUES ($id, $insertMenu)";
+
+            mysqli_query($this->db, $queryMenu);
+        }
         mysqli_query($this->db, $details);
         mysqli_query($this->db, $queryUpdate);
     }
 
-    public function changeStatus ($id) {
+    public function changeStatus($id)
+    {
         $query = "UPDATE `reservations` SET `status`='NOT ACTIVE' WHERE id_reservation = $id";
         mysqli_query($this->db, $query);
         echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
