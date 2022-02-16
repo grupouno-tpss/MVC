@@ -1,11 +1,13 @@
 <?php
 session_start();
     class reserva extends Controller {
+        public $menus;
         public function __construct()
         {
             parent::__construct();
             $this->loadModel('reserva');
             $hours = $this->schedules();
+            $this->view->value2 = $this->getMenus();
             $this->view->render('reserva', $hours);
         }
 
@@ -32,6 +34,11 @@ session_start();
 
         public function reservations () {
             
+        }
+
+        public function getMenus () {
+            $this->loadModel('menus');
+            return $this->nameClass->getMenus();
         }
     }
 ?>

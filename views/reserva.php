@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/reserva.css">
     <title>Reservar</title>
-    <link rel="stylesheet" href="<?php echo constant('URL')?>/public/css/styles.css">
+    <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
 </head>
 
 <body onfocus="asignar()">
@@ -36,7 +36,7 @@
         <?php
         include "layouts/reserva/calendario.php";
         include "layouts/reserva/datos.html";
-        include "layouts/reserva/menu.html";
+        include "layouts/reserva/menu.php";
         ?>
         <br>
 
@@ -58,7 +58,7 @@
                     <select class="form-select" id="hourR" multiple aria-label="multiple select example">
                         <?php
                         foreach ($value as $horas) {
-                            echo '<option value="'.$horas['id_schedule'].'">'.$horas['schedule'].'</option>';
+                            echo '<option value="' . $horas['id_schedule'] . '">' . $horas['schedule'] . '</option>';
                         }
                         ?>
                     </select>
@@ -104,7 +104,7 @@
     </div>
     <!-- FORMULARIO RESERVA -->
 
-    <form action="<?php echo constant('URL') ?>/reserva/addReserve" method="post">
+    <form action="<?php echo constant('URL') ?>/reserva/addReserve" method="post" id="sendReserve">
         <input hidden type="text" id="fechaSend" name="fecha">
         <input hidden type="text" id="horaSend" name="hora">
         <input hidden type="text" id="cantPersonas" name="cantPersonas">
@@ -115,22 +115,6 @@
         <br>
         <br>
     </form>
-
-    <script>
-        function asignar() {
-
-            console.log(dataReserva[0]);
-            document.getElementById("fechaSend").value = dataReserva[0];
-            document.getElementById("horaSend").value = dataReserva[1];
-            document.getElementById("cantPersonas").value = dataReserva[2];
-            document.getElementById("tipoServicioSend").value = dataReserva[3];
-            document.getElementById("especificacion").value = dataReserva[4];
-            document.getElementById("menuS").value = dataReserva[5];
-        }
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!-- <script src="../javascript/dataReserva.js"></script> -->
     <script>
         /*
     [0] = fecha
@@ -139,8 +123,31 @@
     [3] = tipo de servicio
     [4] = especificacion de reserva
 */
+        let dataReserva = ["No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada"];
+        let menus = [];
 
-        var dataReserva = ["No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada"];
+        function asignar() {
+            document.getElementById('sendReserve').addEventListener("click", (e) =>{
+                e.preventDefault();
+            });
+            console.log(dataReserva[0]);
+            document.getElementById("fechaSend").value = dataReserva[0];
+            document.getElementById("horaSend").value = dataReserva[1];
+            document.getElementById("cantPersonas").value = dataReserva[2];
+            document.getElementById("tipoServicioSend").value = dataReserva[3];
+            document.getElementById("especificacion").value = dataReserva[4];
+
+            $menusText = menus.toString();
+            console.log($menusText);
+            document.getElementById("menuS").value = $menusText;
+            dataReserva[5] = $menusText;
+        }
+
+
+
+        function addMenu(id) {
+            menus.push(id);
+        }
 
         document.getElementById("verDatos").addEventListener("click", (e) => {
             mostrarDatos();
@@ -174,7 +181,7 @@
             document.getElementById("loading").hidden = true;
         }
     </script>
-    <script src="<?php echo constant('URL')?>/public/js/calendar.js"></script>
+    <script src="<?php echo constant('URL') ?>/public/js/calendar.js"></script>
 
 </body>
 
