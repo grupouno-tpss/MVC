@@ -30,7 +30,7 @@ class reservaModel extends Model
 
         echo $menuExplode[0];
         $date = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
-        VALUES ($id ,'$fecha','DISPONIBLE')";
+        VALUES ($id ,'$fecha','AVAILABLE')";
 
         $detail = "INSERT INTO `details`(`id_detail`, `detail`) 
         VALUES ($id,'$especificacion')";
@@ -38,7 +38,7 @@ class reservaModel extends Model
         $reserve = "INSERT INTO `reservations`(`id_reservation`, `amount_people`,
         `status`,
          `dates_id_date`, `schedules_id_schedule`, `users_id_users`, 
-         `details_id_detail`) VALUES ($id, $cantPersonas, 'AVAILABLE', $id,
+         `details_id_detail`) VALUES ($id, $cantPersonas, 'ACTIVE', $id,
          $hora, " . $_SESSION['user_id'] . ", $id)";
 
         mysqli_query($this->db, $date);
@@ -54,11 +54,11 @@ class reservaModel extends Model
         }
         echo "Reservación hecha";
 
-        //echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
+        echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 
     public function statusReserve($id){
-        $query = "UPDATE `reservations` SET `status`='NOT AVAILABLE' 
+        $query = "UPDATE `reservations` SET `status`='NOT ACTIVE' 
         WHERE id_reservation = $id";
 
         mysqli_query($this->db, $query);
@@ -103,7 +103,7 @@ class reservaModel extends Model
         INNER JOIN users U ON U.id_users = " . $_SESSION['user_id'] . " INNER JOIN dates D 
         ON D.id_date = R.dates_id_date INNER JOIN schedules S 
         ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
-        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = " . $_SESSION['user_id'] . "";
+        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = " . $_SESSION['user_id'] . " AND R.status = 'ACTIVE'";
 
         $result = mysqli_query($this->db, $reservations);
 
@@ -115,11 +115,11 @@ class reservaModel extends Model
     public function reservations()
     {
         $reservations = "SELECT id_reservation, amount_people, date, 
-        schedule, p_nombre, p_apellido, email, detail FROM reservations R 
+        schedule, p_nombre, p_apellido, email, detail, id_menu, title_menu, description_menu, price_menu, img_menu FROM reservations R 
         INNER JOIN users U ON U.id_users = U.id_users INNER JOIN dates D 
         ON D.id_date = R.dates_id_date INNER JOIN schedules S 
         ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
-        ON E.id_detail = R.details_id_detail WHERE R.users_id_users = U.id_users AND R.status = 'AVAILABLE'";
+        ON E.id_detail = R.details_id_detail INNER JOIN reservations_has_menus RM ON RM.reservations_id_reservation = R.id_reservation INNER JOIN menus MN ON MN.id_menu = RM.menus_id_menu  WHERE R.users_id_users = U.id_users AND R.status = 'ACTIVE'";
 
         $result = mysqli_query($this->db, $reservations);
 
