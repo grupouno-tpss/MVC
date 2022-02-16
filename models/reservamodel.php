@@ -19,13 +19,16 @@ class reservaModel extends Model
     ) {
         echo "Jpñaflaksdlñfkasd";
 
+        $menuExplode = explode(',', $menu);
+
         echo $id . "<br>";
         echo $fecha . "<br>";
         echo $hora . "<br>";
         echo $cantPersonas . "<br>";
         echo $tipoServicio . "<br>";
         echo $especificacion . "<br>";
-        echo $menu;
+
+        echo $menuExplode[0];
         $date = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
         VALUES ($id ,'$fecha','DISPONIBLE')";
 
@@ -39,11 +42,19 @@ class reservaModel extends Model
          $hora, " . $_SESSION['user_id'] . ", $id)";
 
         mysqli_query($this->db, $date);
-        echo "Reservación hecha";
 
         mysqli_query($this->db, $detail);
         mysqli_query($this->db, $reserve);
-        echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
+
+        foreach ($menuExplode as $menus) {
+            $query = "INSERT INTO `reservations_has_menus`(`reservations_id_reservation`, `menus_id_menu`)
+            VALUES ($id, $menus)";
+            echo "<br>".$query."<br>";
+            mysqli_query($this->db, $query);
+        }
+        echo "Reservación hecha";
+
+        //echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 
     public function statusReserve($id){
