@@ -61,8 +61,8 @@ echo "<script>alert('".$_SESSION['user']."')</script>";
     <h1>¿Qué desea hacer?</h1>
     <div class="options">
         <div><a href="<?php echo constant('URL')?>/reserva">Reservar</a></div>
-        <div><a href="<?php echo constant('URL')?>/reservaciones">Modificar reserva</a></div>
-        <div><a href="<?php echo constant('URL')?>/reservaciones">Cancelar reserva</a></div>
+        <div><a href="<?php echo constant('URL')?>/reservaciones">Cancelar/modificar reserva</a></div>
+        <div><a href="<?php echo constant('URL')?>/profile">Actualizar perfil</a></div>
     </div>
     <script>
         window.onload = function () {
