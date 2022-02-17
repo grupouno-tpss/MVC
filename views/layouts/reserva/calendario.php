@@ -1,4 +1,4 @@
-<div class="container section">
+<div class="container section divCalendar">
     <h4>Calendario</h4>
     <i class="bi bi-calendar-event">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">

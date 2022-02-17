@@ -133,8 +133,10 @@ class reservaModel extends Model
 
     public function updateReservation($id, $date, $amount_people, $hour, $detail, $menu)
     {
-        $dates = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
-        VALUES ($id, '$date','AVAILABLE')";
+        $dateExplode = explode('-', $date);
+        echo $dateExplode[2].'/'. $dateExplode[1]. '/'. $dateExplode[0];
+        $dates = "UPDATE `dates` SET `date`='".$dateExplode[0].'/'. $dateExplode[1]. '/'. $dateExplode[2]."' 
+        WHERE id_date = $id";
 
         $details = "UPDATE `details` SET `detail`='$detail'
         WHERE id_detail = $id";
@@ -156,6 +158,8 @@ class reservaModel extends Model
         SET `amount_people`=$amount_people,
         `status`='ACTIVE',`dates_id_date`=$id,
         `schedules_id_schedule`=$hour,`users_id_users`=" . $_SESSION['user_id'] . " WHERE id_reservation = $id";
+
+        mysqli_query($this->db, $dates);
 
         mysqli_query($this->db, $deleteMenus);
 
