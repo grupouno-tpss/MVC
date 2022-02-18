@@ -7,7 +7,7 @@ session_start();
 //     header("Location:login.php?s=false");
 //     die();
 // }
-echo "<script>alert('".$_SESSION['user']."')</script>";
+echo "<script>alert('".$_SESSION['user_email']."')</script>";
 ?>
 
 <!DOCTYPE html>

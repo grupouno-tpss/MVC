@@ -46,7 +46,7 @@ class usuarioModel extends Model
             } else {
                 session_destroy();
                 echo "no hay usuario";
-                echo "<script>location.href ='" . constant('URL') . "/login'</script>";
+                //echo "<script>location.href ='" . constant('URL') . "/login'</script>";
             }
         }
     }
@@ -103,8 +103,34 @@ class usuarioModel extends Model
         mysqli_query($this->db, $queryUser);
         echo "Se ha eliminado el usuario";
     }
-    public function actualizar()
+    public function update(
+        $id,
+        $p_nombre,
+        $s_nombre,
+        $p_apellido,
+        $s_apellido, 
+        $email,
+        $password,
+        $num_celular,
+        $num_telefono
+    )
     {
+        $query = "UPDATE `users` SET
+        `email`='$email',`password`='$password',`p_nombre`='$p_nombre',
+        `s_nombre`='$s_nombre',`p_apellido`='$p_apellido',`s_apellido`='$s_apellido'
+        WHERE id_users = ".$_SESSION['user_id']."";
+
+        mysqli_query($this->db, $query);
+
+        echo $id."<br>";
+        echo $p_nombre."<br>";
+        echo $s_nombre."<br>";
+        echo $p_apellido."<br>";
+        echo $s_apellido."<br>";
+        echo $email."<br>";
+        echo $password."<br>";
+        echo $num_celular."<br>";
+        echo $num_telefono."<br>";
     }
 
     public function users($rol)

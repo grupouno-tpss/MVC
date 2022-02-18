@@ -39,7 +39,7 @@
         <div>
             <div class="dropdown">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php echo "Usuario: " . $_SESSION["user"]; ?> 
+                <?php echo "Usuario: " . $_SESSION["user_email"]; ?> 
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
