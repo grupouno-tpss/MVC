@@ -41,5 +41,6 @@ class profile extends Controller
             $_REQUEST['num_telefono'],
         );
         echo "Actualizar usuario";
+
     }
 }

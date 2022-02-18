@@ -1,14 +1,6 @@
 <?php
 class usuarioModel extends Model
 {
-    private $_p_nombre;
-    private $_s_nombre;
-    private $_p_apellido;
-    private $_s_apellido;
-    private $_email;
-    private $_telefono;
-    private $_tel_celular;
-    private $contraseña;
 
     public function __construct()
     {
@@ -98,47 +90,62 @@ class usuarioModel extends Model
     public function delete($id)
     {
         $queryReserve = "DELETE FROM `reservations` WHERE users_id_users = $id";
+        $reservations = "SELECT id_reservation FROM reservations WHERE users_id_users = $id";
         $queryUser = "DELETE FROM `users` WHERE id_users = $id";
-        mysqli_query($this->db, $queryReserve);
-        mysqli_query($this->db, $queryUser);
-        echo "Se ha eliminado el usuario";
+
+        $result = mysqli_query($this->db, $reservations);
+
+        if (mysqli_fetch_assoc($result)) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo $row['id_reservation']."<br>";
+                $menus = "DELETE FROM `reservations_has_menus` WHERE reservations_id_reservation = ".$row['id_reservation']."";
+                mysqli_query($this->db, $menus);
+            }
+            mysqli_query($this->db, $queryReserve);
+        } else {
+            mysqli_query($this->db, $queryUser);
+            echo "Se ha eliminado el usuario";
+        }
     }
     public function update(
         $id,
         $p_nombre,
         $s_nombre,
         $p_apellido,
-        $s_apellido, 
+        $s_apellido,
         $email,
         $password,
         $num_celular,
         $num_telefono
-    )
-    {
-        $query = "UPDATE `users` SET
+    ) {
+        echo $id . "<br>";
+        echo $p_nombre . "<br>";
+        echo $s_nombre . "<br>";
+        echo $p_apellido . "<br>";
+        echo $s_apellido . "<br>";
+        echo $password . "<br>";
+        echo $num_celular . "<br>";
+        echo $num_telefono . "<br>";
+
+        $user = $_SESSION['user_id'];
+        $p = $password;
+
+        $queryUpdate = "UPDATE `users` SET 
         `email`='$email',`password`='$password',`p_nombre`='$p_nombre',
-        `s_nombre`='$s_nombre',`p_apellido`='$p_apellido',`s_apellido`='$s_apellido'
-        WHERE id_users = ".$_SESSION['user_id']."";
+        `s_nombre`='$s_nombre',`p_apellido`='$p_apellido',`s_apellido`='$s_apellido' 
+        WHERE id_users = " . $_SESSION['user_id'] . "";
 
-        mysqli_query($this->db, $query);
+        echo $queryUpdate . "<br>";
 
-        echo $id."<br>";
-        echo $p_nombre."<br>";
-        echo $s_nombre."<br>";
-        echo $p_apellido."<br>";
-        echo $s_apellido."<br>";
-        echo $email."<br>";
-        echo $password."<br>";
-        echo $num_celular."<br>";
-        echo $num_telefono."<br>";
+        mysqli_query($this->db, $queryUpdate);
     }
 
     public function users($rol)
     {
         $query = "SELECT id_users, p_nombre, s_nombre, p_apellido, email, 
         num_celular, num_telefono, rol FROM users U INNER JOIN roles R 
-        ON R.id_rol = U.roles_id_rol INNER JOIN contactos C 
-        ON U.contactos_id_contacto = C.id_contacto AND U.roles_id_rol = U.roles_id_rol";
+        ON R.id_rol = $rol INNER JOIN contactos C 
+        ON U.contactos_id_contacto = C.id_contacto AND U.roles_id_rol = $rol";
 
         $resultado = mysqli_query($this->db, $query);
 
