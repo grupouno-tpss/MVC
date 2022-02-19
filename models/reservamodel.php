@@ -173,6 +173,7 @@ class reservaModel extends Model
         }
         mysqli_query($this->db, $details);
         mysqli_query($this->db, $queryUpdate);
+        echo "<script>location.href = '".constant('URL')."/reservaciones'</script>";
     }
 
     public function changeStatus($id)
