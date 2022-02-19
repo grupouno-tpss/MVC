@@ -6,6 +6,9 @@ class login extends Controller
 {
     public function __construct()
     {
+    }
+    public function render()
+    {
         parent::__construct();
 
         $this->view->render('login', null);
