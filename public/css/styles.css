@@ -79,3 +79,88 @@
     margin: auto;
     color: white;
 }
+
+
+/*FOOTER*/
+
+.navbar-expand-lg {
+    /* display: flex;
+    justify-content: space-between; */
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(18, 13, 13, 1) 52%, rgba(207, 44, 88, 1) 97%);
+    font-family: 'Redressed', cursive;
+    color: white;
+    border-bottom: 3px solid red;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    max-height: auto;
+}
+
+.navbar-brand {
+    width: 50%;
+    height: auto;
+    margin-left: 2%;
+}
+
+.title {
+    font-size: 220%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    font-size: 130%;
+}
+
+.btn-danger {
+    font-size: 130%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    margin-right: 10px;
+    border-radius: 40px;
+    background: pink;
+}
+
+.btn-secondary {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(18, 13, 13, 1) 52%);
+    color: white;
+    font-size: 130%;
+}
+
+.logsedes {
+    display: flex;
+    width: 150%;
+    height: auto;
+    align-items: center;
+    padding-left: 10px;
+}
+
+h1 {
+    font-family: 'Redressed', cursive;
+}
+
+.formComments {
+    display: block;
+    height: auto;
+    width: 95%;
+    font-family: 'Redressed', cursive;
+    font-size: 150%;
+}
+
+.Info {
+    margin-left: -20px;
+    font-size: 70%;
+    text-align: left;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
