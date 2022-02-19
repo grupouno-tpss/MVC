@@ -15,6 +15,7 @@ class admint extends Controller
         $dates = $this->getDatesNotAvailable();
         $this->view->value2 = $dates;
         $this->view->value4 = $this->getHours();
+        $this->view->value5 = $this->getMenus();
         $this->view->render('admint', $users);
     }
 
@@ -77,5 +78,10 @@ class admint extends Controller
         extract($_REQUEST);
         $this->loadModel('schedule');
         $this->nameClass->addHour($_REQUEST['hour']);
+    }
+
+    public function getMenus () {
+        $this->loadModel('menus');
+        return $this->nameClass->getMenus();
     }
 }

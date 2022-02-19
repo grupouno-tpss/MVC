@@ -7,7 +7,7 @@ class menusModel extends Model
     }
 
     public function getMenus () {
-        $query = "SELECT * FROM menus";
+        $query = "SELECT * FROM menus INNER JOIN menus_has_menu_categories ON menus.id_menu = menus_id_menu INNER JOIN menu_categories ON id_menu_categories = menu_categories_id_menu_categories";
         $result = mysqli_query($this->db, $query);
 
         while ($row = mysqli_fetch_assoc($result)) {

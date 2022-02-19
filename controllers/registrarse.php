@@ -3,6 +3,10 @@ class registrarse extends Controller
 {
     public function __construct()
     {
+    }
+
+    public function render()
+    {
         parent::__construct();
 
         $this->view->render('registrarse', null);
@@ -17,7 +21,7 @@ class registrarse extends Controller
 
         if (isset($_REQUEST['rol'])) {
             $rol = $_REQUEST['rol'];
-        }else{
+        } else {
             $rol = 1;
         }
 
