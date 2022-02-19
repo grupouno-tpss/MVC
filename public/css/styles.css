@@ -94,11 +94,12 @@
     border-bottom: 3px solid red;
 }
 
-img {
+
+/* img {
     display: block;
     max-width: 100%;
     max-height: auto;
-}
+} */
 
 .navbar-brand {
     width: 50%;
