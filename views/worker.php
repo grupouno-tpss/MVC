@@ -12,7 +12,8 @@
             background-image: url(https://fondosmil.com/fondo/11825.jpg);
             color: white;
         }
-        .divCalendar{
+
+        .divCalendar {
             background-color: black;
             padding: 30px;
             border-radius: 5px;
@@ -29,6 +30,45 @@
             <?php
             require "layouts/reservaciones.php";
             ?>
+        </div>
+
+        <div class="section">
+            <h2>Clientes</h2>
+            <hr><br>
+            <table class="table table-dark table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID usuario</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Numero celular</th>
+                        <th scope="col">Numero telefonico</th>
+                        <th scope="col">Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+                    foreach ($this->value5 as $user) {
+                        echo '
+                    <tr>
+                        <th scope="row">' . $user['id_users'] . '</th>
+                        <td>' . $user['p_nombre'] . " " . $user['p_apellido'] . '</td>
+                        <td>' . $user['email'] . '</td>
+                        <td>' . $user['rol'] . '</td>
+                        <td>' . $user['num_celular'] . '</td>
+                        <td>' . $user['num_telefono'] . '</td>
+                        <td>
+                        <button class="btn btn-danger"><a href="' . constant('URL') . '/admint/deleteUser?user=' . $user['id_users'] . '" class="link-light" Disabled>Eliminar usuario</button>
+                            
+                        </td>
+                    </tr>
+                    ';
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
     </div>
 

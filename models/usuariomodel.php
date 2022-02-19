@@ -91,17 +91,16 @@ class usuarioModel extends Model
     {
         $queryReserve = "DELETE FROM `reservations` WHERE users_id_users = $id";
         $reservations = "SELECT id_reservation FROM reservations WHERE users_id_users = $id";
+        $menus = "DELETE FROM `reservations_has_menus` WHERE user_id = $id";
         $queryUser = "DELETE FROM `users` WHERE id_users = $id";
 
         $result = mysqli_query($this->db, $reservations);
 
         if (mysqli_fetch_assoc($result)) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo $row['id_reservation']."<br>";
-                $menus = "DELETE FROM `reservations_has_menus` WHERE reservations_id_reservation = ".$row['id_reservation']."";
-                mysqli_query($this->db, $menus);
-            }
+            mysqli_query($this->db, $menus);
             mysqli_query($this->db, $queryReserve);
+            mysqli_query($this->db, $queryUser);
+            echo "Se ha eliminado el usuario";
         } else {
             mysqli_query($this->db, $queryUser);
             echo "Se ha eliminado el usuario";

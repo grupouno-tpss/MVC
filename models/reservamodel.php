@@ -47,8 +47,8 @@ class reservaModel extends Model
         mysqli_query($this->db, $reserve);
 
         foreach ($menuExplode as $menus) {
-            $query = "INSERT INTO `reservations_has_menus`(`reservations_id_reservation`, `menus_id_menu`)
-            VALUES ($id, $menus)";
+            $query = "INSERT INTO `reservations_has_menus`(`reservations_id_reservation`, `menus_id_menu`, `user_id`)
+            VALUES ($id, $menus, ".$_SESSION['user_id'].")";
             echo "<br>" . $query . "<br>";
             mysqli_query($this->db, $query);
         }

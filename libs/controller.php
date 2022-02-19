@@ -3,6 +3,7 @@
         public $value2;
         public $value3;
         public $value4;
+        public $value5;
         public function __construct()
         {
             $this->view = new View();
@@ -11,6 +12,7 @@
             $this->value2;
             $this->value3;
             $this->value4;
+            $this->value5;
         }
 
         public function loadModel ($model) {

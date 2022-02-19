@@ -13,11 +13,18 @@ class registrarse extends Controller
         extract($_REQUEST);
 
         $idGenerated = rand();
+        $rol;
+
+        if (isset($_REQUEST['rol'])) {
+            $rol = $_REQUEST['rol'];
+        }else{
+            $rol = 1;
+        }
 
         $this->loadModel('usuario');
         $this->nameClass->insertar(
             $idGenerated,
-            1,
+            $rol,
             $_REQUEST['p_nombre'],
             $_REQUEST['s_nombre'],
             $_REQUEST['p_apellido'],

@@ -99,9 +99,10 @@
         </thead>
         <tbody>
             <?php
-            foreach ($value as $reserve) {
+            if ($value) {
+                foreach ($value as $reserve) {
 
-                echo '<tr>
+                    echo '<tr>
                         <th scope="row">' . $reserve['id_reservation'] . '</th>
                         <td>' . $reserve['p_nombre'] . ' ' . $reserve['p_apellido'] . '</td>
                         <td>' . $reserve['amount_people'] . '</td>
@@ -117,14 +118,15 @@
                         <button class="btn btn-danger"><a href="' . constant('URL') . '/reservaciones/changeStatus?cancel=' . $reserve['id_reservation'] . '" class="link-light">Cancelar reserva</a></button>
                         </td>
                     </tr>';
-            }
+                }
 
-            foreach ($this->value2 as $menu) {
-                echo "<script>
+                foreach ($this->value2 as $menu) {
+                    echo "<script>
                             console.log(document.getElementById('" . $menu['id_reservation'] . "'));
                             document.getElementById('" . $menu['id_reservation'] . "').append('" . $menu['title_menu'] . "', '  -  ');     
                             document.getElementById('menu').append('" . $menu['title_menu'] . "', '  -  ');                   
                         </script>";
+                }
             }
             ?>
         </tbody>

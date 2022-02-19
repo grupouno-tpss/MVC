@@ -52,6 +52,54 @@
     <?php
     require "layouts/nav.php";
     ?>
+
+    <!--Ventana modal-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar un nuevo usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo constant('URL') ?>/registrarse/addUser" method="post">
+                        <label for="p_nombre">Primer nombre *</label>
+                        <input type="text" class="form-control" id="" name="p_nombre" required>
+                        <label for="s_nombre">Segundo nombre</label>
+                        <input type="text" class="form-control" id="s_nombre" name="s_nombre">
+                        <label for="p_apellido">Primer apellido *</label>
+                        <input type="text" class="form-control" id="p_apellido" name="p_apellido" required>
+                        <label for="s_apellido">Segundo apellido</label>
+                        <input type="text" class="form-control" id="s_apellido" name="s_apellido">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                        <label for="telcelular">Numero celular *</label>
+                        <input type="text" class="form-control" id="telcelular" name="telcelular" required>
+                        <label for="telefono">Numero telefonico</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                        <label for="Contraseña">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña" name="contraseña" required>
+                        <label for="">Rol del usuario</label>
+                        <select class="form-select" aria-label="Default select example" name="rol">
+                            <option value="2">Empleado</option>
+                            <option value="1">Cliente</option>
+                            <option value="3">Administrador</option>
+                        </select>
+                        <br>
+                        <hr>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <input type="submit" class="btn btn-primary" name="registrar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--endModal-->
+
     <div class="content">
         <div class="section">
             <div>
@@ -96,7 +144,7 @@
             </div>
         </div>
         <div class="section">
-            <h2>Clientes</h2>
+            <h2>Empleados</h2>
             <hr><br>
             <table class="table table-dark table-bordered">
                 <thead>
@@ -117,7 +165,7 @@
                         echo '
                     <tr>
                         <th scope="row">' . $user['id_users'] . '</th>
-                        <td>' . $user['rol'] . '</td>
+                        <td>' . $user['p_nombre'] . " ". $user['p_apellido'].'</td>
                         <td>' . $user['email'] . '</td>
                         <td>' . $user['rol'] . '</td>
                         <td>' . $user['num_celular'] . '</td>
@@ -131,6 +179,11 @@
                     ?>
                 </tbody>
             </table>
+            <br>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Agregar usuario
+            </button>
         </div>
         <div class="section">
             <h2>Clientes</h2>
@@ -154,7 +207,7 @@
                         echo '
                     <tr>
                         <th scope="row">' . $user['id_users'] . '</th>
-                        <td>' . $user['rol'] . '</td>
+                        <td>' . $user['p_nombre'] . " ". $user['p_apellido'].'</td>
                         <td>' . $user['email'] . '</td>
                         <td>' . $user['rol'] . '</td>
                         <td>' . $user['num_celular'] . '</td>
@@ -169,6 +222,8 @@
                     ?>
                 </tbody>
             </table>
+            <br>
+            <a href="<?php echo constant('URL')?>/worker" class="btn btn-primary">Vista de empleado</a>
         </div>
     </div>
 </body>
