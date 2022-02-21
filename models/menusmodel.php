@@ -7,7 +7,7 @@ class menusModel extends Model
     }
 
     public function getMenus () {
-        $query = "SELECT * FROM menus INNER JOIN menus_has_menu_categories ON menus.id_menu = menus_id_menu INNER JOIN menu_categories ON id_menu_categories = menu_categories_id_menu_categories";
+        $query = "SELECT * FROM menus ";
         $result = mysqli_query($this->db, $query);
 
         while ($row = mysqli_fetch_assoc($result)) {
@@ -15,6 +15,7 @@ class menusModel extends Model
         }
         return $menus;
     }
+
     public function getMenusUser () {
         $query = "SELECT id_menu, title_menu, description_menu, price_menu, 
         id_menu, id_reservation FROM menus M INNER JOIN reservations R 
@@ -41,5 +42,19 @@ class menusModel extends Model
             $menus[] = $row;
         }
         return $menus;
+    }
+
+    public function addMenu ($title, $desc,$price, $url) {
+        $queryMenu = "INSERT INTO `menus`(`id_menu`, `title_menu`, 
+        `description_menu`, `price_menu`, `img_menu`) 
+        VALUES (".rand().",'$title','$desc',
+        '$price','$url')";
+        echo $queryMenu;
+
+        if ($title == "") {
+            echo "No se recibieron datos";
+        }else{
+            mysqli_query($this->db, $queryMenu);
+        }
     }
 }

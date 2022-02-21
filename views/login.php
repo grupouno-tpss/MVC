@@ -56,6 +56,10 @@
         </div>
     </div>
 
+    <?php
+        require "layouts/footer.php";
+    ?>
+
     <script>
         window.onload = function() {
             document.getElementById("loading").hidden = true;

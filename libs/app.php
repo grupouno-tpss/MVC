@@ -8,6 +8,7 @@ class App
         $url = explode('/', $url);
 
         $archivoController = 'controllers/' . $url[0] . '.php';
+        
         if (file_exists($archivoController)) {
             require $archivoController;
             $controller = new $url[0];
