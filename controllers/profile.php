@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+//error_reporting(0);
 class profile extends Controller
 {
     public function __construct()
@@ -10,7 +11,7 @@ class profile extends Controller
     public function render()
     {
         parent::__construct();
-
+        $this->view->value2 = $this->user($_SESSION['user_id']);
         $this->view->render('profile', null);
     }
 
@@ -42,5 +43,10 @@ class profile extends Controller
         );
         echo "Actualizar usuario";
 
+    }
+
+    public function user ($rol) {
+        $this->loadModel('usuario');
+        return $this->nameClass->user($rol);
     }
 }

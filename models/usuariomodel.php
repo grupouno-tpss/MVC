@@ -129,10 +129,10 @@ class usuarioModel extends Model
         $user = $_SESSION['user_id'];
         $p = $password;
 
-        $queryUpdate = "UPDATE `users` SET 
+        $queryUpdate = "UPDATE `users` SET `id_users`=$id,
         `email`='$email',`password`='$password',`p_nombre`='$p_nombre',
         `s_nombre`='$s_nombre',`p_apellido`='$p_apellido',`s_apellido`='$s_apellido' 
-        WHERE id_users = " . $_SESSION['user_id'] . "";
+        WHERE id_users = $id";
 
         echo $queryUpdate . "<br>";
 
@@ -145,6 +145,22 @@ class usuarioModel extends Model
         num_celular, num_telefono, rol FROM users U INNER JOIN roles R 
         ON R.id_rol = $rol INNER JOIN contactos C 
         ON U.contactos_id_contacto = C.id_contacto AND U.roles_id_rol = $rol";
+
+        $resultado = mysqli_query($this->db, $query);
+
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $dataUsers[] = $row;
+        }
+        return $dataUsers;
+    }
+
+    public function user($id)
+    {
+        $query = "SELECT id_users, p_nombre, s_nombre, p_apellido, email, 
+        num_celular, num_telefono, rol, password FROM users U INNER JOIN roles R 
+        ON R.id_rol = U.roles_id_rol INNER JOIN contactos C 
+        ON U.contactos_id_contacto = C.id_contacto AND U.roles_id_rol = U.roles_id_rol
+        WHERE U.id_users = $id";
 
         $resultado = mysqli_query($this->db, $query);
 
