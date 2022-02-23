@@ -57,4 +57,24 @@ class menusModel extends Model
             mysqli_query($this->db, $queryMenu);
         }
     }
+
+    public function updateMenu($id, $title, $description, $price, $url) {
+
+        $query = "UPDATE `menus` SET 
+        `title_menu`='$title',`description_menu`='$description',
+        `price_menu`=$price,`img_menu`='$url' 
+        WHERE id_menu = $id";
+
+        mysqli_query($this->db, $query);
+        echo $query. "<br>";
+        echo "<br> <p class='bg-success'>Menú actualizado</p>";
+        echo "<script>location.href='".constant('URL')."/menus'</script>";
+    }
+
+    public function delete ($id) {
+        $query = "DELETE FROM `menus` WHERE id_menu = $id";
+        mysqli_query($this->db, $query);
+        echo "Menu eliminado";
+        echo "<script>location.href='".constant('URL')."/menus'</script>";
+    }
 }

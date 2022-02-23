@@ -379,23 +379,9 @@
             <h2>Menus</h2>
             <hr><br>
             <button class="btn btn-primary">Añadir menú</button>
-            <div class="d-flex text-black">
-                <?php
-                foreach ($this->value5 as $menu) {
-                    echo '
-                    <div class="card" style="width: 18rem height: 50%;
-                    <img src="'.$menu['img_menu'].'" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">'.$menu['title_menu'].'</h5>
-                      <p class="card-text">'.$menu['description_menu'].'</p>
-                      <p>'."$".$menu['price_menu'].'</p>
-                      <button class="btn btn-primary">'."ID del menú: ".$menu['id_menu'].'</button>
-                    </div>
-                  </div>
-                    ';
-                }
-                ?>
-            </div>
+            <?php 
+                require "views/menus.php";
+            ?>
         </div>
     </div>
 </body>

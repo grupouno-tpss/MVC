@@ -15,8 +15,14 @@ class admint extends Controller
         $dates = $this->getDatesNotAvailable();
         $this->view->value2 = $dates;
         $this->view->value4 = $this->getHours();
-        $this->view->value5 = $this->getMenus();
+        $this->view->menus = $this->getMenus();
         $this->view->render('admint', $users);
+    }
+
+    public function getMenus()
+    {
+        $this->loadModel('menus');
+        return $this->nameClass->getMenus();
     }
 
     public function users($rol)
@@ -49,7 +55,8 @@ class admint extends Controller
         return $this->nameClass->dateNotAvailable();
     }
 
-    public function deleteDateNotAvailable (){
+    public function deleteDateNotAvailable()
+    {
         extract($_REQUEST);
 
         $this->loadModel('dates');
@@ -57,31 +64,30 @@ class admint extends Controller
         $this->nameClass->deleteDateNotAvailable($_REQUEST['IDdate']);
     }
 
-    public function addDateNotAvailable () {
+    public function addDateNotAvailable()
+    {
         extract($_REQUEST);
         $this->loadModel('dates');
         $this->nameClass->addDateNotAvailable($_REQUEST['date']);
     }
 
-    public function getHours () {
+    public function getHours()
+    {
         $this->loadModel('schedule');
         return $this->nameClass->getHour();
     }
 
-    public function deleteHour () {
+    public function deleteHour()
+    {
         extract($_REQUEST);
         $this->loadModel('schedule');
         $this->nameClass->deleteHour($_REQUEST['IDhour']);
     }
 
-    public function addHour () {
+    public function addHour()
+    {
         extract($_REQUEST);
         $this->loadModel('schedule');
         $this->nameClass->addHour($_REQUEST['hour']);
-    }
-
-    public function getMenus () {
-        $this->loadModel('menus');
-        return $this->nameClass->getMenus();
     }
 }
