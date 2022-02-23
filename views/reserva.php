@@ -124,7 +124,6 @@
     [4] = especificacion de reserva
 */
         let dataReserva = ["No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada", "No seleccionada"];
-        let menus = [];
 
         function asignar() {
             // document.getElementById('sendReserve').addEventListener("click", (e) =>{
@@ -143,11 +142,6 @@
             dataReserva[5] = $menusText;
         }
 
-
-
-        function addMenu(id) {
-            menus.push(id);
-        }
 
         document.getElementById("verDatos").addEventListener("click", (e) => {
             mostrarDatos();
@@ -183,6 +177,20 @@
     </script>
     <script src="<?php echo constant('URL') ?>/public/js/calendar.js"></script>
 
+    <?php
+    foreach ($this->value2 as $date) {
+        echo $date['date'] . "<br>";
+        $dateExplode = explode('-', $date['date']);
+        $dateID = $dateExplode[0] . "/" . intval($dateExplode[1]) . "/" . intval($dateExplode[2]);
+        echo $dateID;
+        echo '
+            <script>
+                document.getElementById("' . $dateID . '").style.background= "gray";
+                document.getElementById("' . $dateID . '").id = "not";
+            </script>
+        ';
+    }
+    ?>
 </body>
 
 </html>

@@ -28,13 +28,17 @@ function loadItemsCalendar(m) {
     }
     for (let index = 1; index <= new Date(year, month, 0).getDate(); index++) {
         let div = document.createElement("div");
-        div.id = year + "/"+ m + "/" + index;
+        div.id = year + "/" + m + "/" + index;
         document.getElementById("calendar").appendChild(div);
 
         div.addEventListener("click", (e) => {
-            document.getElementById("modalCalendar").hidden = false;
-            document.getElementById("dateModal").value = e.target.id;
-            dataReserva[0] = e.target.id;
+            if (e.target.id == "not") {
+                alert("Fecha no disponible");
+            } else {
+                document.getElementById("modalCalendar").hidden = false;
+                document.getElementById("dateModal").value = e.target.id;
+                dataReserva[0] = e.target.id;
+            }
         });
     }
 }
@@ -45,13 +49,14 @@ function deleteItemsCalendar(m) {
     }
 
     for (let index = 1; index <= new Date(year, month, 0).getDate(); index++) {
-        document.getElementById("calendar").removeChild(document.getElementById(year + "/"+ m + "/" + index));
+        document.getElementById("calendar").removeChild(document.getElementById(year + "/" + m + "/" + index));
     }
 }
 
 function inner(m) {
     for (let index = 1; index <= new Date(year, month, 0).getDate(); index++) {
-        var div = document.getElementById(year + "/" + m + "/"+ index);
+        let dateConver = new Date(year, m, index);
+        var div = document.getElementById(year + "/" + m + "/" + index);
         div.innerHTML = index;
     }
 }

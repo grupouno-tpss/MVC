@@ -375,10 +375,7 @@
                 Añadir hora
             </button>
         </div>
-        <div>
-            <h2>Menus</h2>
-            <hr><br>
-            <button class="btn btn-primary">Añadir menú</button>
+        <div class="section" style="overflow: auto;">
             <?php 
                 require "views/menus.php";
             ?>

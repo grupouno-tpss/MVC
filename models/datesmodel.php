@@ -28,7 +28,7 @@ class datesModel extends Model
 
     public function addDateNotAvailable ($date) {
         $query = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
-        VALUES (rand(),'$date','NOT AVAILABLE')";
+        VALUES (".rand().",'$date','NOT AVAILABLE')";
         if ($date == "") {
             echo "No se recibió una hora";
         }else{

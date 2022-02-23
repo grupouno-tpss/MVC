@@ -182,6 +182,15 @@ class reservaModel extends Model
         mysqli_query($this->db, $query);
         echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
+
+    public function getDatesNotAvailables () {
+        $query = "SELECT * FROM `dates` WHERE status = 'NOT AVAILABLE'";
+        $result = mysqli_query($this->db, $query);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $dateNotAvailable[] = $row;
+        }
+        return $dateNotAvailable;
+    }
 }
 
 
