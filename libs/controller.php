@@ -27,5 +27,30 @@
 
             $this->nameClass = new $urlName();
         }
+
+        public function authClient ($rol) {
+            if ($rol == 1) {
+                echo "";
+            }else{
+                echo "No tiene acceso. Por favor logearse";
+                die();
+            }
+        }
+        public function authEmp ($rol) {
+            if ($rol == 2) {
+                echo "";
+            }else{
+                echo "No tiene acceso. Por favor logearse";
+                die();
+            }
+        }
+        public function authAdmint ($rol) {
+            if ($rol == 3) {
+                echo "";
+            }else{
+                echo "No tiene acceso. Por favor logearse";
+                die();
+            }
+        }
     }
 ?>

@@ -134,9 +134,16 @@ class usuarioModel extends Model
         `s_nombre`='$s_nombre',`p_apellido`='$p_apellido',`s_apellido`='$s_apellido' 
         WHERE id_users = $id";
 
+        $queryContacto = "UPDATE `contactos` SET `id_contacto`='$id',
+        `num_telefono`='$num_telefono',`num_celular`='$num_celular'
+         WHERE id_contacto = $id";
+
         echo $queryUpdate . "<br>";
 
         mysqli_query($this->db, $queryUpdate);
+        mysqli_query($this->db, $queryContacto);
+
+        echo "<script>location.href = '".constant('URL')."/profile'</script>";
     }
 
     public function users($rol)
