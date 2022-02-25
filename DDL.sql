@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2022 a las 15:59:07
+-- Tiempo de generación: 25-02-2022 a las 18:30:44
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -38,20 +38,9 @@ CREATE TABLE `contactos` (
 --
 
 INSERT INTO `contactos` (`id_contacto`, `num_telefono`, `num_celular`) VALUES
-(75960606, '32454335', '324654'),
-(92835341, '32454335', '324654'),
-(131737921, '32454335', '324654'),
-(231941234, '32454335', '324654'),
-(285996943, '32454335', '324654'),
-(383403847, '32454335', '324654'),
-(457513813, '32454335', '324654'),
-(628976969, '32454335', '324654'),
-(876760246, '32454335', '324654'),
-(1401497291, '32454335', '324654'),
-(1612171322, '45345', '5435'),
-(1787328849, '32454335', '324654'),
-(1941399206, '32454335', '324654'),
-(2081846036, '32454335', '324654');
+(358756342, '3227519202', '3227519202'),
+(1092432273, '3227519202', '3227519202'),
+(1413203486, '32454335', '324654');
 
 -- --------------------------------------------------------
 
@@ -70,46 +59,7 @@ CREATE TABLE `dates` (
 --
 
 INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
-(1, '2022-02-15', 'NOT AVAILABLE'),
-(25818457, '2022-02-27', 'AVAILABLE'),
-(127750032, '2022-02-27', 'AVAILABLE'),
-(167798704, '2022-02-27', 'AVAILABLE'),
-(416101879, '2022-02-27', 'DISPONIBLE'),
-(471513197, '2022-02-27', 'AVAILABLE'),
-(540206956, '2022-02-27', 'AVAILABLE'),
-(547499120, '0000-00-00', 'AVAILABLE'),
-(583955245, '2022-02-27', 'AVAILABLE'),
-(632987424, '0000-00-00', 'AVAILABLE'),
-(840269105, '2022-02-27', 'AVAILABLE'),
-(886666732, '2022-02-27', 'AVAILABLE'),
-(891348869, '2022-02-27', 'AVAILABLE'),
-(990965086, '2022-02-27', 'AVAILABLE'),
-(1133100990, '2022-02-27', 'AVAILABLE'),
-(1142908134, '0000-00-00', 'AVAILABLE'),
-(1154622106, '2022-02-27', 'AVAILABLE'),
-(1208005909, '0000-00-00', 'AVAILABLE'),
-(1225987891, '2022-02-27', 'AVAILABLE'),
-(1249522556, '2022-02-27', 'AVAILABLE'),
-(1264032189, '0000-00-00', 'AVAILABLE'),
-(1326771938, '0000-00-00', 'AVAILABLE'),
-(1460295166, '0000-00-00', 'AVAILABLE'),
-(1484442796, '2022-02-27', 'AVAILABLE'),
-(1515630655, '2022-02-27', 'AVAILABLE'),
-(1516962418, '2022-02-27', 'AVAILABLE'),
-(1595319480, '2022-02-27', 'AVAILABLE'),
-(1660828971, '2022-02-27', 'AVAILABLE'),
-(1700794490, '0000-00-00', 'AVAILABLE'),
-(1702783497, '0000-00-00', 'AVAILABLE'),
-(1792643572, '2022-02-27', 'AVAILABLE'),
-(1831622562, '2022-02-16', 'AVAILABLE'),
-(1840336842, '0000-00-00', 'AVAILABLE'),
-(1891296386, '0000-00-00', 'AVAILABLE'),
-(1992617006, '2022-02-27', 'AVAILABLE'),
-(2033237702, '0000-00-00', 'AVAILABLE'),
-(2062241926, '2022-02-27', 'AVAILABLE'),
-(2072428118, '0000-00-00', 'AVAILABLE'),
-(2076673194, '0000-00-00', 'AVAILABLE'),
-(2142001698, '0000-00-00', 'AVAILABLE');
+(1072183417, '2022-02-28', 'NOT AVAILABLE');
 
 -- --------------------------------------------------------
 
@@ -121,38 +71,6 @@ CREATE TABLE `details` (
   `id_detail` int(11) NOT NULL,
   `detail` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `details`
---
-
-INSERT INTO `details` (`id_detail`, `detail`) VALUES
-(471513197, ''),
-(547499120, ''),
-(632987424, ''),
-(686884679, ''),
-(773326396, ''),
-(840269105, 'gsdfgsd'),
-(906993175, ''),
-(1133100990, 'HOLA A TODOOOS'),
-(1225987891, 'Se ha cambiado el detalle'),
-(1249522556, 'dfsasdfasd'),
-(1264032189, ''),
-(1326771938, ''),
-(1460295166, ''),
-(1484442796, 'dfsasdfasd'),
-(1515630655, 'dfsasdfasd'),
-(1516962418, 'Se ha cambiado el detalle'),
-(1595319480, 'gsdfgsd'),
-(1660828971, 'gsdfgsd'),
-(1831622562, 'gsdfgsd'),
-(1840336842, ''),
-(2062241926, 'dfasdfas'),
-(2081762740, ''),
-(2107199814, ''),
-(2121236418, ''),
-(2142001698, ''),
-(2146882582, '');
 
 -- --------------------------------------------------------
 
@@ -173,10 +91,69 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id_menu`, `title_menu`, `description_menu`, `price_menu`, `img_menu`) VALUES
-(2, 'SASHIM', 'Es una delicia japonesa que consiste principalmente en marisco o pescado crudo. Se sirve junto a él salsa de soja, wasabi, y un aderezo simple como rábano daikon rallado.', 50000, 'https://www.196flavors.com/wp-content/uploads/2019/12/sashimi-1-FP.jpeg'),
-(3, 'UDON', 'Es un tipo de fideo grueso hecho de harina. Fue importado a Japón desde China en el siglo VI. Son normalmente servidos en un caldo a base de dashi, salsa de soja, y mirin. Según los ingredientes con los que se acompañe se diferencia entre los distint', 50000, 'https://www.196flavors.com/wp-content/uploads/2019/11/yaki-udon-1-FP.jpg'),
-(4, 'SOBA', 'Este término se utiliza para referirse a los fideos finos  elaborados con harina de alforfón. Se sirven fríos con una salsa o caldo en que se los sumerge, o en caldo caliente como elramen. Por otra parte, es muy común en Japón referirse a los fideos ', 50000, 'https://i2.wp.com/golososdelmundo.com/wp-content/uploads/2017/07/zaru-soba.jpg?fit=1024%2C683'),
-(1916580704, 'Ramen', 'El menú es un documento ofrecido en los restaurantes en el que se muestra a los clientes una secuencia o lista de posibles opciones disponibles para un cliente. El menú puede estructurarse en platos por tipologías de contenido: carne, pasta, pescado,', 40000, 'https://img.freepik.com/vector-gratis/menu-restaurante-moderno-comida-rapida_52683-48982.jpg?size=626&ext=jpg');
+(1073968626, 'Ramen', 'Si quisiéramos definirlo de una manera más o menos rápida, podríamos decir que el ramen (ラーメン) es una sopa de fideos, de origen chino, normalmente preparada con una base de caldo de carne, que se sirve con una gran variedad de toppings.', 70000, 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYVFRgVFhUYGBgaGBgYGhoaGBkYGhoaGRgaGhgYGBkcIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QHhISHzQsJSs0NDQ0MTQ2NDQ0MTQ0NDQ0NDQ2NDQ0NDQ0NDQ0NDQ0NDY0NjQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIALcBEwMBIgACEQE'),
+(1302736935, 'Cualquiera', 'fasdfasdfasdfasd', 30000, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Soy_ramen.jpg/640px-Soy_ramen.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menus_categories`
+--
+
+CREATE TABLE `menus_categories` (
+  `id_category` int(11) NOT NULL,
+  `category` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `menus_categories`
+--
+
+INSERT INTO `menus_categories` (`id_category`, `category`) VALUES
+(126624185, 'ENTRADAS'),
+(901094428, 'ALMUERZOS'),
+(1560018873, 'POSTRES');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menus_has_menus_categories`
+--
+
+CREATE TABLE `menus_has_menus_categories` (
+  `menus_id_menu` int(11) NOT NULL,
+  `menus_categories_id_category` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `menus_has_menus_categories`
+--
+
+INSERT INTO `menus_has_menus_categories` (`menus_id_menu`, `menus_categories_id_category`) VALUES
+(1302736935, 126624185),
+(1302736935, 901094428);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menus_has_menu_categories`
+--
+
+CREATE TABLE `menus_has_menu_categories` (
+  `menus_id_menu` int(11) NOT NULL,
+  `menu_categories_id_menu_categories` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_categories`
+--
+
+CREATE TABLE `menu_categories` (
+  `id_menu_categories` int(11) NOT NULL,
+  `category` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -191,15 +168,9 @@ CREATE TABLE `reservations` (
   `dates_id_date` int(11) NOT NULL,
   `schedules_id_schedule` int(11) NOT NULL,
   `users_id_users` int(11) NOT NULL,
-  `details_id_detail` int(11) NOT NULL
+  `details_id_detail` int(11) NOT NULL,
+  `services_id_service` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `reservations`
---
-
-INSERT INTO `reservations` (`id_reservation`, `amount_people`, `status`, `dates_id_date`, `schedules_id_schedule`, `users_id_users`, `details_id_detail`) VALUES
-(1831622562, 3, 'ACTIVE', 1831622562, 2, 1941399206, 1831622562);
 
 -- --------------------------------------------------------
 
@@ -211,25 +182,6 @@ CREATE TABLE `reservations_has_menus` (
   `reservations_id_reservation` int(11) NOT NULL,
   `menus_id_menu` int(11) NOT NULL,
   `user_id` int(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `reservations_has_menus`
---
-
-INSERT INTO `reservations_has_menus` (`reservations_id_reservation`, `menus_id_menu`, `user_id`) VALUES
-(1831622562, 2, 1941399206),
-(1831622562, 3, 1941399206);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reservations_has_services`
---
-
-CREATE TABLE `reservations_has_services` (
-  `reservations_id_reservation` int(11) NOT NULL,
-  `services_id_services` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -249,7 +201,7 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id_rol`, `rol`) VALUES
 (1, 'CLIENTE'),
-(2, 'TRABAJADOR'),
+(2, 'EMPLEADO'),
 (3, 'ADMINISTRADOR');
 
 -- --------------------------------------------------------
@@ -269,13 +221,7 @@ CREATE TABLE `schedules` (
 --
 
 INSERT INTO `schedules` (`id_schedule`, `schedule`, `status`) VALUES
-(1, '03:30:00', 'NOT AVAILABLE'),
-(2, '04:30:00', 'AVAILABLE'),
-(698756245, '19:19:00', 'AVAILABLE'),
-(991621988, '15:15:00', 'AVAILABLE'),
-(1142747440, '12:40:00', 'AVAILABLE'),
-(1714562596, '20:43:00', 'AVAILABLE'),
-(2048598305, '16:28:00', 'AVAILABLE');
+(157480650, '08:00:00', 'AVAILABLE');
 
 -- --------------------------------------------------------
 
@@ -284,7 +230,7 @@ INSERT INTO `schedules` (`id_schedule`, `schedule`, `status`) VALUES
 --
 
 CREATE TABLE `services` (
-  `id_services` int(11) NOT NULL,
+  `id_service` int(11) NOT NULL,
   `service` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -311,12 +257,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `email`, `password`, `p_nombre`, `s_nombre`, `p_apellido`, `s_apellido`, `roles_id_rol`, `contactos_id_contacto`) VALUES
-(75960606, 'pinky@gmail.com', '1022322859', 'Pinky', 'Estiven ', 'Triana ', 'Quiroga', 2, 75960606),
-(92835341, 'stivenjhojan011@gmail.com', '1022322859', 'Jhojann', 'Estiven ', 'Triana ', 'Quiroga', 1, 92835341),
-(131737921, 'jhojan@gmail.com', '1022322859', 'Jhojann', 'Estiven ', 'Triana ', 'Quiroga', 2, 131737921),
-(285996943, 'carlos@gmail.com', '1022322859', 'Carlos', 'Alberto', 'Pelaez', 'Quiroga', 1, 285996943),
-(1941399206, 'jhostriana11@misena.edu.co', '1022322859', 'Jhojann', 'Estiven ', 'Triana ', 'Quiroga', 3, 1941399206),
-(2081846036, 'delfina@gmail.com', '123', 'Delfina', 'Estiven ', 'Triana ', 'Quiroga', 2, 2081846036);
+(358756342, 'jhostriana11@misena.edu.co', '1022322859', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 3, 358756342),
+(1413203486, 'diego@gmail.com', '1022322859', 'Diego', 'Andrés', 'Casallas', '', 2, 1413203486);
 
 --
 -- Índices para tablas volcadas
@@ -347,6 +289,34 @@ ALTER TABLE `menus`
   ADD PRIMARY KEY (`id_menu`);
 
 --
+-- Indices de la tabla `menus_categories`
+--
+ALTER TABLE `menus_categories`
+  ADD PRIMARY KEY (`id_category`);
+
+--
+-- Indices de la tabla `menus_has_menus_categories`
+--
+ALTER TABLE `menus_has_menus_categories`
+  ADD PRIMARY KEY (`menus_id_menu`,`menus_categories_id_category`),
+  ADD KEY `fk_menus_has_menus_categories_menus_categories1_idx` (`menus_categories_id_category`),
+  ADD KEY `fk_menus_has_menus_categories_menus1_idx` (`menus_id_menu`);
+
+--
+-- Indices de la tabla `menus_has_menu_categories`
+--
+ALTER TABLE `menus_has_menu_categories`
+  ADD PRIMARY KEY (`menus_id_menu`,`menu_categories_id_menu_categories`),
+  ADD KEY `fk_menus_has_menu_categories_menu_categories1_idx` (`menu_categories_id_menu_categories`),
+  ADD KEY `fk_menus_has_menu_categories_menus1_idx` (`menus_id_menu`);
+
+--
+-- Indices de la tabla `menu_categories`
+--
+ALTER TABLE `menu_categories`
+  ADD PRIMARY KEY (`id_menu_categories`);
+
+--
 -- Indices de la tabla `reservations`
 --
 ALTER TABLE `reservations`
@@ -354,7 +324,8 @@ ALTER TABLE `reservations`
   ADD KEY `fk_reservations_dates1_idx` (`dates_id_date`),
   ADD KEY `fk_reservations_schedules1_idx` (`schedules_id_schedule`),
   ADD KEY `fk_reservations_users1_idx` (`users_id_users`),
-  ADD KEY `fk_reservations_details1_idx` (`details_id_detail`);
+  ADD KEY `fk_reservations_details1_idx` (`details_id_detail`),
+  ADD KEY `fk_reservations_services1_idx` (`services_id_service`);
 
 --
 -- Indices de la tabla `reservations_has_menus`
@@ -363,14 +334,6 @@ ALTER TABLE `reservations_has_menus`
   ADD PRIMARY KEY (`reservations_id_reservation`,`menus_id_menu`),
   ADD KEY `fk_reservations_has_menus_menus1_idx` (`menus_id_menu`),
   ADD KEY `fk_reservations_has_menus_reservations1_idx` (`reservations_id_reservation`);
-
---
--- Indices de la tabla `reservations_has_services`
---
-ALTER TABLE `reservations_has_services`
-  ADD PRIMARY KEY (`reservations_id_reservation`,`services_id_services`),
-  ADD KEY `fk_reservations_has_services_services1_idx` (`services_id_services`),
-  ADD KEY `fk_reservations_has_services_reservations1_idx` (`reservations_id_reservation`);
 
 --
 -- Indices de la tabla `roles`
@@ -388,7 +351,7 @@ ALTER TABLE `schedules`
 -- Indices de la tabla `services`
 --
 ALTER TABLE `services`
-  ADD PRIMARY KEY (`id_services`);
+  ADD PRIMARY KEY (`id_service`);
 
 --
 -- Indices de la tabla `users`
@@ -403,34 +366,42 @@ ALTER TABLE `users`
 --
 
 --
+-- Filtros para la tabla `menus_has_menus_categories`
+--
+ALTER TABLE `menus_has_menus_categories`
+  ADD CONSTRAINT `fk_menus_has_menus_categories_menus1` FOREIGN KEY (`menus_id_menu`) REFERENCES `menus` (`id_menu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_menus_has_menus_categories_menus_categories1` FOREIGN KEY (`menus_categories_id_category`) REFERENCES `menus_categories` (`id_category`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `menus_has_menu_categories`
+--
+ALTER TABLE `menus_has_menu_categories`
+  ADD CONSTRAINT `fk_menus_has_menu_categories_menu_categories1` FOREIGN KEY (`menu_categories_id_menu_categories`) REFERENCES `menu_categories` (`id_menu_categories`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_menus_has_menu_categories_menus1` FOREIGN KEY (`menus_id_menu`) REFERENCES `menus` (`id_menu`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Filtros para la tabla `reservations`
 --
 ALTER TABLE `reservations`
-  ADD CONSTRAINT `fk_reservations_dates1` FOREIGN KEY (`dates_id_date`) REFERENCES `dates` (`id_date`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_reservations_dates1` FOREIGN KEY (`dates_id_date`) REFERENCES `dates` (`id_date`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_reservations_details1` FOREIGN KEY (`details_id_detail`) REFERENCES `details` (`id_detail`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_reservations_schedules1` FOREIGN KEY (`schedules_id_schedule`) REFERENCES `schedules` (`id_schedule`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_reservations_users1` FOREIGN KEY (`users_id_users`) REFERENCES `users` (`id_users`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_reservations_schedules1` FOREIGN KEY (`schedules_id_schedule`) REFERENCES `schedules` (`id_schedule`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_reservations_services1` FOREIGN KEY (`services_id_service`) REFERENCES `services` (`id_service`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_reservations_users1` FOREIGN KEY (`users_id_users`) REFERENCES `users` (`id_users`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `reservations_has_menus`
 --
 ALTER TABLE `reservations_has_menus`
-  ADD CONSTRAINT `fk_reservations_has_menus_menus1` FOREIGN KEY (`menus_id_menu`) REFERENCES `menus` (`id_menu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_reservations_has_menus_reservations1` FOREIGN KEY (`reservations_id_reservation`) REFERENCES `reservations` (`id_reservation`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `reservations_has_services`
---
-ALTER TABLE `reservations_has_services`
-  ADD CONSTRAINT `fk_reservations_has_services_reservations1` FOREIGN KEY (`reservations_id_reservation`) REFERENCES `reservations` (`id_reservation`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_reservations_has_services_services1` FOREIGN KEY (`services_id_services`) REFERENCES `services` (`id_services`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_reservations_has_menus_menus1` FOREIGN KEY (`menus_id_menu`) REFERENCES `menus` (`id_menu`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_reservations_has_menus_reservations1` FOREIGN KEY (`reservations_id_reservation`) REFERENCES `reservations` (`id_reservation`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `fk_users_contactos1` FOREIGN KEY (`contactos_id_contacto`) REFERENCES `contactos` (`id_contacto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_roles` FOREIGN KEY (`roles_id_rol`) REFERENCES `roles` (`id_rol`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_users_roles` FOREIGN KEY (`roles_id_rol`) REFERENCES `roles` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

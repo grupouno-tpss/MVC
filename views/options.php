@@ -62,6 +62,7 @@ echo "<script>alert('".$_SESSION['user_email']."')</script>";
     <div class="options">
         <div><a href="<?php echo constant('URL')?>/reserva">Reservar</a></div>
         <div><a href="<?php echo constant('URL')?>/reservaciones">Cancelar/modificar reserva</a></div>
+        <div><a href="<?php echo constant('URL')?>/menus">Menús</a></div>
         <div><a href="<?php echo constant('URL')?>/profile">Actualizar perfil</a></div>
     </div>
     <script>

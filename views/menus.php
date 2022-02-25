@@ -1,5 +1,5 @@
 <body>
-    <!--Ventana modal menus-->
+    <!--Ventana modal añadir menus-->
 
     <!-- Modal -->
     <div class="modal fade" style="color: black;" id="menuAdmint" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -22,6 +22,28 @@
                         <input type="text" class="form-control" name="price">
                         <label for="">Ingrese la URL de la imagen del menù</label>
                         <input type="text" class="form-control" name="url">
+                        <label for="">Ingrese la categoria del menú</label>
+                        <div class="d-flex" style="flex-wrap: wrap;">
+                            <?php
+                            foreach ($this->categories as $category) {
+                                echo '
+                                
+                                <div class="d-flex justify-content-around m-3" style="background: rgba(0,0,0,0.5); padding: 5px; border-radius: 5px; color: white;">
+                                    <div>' . $category['category'] . '</div>
+                                    <div style="margin-left: 10px;">
+                                    <button type="button" class="btn btn-primary" id="' . $category['id_category'] . '" onclick="addCategories(' . $category['id_category'] . ')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                  </svg>
+                                    </button></div>
+                                </div>
+                                ';
+                            }
+
+                            ?>
+                        </div>
+                        <input type="text" id="categories" name="categories">
                         <br>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -33,7 +55,7 @@
         </div>
     </div>
 
-    <!--Ventana modal de menus-->
+    <!--Ventana modal de actualizar menus-->
 
     <!-- Modal -->
     <div class="modal fade" style="color: black;" id="updateMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -65,12 +87,36 @@
         </div>
     </div>
 
-    <div>
+    <!--Ventana modal de añadir categorias menu-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="addCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Añadir categoria de menú</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo constant('URL') ?>/menus/addCategory">
+                        <label for="category">Ingrese la categoria</label>
+
+                        <input type="text" class="form-control" id="category" name="category">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         <div>
             <h1>Menus</h1>
             <div class="d-flex" style="flex-wrap: wrap;" id="selectedMenu"></div>
         </div>
-        <hr>
         <br>
         <div>
             <?php
@@ -79,8 +125,29 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#menuAdmint">
                     Añadir menù
                 </button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategory">
+                    Añadir categoria de menú
+                </button><br><hr>
                 ';
+
+                //categories
+
+                echo '<br><h3>Categorias de menú</h3>';
+
+                echo '<div class="d-flex">';
+
+                foreach ($this->categories as $category) {
+                    echo '
+                    
+                    <div class="d-flex justify-content-around m-3" style="background: rgba(0,0,0,0.5); padding: 5px; border-radius: 5px; color: white;">
+                        <div>' . $category['category'] . '</div>
+                        <div style="margin-left: 10px;"><button class="btn btn-warning"><a href="' . constant('URL') . '/menus/deleteCategory?category=' . $category['id_category'] . '">X</a></button></div>
+                    </div>
+                    ';
+                }
             }
+            echo "</div>";
             ?>
         </div>
         <div class="d-flex" style="flex-wrap: wrap; color:black">
@@ -131,6 +198,7 @@
 
     <script>
         let menus = [];
+        let categories = [];
 
         function dataMenu(id, title, description, price, img) {
             document.getElementById('idMenu').innerHTML = id;
@@ -151,6 +219,15 @@
             // div.innerHTML = '<div class="btn btn-success">'+title+'    <button class="btn">X</button> </div>';
             // document.getElementById('selectedMenu').appendChild(div);
             document.getElementById(id).classList.add('btn-success');
+        }
+
+
+        function addCategories(id) {
+            categories.push(id);
+            document.getElementById(id).classList.add('btn-success');
+            let categoriesToString = categories.toString();
+            document.getElementById('categories').value = categoriesToString;
+            console.log(categories);
         }
     </script>
 </body>

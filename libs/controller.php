@@ -5,6 +5,7 @@
         public $value4;
         public $value5;
         public $menus;
+        public $categories;
         public function __construct()
         {
             $this->view = new View();
@@ -16,6 +17,7 @@
             $this->value4;
             $this->value5;
             $this->menus;
+            $this->categories;
         }
 
         public function loadModel ($model) {

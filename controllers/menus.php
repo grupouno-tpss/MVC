@@ -13,6 +13,7 @@ class menus extends Controller
     {
         parent::__construct();
         $this->view->menus = $this->getMenus();
+        $this->view->categories = $this->getCategories();
         $this->view->render('menus', null);
     }
 
@@ -20,6 +21,10 @@ class menus extends Controller
     {
         $this->loadModel('menus');
         return $this->nameClass->getMenus();
+    }
+
+    public function getCategories () {
+        return $this->nameClass->getCategories();
     }
 
     public function addMenu () {
@@ -31,7 +36,8 @@ class menus extends Controller
             $_REQUEST['title'],
             $_REQUEST['desc'],
             $_REQUEST['price'],
-            $_REQUEST['url']
+            $_REQUEST['url'],
+            $_REQUEST['categories']
         );
         echo "Añadir menú";
     }
@@ -54,5 +60,16 @@ class menus extends Controller
         $this->nameClass->delete(
             $_REQUEST['id']
         );
+    }
+
+    public function deleteCategory () {
+        extract($_REQUEST);
+        $this->loadModel('menus');
+        $this->nameClass->deleteCategory($_REQUEST['category']);
+    }
+    public function addCategory () {
+        extract($_REQUEST);
+        $this->loadModel('menus');
+        $this->nameClass->addCategory($_REQUEST['category']);
     }
 }
