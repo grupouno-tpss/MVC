@@ -14,6 +14,7 @@ class reserva extends Controller
         $hours = $this->schedules();
         $this->view->value2 = $this->getDatesNotAvailables();
         $this->view->menus = $this->getMenus();
+        $this->view->categories = $this->getCategories();
         $this->view->render('reserva', $hours);
     }
 
@@ -45,8 +46,13 @@ class reserva extends Controller
         return $this->nameClass->dates();
     }
 
-    public function getDatesNotAvailables () {
+    public function getDatesNotAvailables()
+    {
         return $this->nameClass->getDatesNotAvailables();
     }
 
+    public function getCategories()
+    {
+        return $this->nameClass->getCategories();
+    }
 }
