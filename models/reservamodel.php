@@ -38,8 +38,8 @@ class reservaModel extends Model
         $reserve = "INSERT INTO `reservations`(`id_reservation`, `amount_people`,
         `status`,
          `dates_id_date`, `schedules_id_schedule`, `users_id_users`, 
-         `details_id_detail`) VALUES ($id, $cantPersonas, 'ACTIVE', $id,
-         $hora, " . $_SESSION['user_id'] . ", $id)";
+         `details_id_detail`, `services_id_service`) VALUES ($id, $cantPersonas, 'ACTIVE', $id,
+         $hora, " . $_SESSION['user_id'] . ", $id, $tipoServicio)";
 
         mysqli_query($this->db, $date);
 
