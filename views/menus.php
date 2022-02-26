@@ -14,7 +14,7 @@
                         <label for="">Ingrese el titulo del menù</label>
                         <input type="text" class="form-control" name="title">
                         <label for="">Ingrese la descripciòn del menù</label>
-                        <input type="text" class="form-control" name="desc">
+                        <input type="text" class="form-control" max="250" name="desc">
 
 
 
