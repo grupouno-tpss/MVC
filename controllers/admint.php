@@ -1,9 +1,11 @@
 <?php
-session_start();
 class admint extends Controller
 {
     public function __construct()
     {
+        session_start();
+        $this->verify_session();
+        $this->AuthAdmin();
     }
 
     public function render()
@@ -91,7 +93,8 @@ class admint extends Controller
         $this->loadModel('schedule');
         $this->nameClass->addHour($_REQUEST['hour']);
     }
-    public function getCategories () {
+    public function getCategories()
+    {
         return $this->nameClass->getCategories();
     }
 }

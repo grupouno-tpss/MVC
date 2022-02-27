@@ -11,7 +11,7 @@ class usuarioModel extends Model
     {
         //consultar usuario
         $usuario = "SELECT id_users, p_nombre, s_nombre, p_apellido, s_apellido, 
-        password, email, rol, num_telefono, num_celular FROM users U INNER JOIN roles 
+        password, email, rol, id_rol, num_telefono, num_celular FROM users U INNER JOIN roles 
         ON roles.id_rol = U.roles_id_rol INNER JOIN contactos C ON C.id_contacto =U.id_users
         WHERE email = '$email' AND password = '$password'";
 
@@ -26,15 +26,14 @@ class usuarioModel extends Model
                 $_SESSION['user_pNombre'] = $row['p_nombre'];
                 $_SESSION['user_sNombre'] = $row['s_nombre'];
                 $_SESSION['user_pApellido'] = $row['p_apellido'];
-                $_SESSION['user_sApellido'] = $row['s_apelldio'];
+                $_SESSION['user_sApellido'] = $row['s_apellido'];
                 $_SESSION['user_id'] = $row['id_users'];
                 $_SESSION['user_password'] = $row['password'];
                 $_SESSION['user_email'] = $row['email'];
                 $_SESSION['user_rol'] = $row['rol'];
+                $_SESSION['user_rolID'] = $row['id_rol'];
                 $_SESSION['user_celular'] = $row['num_celular'];
                 $_SESSION['user_telefono'] = $row['num_telefono'];
-                echo $row['email'];
-                echo "<script>location.href ='" . constant('URL') . "/options'</script>";
             } else {
                 session_destroy();
                 echo "no hay usuario";

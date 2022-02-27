@@ -30,29 +30,38 @@
             $this->nameClass = new $urlName();
         }
 
-        public function authClient ($rol) {
-            if ($rol == 1) {
-                echo "";
+        public function AuthAdmin () {
+            if ($_SESSION['user_rolID'] == 3) {
+                echo "<script>console.log('Estas logeado como administrador')</script>";
             }else{
-                echo "No tiene acceso. Por favor logearse";
+                echo "No tienes permiso para acceder";
                 die();
             }
         }
-        public function authEmp ($rol) {
-            if ($rol == 2) {
-                echo "";
+
+        public function AuthEmp () {
+            if ($_SESSION['user_rolID'] == 2 || 1) {
+                echo "<script>console.log('Estas logeado como empleado')</script>";
             }else{
-                echo "No tiene acceso. Por favor logearse";
+                echo "No tienes permiso para acceder";
                 die();
             }
         }
-        public function authAdmint ($rol) {
-            if ($rol == 3) {
-                echo "";
+
+        public function AuthClient () {
+            if ($_SESSION['user_rolID'] == 1 || 2 || 3) {
+                echo "<script>console.log('Estas logeado como cliente')</script>";
             }else{
-                echo "No tiene acceso. Por favor logearse";
+                echo "No tienes permiso para acceder";
                 die();
+            }
+        }
+
+        public function verify_session () {
+            if (isset($_SESSION['user_rolID'])) {
+                echo "<script>console.log('Sesion iniciada')</script>";
+            }else{
+                header("Location: ".constant('URL')."/login");
             }
         }
     }
-?>

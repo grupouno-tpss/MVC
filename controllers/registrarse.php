@@ -1,9 +1,6 @@
 <?php
 class registrarse extends Controller
 {
-    public function __construct()
-    {
-    }
 
     public function render()
     {

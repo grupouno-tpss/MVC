@@ -1,10 +1,15 @@
 <?php
-    class options extends Controller {
-        public function __construct()
-        {
-            parent::__construct();
-            $this->authClient(1);
-            $this->view->render('options', null);
-        }
+class options extends Controller
+{
+    public function __construct()
+    {
+        $this->verify_session();
+        $this->AuthClient();
     }
-?>
+
+    public function render()
+    {
+        parent::__construct();
+        $this->view->render('options', null);
+    }
+}

@@ -5,6 +5,8 @@ class reserva extends Controller
     public $menus;
     public function __construct()
     {
+        $this->verify_session();
+        $this->AuthClient();
     }
 
     public function render()
