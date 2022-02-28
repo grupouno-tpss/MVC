@@ -47,6 +47,9 @@
             <hr> <a href="<?php echo constant('URL') ?>/reserva" class="btn btn-primary link-light">Hacer una reservación</a>
         </center>
     </div>
+    <?php
+        require "layouts/footer.php";
+    ?>
 </body>
 
 </html>

@@ -34,16 +34,16 @@
             if ($_SESSION['user_rolID'] == 3) {
                 echo "<script>console.log('Estas logeado como administrador')</script>";
             }else{
-                echo "No tienes permiso para acceder";
+                echo "<center><h1>No tienes permiso para acceder</h1></center>";
                 die();
             }
         }
 
         public function AuthEmp () {
-            if ($_SESSION['user_rolID'] == 2 || 1) {
+            if ($_SESSION['user_rolID'] == 2) {
                 echo "<script>console.log('Estas logeado como empleado')</script>";
             }else{
-                echo "No tienes permiso para acceder";
+                echo "<center><h1>No tienes permiso para acceder</h1></center>";
                 die();
             }
         }
@@ -52,7 +52,7 @@
             if ($_SESSION['user_rolID'] == 1 || 2 || 3) {
                 echo "<script>console.log('Estas logeado como cliente')</script>";
             }else{
-                echo "No tienes permiso para acceder";
+                echo "<center><h1>No tienes permiso para acceder</h1></center>";
                 die();
             }
         }

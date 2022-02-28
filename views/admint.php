@@ -381,6 +381,9 @@
             ?>
         </div>
     </div>
+    <?php
+        require "layouts/footer.php";
+    ?>
 </body>
 
 </html>

@@ -49,7 +49,11 @@ function deleteItemsCalendar(m) {
     }
 
     for (let index = 1; index <= new Date(year, month, 0).getDate(); index++) {
-        document.getElementById("calendar").removeChild(document.getElementById(year + "/" + m + "/" + index));
+        console.log(year + "/" + m + "/" + index);
+        document.getElementById("calendar").removeChild(document.getElementById("not"));
+        if (document.getElementById(year + "/" + m + "/" + index)) {
+            document.getElementById("calendar").removeChild(document.getElementById(year + "/" + m + "/" + index));
+        }
     }
 }
 
@@ -66,6 +70,7 @@ function backMonth() {
     month = month - 1;
     loadItemsCalendar(month);
     inner(month);
+    blockDates();
     console.log(month);
 }
 
@@ -74,6 +79,7 @@ function nextMonth() {
     month = month + 1;
     loadItemsCalendar(month);
     inner(month);
+    blockDates();
     console.log(month);
 }
 

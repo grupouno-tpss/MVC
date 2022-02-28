@@ -46,11 +46,15 @@ class reservaModel extends Model
         mysqli_query($this->db, $detail);
         mysqli_query($this->db, $reserve);
 
-        foreach ($menuExplode as $menus) {
-            $query = "INSERT INTO `reservations_has_menus`(`reservations_id_reservation`, `menus_id_menu`, `user_id`)
-            VALUES ($id, $menus, ".$_SESSION['user_id'].")";
-            echo "<br>" . $query . "<br>";
-            mysqli_query($this->db, $query);
+        if ($menu == "") {
+            echo "no hay menus escogidos";
+        } else {
+            foreach ($menuExplode as $menus) {
+                $query = "INSERT INTO `reservations_has_menus`(`reservations_id_reservation`, `menus_id_menu`, `user_id`)
+            VALUES ($id, $menus, " . $_SESSION['user_id'] . ")";
+                echo "<br>" . $query . "<br>";
+                mysqli_query($this->db, $query);
+            }
         }
         echo "Reservación hecha";
 
@@ -134,8 +138,8 @@ class reservaModel extends Model
     public function updateReservation($id, $date, $amount_people, $hour, $detail, $menu)
     {
         $dateExplode = explode('-', $date);
-        echo $dateExplode[2].'/'. $dateExplode[1]. '/'. $dateExplode[0];
-        $dates = "UPDATE `dates` SET `date`='".$dateExplode[0].'/'. $dateExplode[1]. '/'. $dateExplode[2]."' 
+        echo $dateExplode[2] . '/' . $dateExplode[1] . '/' . $dateExplode[0];
+        $dates = "UPDATE `dates` SET `date`='" . $dateExplode[0] . '/' . $dateExplode[1] . '/' . $dateExplode[2] . "' 
         WHERE id_date = $id";
 
         $details = "UPDATE `details` SET `detail`='$detail'
@@ -173,7 +177,7 @@ class reservaModel extends Model
         }
         mysqli_query($this->db, $details);
         mysqli_query($this->db, $queryUpdate);
-        echo "<script>location.href = '".constant('URL')."/reservaciones'</script>";
+        echo "<script>location.href = '" . constant('URL') . "/reservaciones'</script>";
     }
 
     public function changeStatus($id)
@@ -183,7 +187,8 @@ class reservaModel extends Model
         echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 
-    public function getDatesNotAvailables () {
+    public function getDatesNotAvailables()
+    {
         $query = "SELECT * FROM `dates` WHERE status = 'NOT AVAILABLE'";
         $result = mysqli_query($this->db, $query);
         while ($row = mysqli_fetch_assoc($result)) {

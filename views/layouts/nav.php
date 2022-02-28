@@ -1,19 +1,22 @@
 <style>
-    .user:hover::after {
+    .user::after {
         content: "<?php echo $_SESSION['user_email'] ?>";
+        color: #ffffff;
         transition-duration: 2s;
     }
     .editProfile:hover::after {
         content: "Editar perfil";
+        color: #ffffff;
         transition-duration: 2s;
     }
     .close:hover::after {
         content: "Cerrar sesión";
+        color: #ffffff;
         transition-duration: 2s;
     }
 </style>
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark" style="background-color: rgba(0,0,0,0.7);">
     <div class="container-fluid">
         <a class="navbar-brand">Ichiraku Ramen</a>
 

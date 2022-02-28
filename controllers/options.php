@@ -3,6 +3,8 @@ class options extends Controller
 {
     public function __construct()
     {
+        session_start();
+
         $this->verify_session();
         $this->AuthClient();
     }

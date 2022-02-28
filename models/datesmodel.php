@@ -33,6 +33,7 @@ class datesModel extends Model
             echo "No se recibió una hora";
         }else{
             mysqli_query($this->db, $query);
+            header("Location: ".constant('URL')."/admint");
         }
         echo $date;
     }

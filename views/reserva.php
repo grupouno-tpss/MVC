@@ -185,11 +185,19 @@
         echo $dateID;
         echo '
             <script>
+                function blockDates () {
+                if(document.getElementById("' . $dateID . '")) {
                 document.getElementById("' . $dateID . '").style.background= "gray";
                 document.getElementById("' . $dateID . '").id = "not";
+                }
+                }
+                blockDates();
             </script>
         ';
     }
+    ?>
+    <?php
+        require "layouts/footer.php";
     ?>
 </body>
 

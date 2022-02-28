@@ -71,6 +71,9 @@
             </table>
         </div>
     </div>
+    <?php
+        require "layouts/footer.php";
+    ?>
 
     <script>
         document.getElementById('reservationsTable').classList.add('table-dark');
