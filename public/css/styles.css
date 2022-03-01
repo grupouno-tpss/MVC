@@ -233,10 +233,11 @@
     text-align: left;
 }
 
-.content {
+
+/* .content {
     display: flex;
     align-items: center;
-}
+} */
 
 .contentProfile {
     content: border-box;

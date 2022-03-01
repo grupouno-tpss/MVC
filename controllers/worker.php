@@ -4,8 +4,8 @@ class worker extends Controller
 {
     public function __construct()
     {
-        $this->verify_session();
-        $this->AuthEmp();
+        //$this->verify_session();
+        //$this->AuthEmp();
     }
     public function getSchedules()
     {
