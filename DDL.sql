@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2022 a las 23:40:54
+-- Tiempo de generación: 01-03-2022 a las 20:21:32
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 SET
@@ -47,7 +47,13 @@ INSERT INTO
 VALUES
   (315192503, '32454335', '324654'),
   (621929363, '32454335', '324654'),
-  (1869790832, '32454335', '324654');
+  (651235022, '32454335', '324654'),
+  (912701116, '32454335', '324654'),
+  (976204529, '32454335', '324654'),
+  (997028372, '', '324654'),
+  (1842030796, '123', '1223'),
+  (1869790832, '32454335', '324654'),
+  (2050730869, '32454335', '324654');
 
 -- --------------------------------------------------------
 --
@@ -65,7 +71,23 @@ CREATE TABLE `dates` (
 INSERT INTO
   `dates` (`id_date`, `date`, `status`)
 VALUES
-  (2036968612, '2022-03-27', 'NOT AVAILABLE');
+  (17447870, '2022-02-27', 'NOT AVAILABLE'),
+  (58533182, '0000-00-00', 'AVAILABLE'),
+  (490102472, '2022-02-27', 'AVAILABLE'),
+  (529075174, '2022-02-06', 'NOT AVAILABLE'),
+  (531549844, '2022-02-13', 'NOT AVAILABLE'),
+  (533698196, '2022-02-26', 'AVAILABLE'),
+  (536027015, '2022-03-27', 'AVAILABLE'),
+  (677252598, '2022-02-20', 'NOT AVAILABLE'),
+  (803680268, '0000-00-00', 'AVAILABLE'),
+  (1079693562, '0000-00-00', 'AVAILABLE'),
+  (1246486309, '2022-02-16', 'NOT AVAILABLE'),
+  (1290826813, '2022-02-27', 'AVAILABLE'),
+  (1318382884, '0000-00-00', 'AVAILABLE'),
+  (1319721773, '2022-02-28', 'AVAILABLE'),
+  (1388331478, '0000-00-00', 'AVAILABLE'),
+  (1493414869, '2022-02-24', 'AVAILABLE'),
+  (2036968612, '2022-03-27', 'AVAILABLE');
 
 -- --------------------------------------------------------
 --
@@ -75,6 +97,23 @@ CREATE TABLE `details` (
   `id_detail` int(11) NOT NULL,
   `detail` varchar(250) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
+--
+-- Volcado de datos para la tabla `details`
+--
+INSERT INTO
+  `details` (`id_detail`, `detail`)
+VALUES
+  (58533182, ''),
+  (490102472, 'gsdfgsd'),
+  (533698196, ''),
+  (536027015, 'gsdfgsd'),
+  (803680268, ''),
+  (1079693562, ''),
+  (1290826813, ''),
+  (1318382884, ''),
+  (1388331478, ''),
+  (1493414869, '');
 
 -- --------------------------------------------------------
 --
@@ -101,18 +140,11 @@ INSERT INTO
   )
 VALUES
   (
-    318753853,
-    'fgsdf',
+    1847997509,
+    'RAMEN 2',
     'Si quisiéramos definirlo de una manera más o menos rápida, podríamos decir que el ramen (ラーメン) es una sopa de fideos, de origen chino, normalmente preparada con una base de caldo de carne, que se sirve con una gran variedad de toppings',
     30000,
-    'https://www.youtube.com/watch?v=TDRia-Z9Msk&list=PL5oeKjXx5mQTo9hj8pAsL2dCI7MB92-A1&ab_channel=ClaudiaMagaly'
-  ),
-  (
-    873042585,
-    'GYOZAS DE CERDO',
-    'hola',
-    70000,
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzDp_D0waP966Q2mPlHJGqCT-iSTM9GDXZQA&usqp=CAU'
+    'https://img.freepik.com/vector-gratis/menu-restaurante-moderno-comida-rapida_52683-48982.jpg?size=626&ext=jpg'
   );
 
 -- --------------------------------------------------------
@@ -130,7 +162,8 @@ CREATE TABLE `menus_categories` (
 INSERT INTO
   `menus_categories` (`id_category`, `category`)
 VALUES
-  (1228154616, 'ENTRADAS');
+  (1228154616, 'ENTRADAS'),
+  (1303517700, 'BEBIDAS');
 
 -- --------------------------------------------------------
 --
@@ -147,8 +180,7 @@ CREATE TABLE `menus_has_menus_categories` (
 INSERT INTO
   `menus_has_menus_categories` (`menus_id_menu`, `menus_categories_id_category`)
 VALUES
-  (318753853, 1228154616),
-  (873042585, 1228154616);
+  (1847997509, 1228154616);
 
 -- --------------------------------------------------------
 --
@@ -165,6 +197,62 @@ CREATE TABLE `reservations` (
   `users_id_users` int(11) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
+--
+-- Volcado de datos para la tabla `reservations`
+--
+INSERT INTO
+  `reservations` (
+    `id_reservation`,
+    `amount_people`,
+    `status`,
+    `dates_id_date`,
+    `details_id_detail`,
+    `services_id_service`,
+    `schedules_id_schedule`,
+    `users_id_users`
+  )
+VALUES
+  (
+    533698196,
+    8,
+    'NOT ACTIVE',
+    533698196,
+    533698196,
+    2,
+    460759279,
+    976204529
+  ),
+  (
+    536027015,
+    3,
+    'ACTIVE',
+    536027015,
+    536027015,
+    2,
+    1112181601,
+    651235022
+  ),
+  (
+    1290826813,
+    3,
+    'NOT ACTIVE',
+    1290826813,
+    1290826813,
+    1,
+    1112181601,
+    651235022
+  ),
+  (
+    1493414869,
+    2,
+    'ACTIVE',
+    1493414869,
+    1493414869,
+    2,
+    460759279,
+    1869790832
+  );
+
 -- --------------------------------------------------------
 --
 -- Estructura de tabla para la tabla `reservations_has_menus`
@@ -174,6 +262,21 @@ CREATE TABLE `reservations_has_menus` (
   `menus_id_menu` int(11) NOT NULL,
   `user_id` int(25) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reservations_has_menus`
+--
+INSERT INTO
+  `reservations_has_menus` (
+    `reservations_id_reservation`,
+    `menus_id_menu`,
+    `user_id`
+  )
+VALUES
+  (533698196, 1847997509, NULL),
+  (536027015, 1847997509, 651235022),
+  (1290826813, 1847997509, NULL),
+  (1493414869, 1847997509, NULL);
 
 -- --------------------------------------------------------
 --
@@ -219,7 +322,9 @@ CREATE TABLE `schedules` (
 INSERT INTO
   `schedules` (`id_schedule`, `schedule`, `status`)
 VALUES
-  (1112181601, '19:31:00', 'AVAILABLE');
+  (460759279, '01:58:00', 'AVAILABLE'),
+  (1112181601, '19:31:00', 'AVAILABLE'),
+  (1980260745, '22:55:00', 'AVAILABLE');
 
 -- --------------------------------------------------------
 --
@@ -229,6 +334,16 @@ CREATE TABLE `services` (
   `id_service` int(11) NOT NULL,
   `service` varchar(45) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
+--
+-- Volcado de datos para la tabla `services`
+--
+INSERT INTO
+  `services` (`id_service`, `service`)
+VALUES
+  (1, 'Alice'),
+  (2, 'Saber'),
+  (3, 'Shinobu');
 
 -- --------------------------------------------------------
 --
@@ -274,6 +389,50 @@ VALUES
     2
   ),
   (
+    651235022,
+    'stivenjhojan011@gmail.com',
+    '1022322859',
+    'Jhojann',
+    'Estiven ',
+    'Triana',
+    'Quiroga',
+    651235022,
+    1
+  ),
+  (
+    912701116,
+    'estiven@gmail.com',
+    '123',
+    'estiven',
+    'Andrés',
+    'Triana',
+    '',
+    912701116,
+    2
+  ),
+  (
+    976204529,
+    'pepito@gmail.com',
+    '1022322859',
+    'Pepito',
+    'Perez',
+    'Ortiz',
+    '',
+    976204529,
+    1
+  ),
+  (
+    1842030796,
+    'ramos@gmail.com',
+    '1022322859',
+    'Andres',
+    'Felipe',
+    'Ramos',
+    'Ricaurte',
+    1842030796,
+    1
+  ),
+  (
     1869790832,
     'jhostriana11@misena.edu.co',
     '1022322859',
@@ -282,6 +441,17 @@ VALUES
     'Triana',
     '',
     1869790832,
+    3
+  ),
+  (
+    2050730869,
+    'delfina@gmail.com',
+    '1022322859',
+    'Delfina',
+    'Andrés',
+    'Triana',
+    'Osorio',
+    2050730869,
     3
   );
 
