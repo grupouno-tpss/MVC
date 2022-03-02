@@ -4,8 +4,8 @@ class admint extends Controller
     public function __construct()
     {
         session_start();
-        $this->verify_session();
-        $this->AuthAdmin();
+        //$this->verify_session();
+        //$this->AuthAdmin();
     }
 
     public function render()

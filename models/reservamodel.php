@@ -1,4 +1,6 @@
 <?php
+
+require "controllers/email.php";
 class reservaModel extends Model
 {
 
@@ -57,6 +59,9 @@ class reservaModel extends Model
             }
         }
         echo "Reservación hecha";
+
+        $email = new email("CONFIRMACIÓN DE RESERVA ICHIRAKU RAMEN", "AQUI LA INFORMACIÓN DE RESERVA", "stivenjhojan011@gmail.com", "jhostriana11@misena.edu.co");
+        $email->sendEmail();
 
         echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }

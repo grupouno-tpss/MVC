@@ -11,7 +11,7 @@ class report extends Controller
 
         echo '
 
-            <table style="border:solid black 1px">
+            <table>
             <tr>
             <th scope="col">ID reserva</th>
             <th scope="col">Titular reserva</th>
@@ -27,15 +27,15 @@ class report extends Controller
 
         foreach ($reservas as $reserva) {
             echo '<tr>
-                        <th scope="row">' . $reserva['id_reservation'] . '</th>
-                        <td>' . $reserva['p_nombre'] . ' ' . $reserva['p_apellido'] . '</td>
-                        <td>' . $reserva['amount_people'] . '</td>
-                        <td>' . $reserva['date'] . '</td>
-                        <td>' . $reserva['schedule'] . '</td>
-                        <td>' . $reserva['detail'] . '</td>
-                        <td id="' . $reserva['id_reservation'] . '"></td>
-                        <td>' . $reserva['email'] . '</td>
-                        <td>
+                        <th scope="row" style="border: solid black 1px;">' . $reserva['id_reservation'] . '</th>
+                        <td style="border: solid black 1px;">' . $reserva['p_nombre'] . ' ' . $reserva['p_apellido'] . '</td>
+                        <td style="border: solid black 1px;">' . $reserva['amount_people'] . '</td>
+                        <td style="border: solid black 1px;">' . $reserva['date'] . '</td>
+                        <td style="border: solid black 1px;">' . $reserva['schedule'] . '</td>
+                        <td style="border: solid black 1px;">' . $reserva['detail'] . '</td>
+                        <td id="' . $reserva['id_reservation'] . '" style="border: solid black 1px;"></td>
+                        <td style="border: solid black 1px;">' . $reserva['email'] . '</td>
+                        <td style="border: solid black 1px;">
                         </td>
                     </tr>';
         }

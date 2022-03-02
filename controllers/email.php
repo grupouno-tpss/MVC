@@ -14,16 +14,26 @@ class email extends Controller
     private $bodyMessage;
     private $from;
     private $address;
+    private $asunto;
+
+    public function __construct($asunto, $body, $from, $address)
+    {
+        $this->asunto = $asunto;
+        $this->bodyMessage = $body;
+        $this->from = $from;
+        $this->address = $address;
+    }
 
     public function render()
     {
         parent::__construct();
+
         $this->view->render("email", null);
-        $this->sendEmail();
     }
 
     public function sendEmail()
     {
+        echo "Hola desde el email";
         //Load Composer's autoloader
         require '../vendor/autoload.php';
 
@@ -43,7 +53,7 @@ class email extends Controller
 
             //Recipients
             $mail->setFrom(constant('MAIL-FROM'), 'Ichiraku Ramen');
-            $mail->addAddress('andresricaute98@gmail.com', 'Jhojan');     //Add a recipient
+            $mail->addAddress('jhostriana11@misena.edu.co', 'Jhojan');     //Add a recipient
             // $mail->addAddress('ellen@example.com');               //Name is optional
             // $mail->addReplyTo('info@example.com', 'Information');
             // $mail->addCC('cc@example.com');
@@ -54,9 +64,10 @@ class email extends Controller
             // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
             //Content
+
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Hola desde SRI';
-            $mail->Body    = '<h1>Buenas Ramos</h1>';
+            $mail->Subject = $this->asunto;
+            $mail->Body    = '<h1>'.$this->bodyMessage.'</h1>';
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
