@@ -27,6 +27,7 @@
     ?>
     <div class="content">
         <div class="section">
+            <a href="<?php echo constant('URL') ?>/report/reservations" class="btn btn-primary">Descargar informe (.xml)</a>
             <?php
             require "layouts/reservaciones.php";
             ?>
@@ -35,6 +36,7 @@
         <div class="section">
             <h2>Clientes</h2>
             <hr><br>
+
             <table class="table table-dark table-bordered">
                 <thead>
                     <tr>
@@ -72,7 +74,7 @@
         </div>
     </div>
     <?php
-        require "layouts/footer.php";
+    require "layouts/footer.php";
     ?>
 
     <script>

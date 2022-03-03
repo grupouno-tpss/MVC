@@ -60,7 +60,7 @@ class reservaModel extends Model
         }
         echo "Reservación hecha";
 
-        $email = new email("CONFIRMACIÓN DE RESERVA ICHIRAKU RAMEN", "AQUI LA INFORMACIÓN DE RESERVA", "stivenjhojan011@gmail.com", "jhostriana11@misena.edu.co");
+        $email = new email("CONFIRMACIÓN DE RESERVA ICHIRAKU RAMEN", "AQUI LA INFORMACIÓN DE RESERVA", "stivenjhojan011@gmail.com", $_SESSION['user_email']);
         $email->sendEmail();
 
         echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
