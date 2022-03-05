@@ -4,11 +4,13 @@
         color: #ffffff;
         transition-duration: 2s;
     }
+
     .editProfile:hover::after {
         content: "Editar perfil";
         color: #ffffff;
         transition-duration: 2s;
     }
+
     .close:hover::after {
         content: "Cerrar sesión";
         color: #ffffff;
@@ -18,7 +20,12 @@
 
 <nav class="navbar navbar-dark" style="background-color: rgba(0,0,0,0.7);">
     <div class="container-fluid">
-        <a class="navbar-brand">Ichiraku Ramen</a>
+        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </a>
+        <a class="navbar-brand">Restaurante Ichiraku Ramen</a>
 
         <div class="d-flex bg-primary rounded">
             <button class="btn user">
@@ -34,7 +41,7 @@
                 </a>
             </button>
             <button class="btn close">
-                <a href="<?php echo constant('URL')?>/login/close_session" class="link-dark">
+                <a href="<?php echo constant('URL') ?>/login/close_session" class="link-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
                         <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
@@ -44,4 +51,35 @@
         </div>
     </div>
 </nav>
-<br>
+
+
+<!--//offcanvas-->
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel"><?php echo $_SESSION['user_pNombre'] . " (" . $_SESSION['user_rol'] . ")"; ?> </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-flex justify-content-around">
+            <div>
+                <img src="https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg" alt="">
+            </div>
+            <div>
+                <?php echo $_SESSION['user_pNombre'] ?>
+            </div>
+        </div>
+        <hr><br>
+        <div>
+            <div class="list-group">
+                <a href="<?php echo constant('URL') ?>/reserva" class="list-group-item list-group-item-action active" aria-current="true">
+                    Reservar
+                </a>
+                <a href="<?php echo constant('URL') ?>/reservaciones" class="list-group-item list-group-item-action">Cancelar / Modificar reserva</a>
+                <a href="<?php echo constant('URL') ?>/menus" class="list-group-item list-group-item-action">Ver menús</a>
+                <a href="<?php echo constant('URL') ?>/profile" class="list-group-item list-group-item-action">Actualizar perfil / cambiar contraseña</a>
+                <a class="list-group-item list-group-item-action disabled">Atención al cliente</a>
+            </div>
+        </div>
+    </div>
+</div>

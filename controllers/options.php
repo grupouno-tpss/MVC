@@ -12,6 +12,7 @@ class options extends Controller
     public function render()
     {
         parent::__construct();
+        
         $this->view->render('options', null);
     }
 }

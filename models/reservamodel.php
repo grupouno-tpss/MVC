@@ -201,6 +201,17 @@ class reservaModel extends Model
         }
         return $dateNotAvailable;
     }
+
+    public function getServices () {
+        $query = "SELECT * FROM `services` WHERE 1";
+
+        $result = mysqli_query($this->db, $query);
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $service[] = $row;
+        }
+        return $service;
+    }
 }
 
 

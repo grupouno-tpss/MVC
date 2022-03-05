@@ -7,4 +7,4 @@
 
     require_once "config/config.php";
 
-    $app = new app();
+    $app = new app(); 

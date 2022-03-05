@@ -13,6 +13,7 @@ class reserva extends Controller
     {
         parent::__construct();
         $this->loadModel('reserva');
+        $this->view->value3= $this->getServices();
         $hours = $this->schedules();
         $this->view->value2 = $this->getDatesNotAvailables();
         $this->view->menus = $this->getMenus();
@@ -56,5 +57,9 @@ class reserva extends Controller
     public function getCategories()
     {
         return $this->nameClass->getCategories();
+    }
+
+    public function getServices () {
+        return $this->nameClass->getServices();
     }
 }
