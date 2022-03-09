@@ -179,6 +179,9 @@
     <div class="content">
         <div class="section">
             <div>
+                <button class="btn btn-primary">
+                    <a class="link-light" href="<?php echo constant('URL')?>/report/reservations">Descargar informe de reservas (.xml)</a>
+                </button>
                 <button class="btn btn-primary">Reservaciones</button>
                 <button class="btn btn-primary">Empleados</button>
                 <button class="btn btn-primary">Usuarios (clientes)</button>

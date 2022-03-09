@@ -38,7 +38,7 @@ class registrarse extends Controller
             $_REQUEST['email'],
             $_REQUEST['telefono'],
             $_REQUEST['telcelular'],
-            $_REQUEST['contraseña'],
+            password_hash($_REQUEST['contraseña'], PASSWORD_BCRYPT)
         );
     }
 
@@ -60,7 +60,7 @@ class registrarse extends Controller
             $_REQUEST['email'],
             $_REQUEST['telefono'],
             $_REQUEST['telcelular'],
-            $_REQUEST['contraseña'],
+            $_REQUEST['contraseña']
         );
     }
 }

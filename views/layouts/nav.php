@@ -18,7 +18,7 @@
     }
 </style>
 
-<nav class="navbar navbar-dark" style="background-color: rgba(0,0,0,0.7);">
+<nav class="navbar navbar-dark fixed-top" style="background-color: rgba(0,0,0,0.7);">
     <div class="container-fluid">
         <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -51,7 +51,7 @@
         </div>
     </div>
 </nav>
-
+<br><br><br>
 
 <!--//offcanvas-->
 

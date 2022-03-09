@@ -9,6 +9,15 @@ class usuarioModel extends Model
 
     public function login($email, $password)
     {
+
+        $cpassword = "SELECT `email`, `password` FROM `users` WHERE email = '$email'";
+        $cresult = mysqli_query($this->db, $cpassword);
+
+        while ($row = mysqli_fetch_assoc($cresult)) {
+            if ($row) {
+                $password = $row['password'];
+            }
+        }
         //consultar usuario
         $usuario = "SELECT id_users, p_nombre, s_nombre, p_apellido, s_apellido, 
         password, email, rol, id_rol, num_telefono, num_celular FROM users U INNER JOIN roles 
@@ -22,24 +31,29 @@ class usuarioModel extends Model
         // }
 
         while ($row = mysqli_fetch_assoc($result)) {
-            if ($row) {
-                $_SESSION['user_pNombre'] = $row['p_nombre'];
-                $_SESSION['user_sNombre'] = $row['s_nombre'];
-                $_SESSION['user_pApellido'] = $row['p_apellido'];
-                $_SESSION['user_sApellido'] = $row['s_apellido'];
-                $_SESSION['user_id'] = $row['id_users'];
-                $_SESSION['user_password'] = $row['password'];
-                $_SESSION['user_email'] = $row['email'];
-                $_SESSION['user_rol'] = $row['rol'];
-                $_SESSION['user_rolID'] = $row['id_rol'];
-                $_SESSION['user_celular'] = $row['num_celular'];
-                $_SESSION['user_telefono'] = $row['num_telefono'];
-            } else {
-                session_destroy();
-                echo "no hay usuario";
-                //echo "<script>location.href ='" . constant('URL') . "/login'</script>";
+
+            $verify = password_verify($password, $row['password']);
+            echo $verify;
+
+                if ($row) {
+                    echo $row['password'] . "<br>";
+                    $_SESSION['user_pNombre'] = $row['p_nombre'];
+                    $_SESSION['user_sNombre'] = $row['s_nombre'];
+                    $_SESSION['user_pApellido'] = $row['p_apellido'];
+                    $_SESSION['user_sApellido'] = $row['s_apellido'];
+                    $_SESSION['user_id'] = $row['id_users'];
+                    $_SESSION['user_password'] = $row['password'];
+                    $_SESSION['user_email'] = $row['email'];
+                    $_SESSION['user_rol'] = $row['rol'];
+                    $_SESSION['user_rolID'] = $row['id_rol'];
+                    $_SESSION['user_celular'] = $row['num_celular'];
+                    $_SESSION['user_telefono'] = $row['num_telefono'];
+                } else {
+                    session_destroy();
+                    echo "no hay usuario";
+                    //echo "<script>location.href ='" . constant('URL') . "/login'</script>";
+                }
             }
-        }
     }
 
     public function insertar(
@@ -52,7 +66,7 @@ class usuarioModel extends Model
         $_email,
         $_telefono,
         $_tel_celular,
-        $contraseña,
+        $contraseña
     ) {
 
         echo "Hey, el modelo de usuario esta presente jsjs" . "<br>";
@@ -69,6 +83,7 @@ class usuarioModel extends Model
 
         $contacto = "INSERT INTO `contactos`(`id_contacto`, `num_telefono`, 
         `num_celular`) VALUES ($id, $_telefono, $_tel_celular)";
+
 
         $usuario = "INSERT INTO `users`(`id_users`, `email`, `password`, 
         `p_nombre`, `s_nombre`, `p_apellido`, `s_apellido`, `roles_id_rol`, 
@@ -142,7 +157,7 @@ class usuarioModel extends Model
         mysqli_query($this->db, $queryUpdate);
         mysqli_query($this->db, $queryContacto);
 
-        echo "<script>location.href = '".constant('URL')."/profile'</script>";
+        echo "<script>location.href = '" . constant('URL') . "/profile'</script>";
     }
 
     public function users($rol)
