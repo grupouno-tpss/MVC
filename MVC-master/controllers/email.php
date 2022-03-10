@@ -4,9 +4,9 @@ use  phpmailer\phpmailer\PHPMailer;
 use  phpmailer\phpmailer\Exception;
 use phpmailer\phpmailer\SMTP;
 
-require  'phpmailer/phpmailer/src/Exception.php';
-require  'phpmailer/phpmailer/src/PHPMailer.php';
-require  'phpmailer/phpmailer/src/SMTP.php';
+require  'phpmailer/PHPMailer/src/Exception.php';
+require  'phpmailer/PHPMailer/src/PHPMailer.php';
+require  'phpmailer/PHPMailer/src/SMTP.php';
 
 class email extends Controller
 {

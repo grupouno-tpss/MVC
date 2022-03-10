@@ -12,7 +12,6 @@ class report extends Controller
         echo '
 
             <table>
-            <caption style="margin:15px; text-align: center; background: teal; color: white;">Reservaciones activas (Ichiraku Ramen)</caption>
             <tr>
             <th scope="col">ID reserva</th>
             <th scope="col">Titular reserva</th>
@@ -22,7 +21,6 @@ class report extends Controller
             <th scope="col">Detalle</th>
             <th scope="col">Menus</th>
             <th scope="col">Email</th>
-            <th scope="col">Estado</th>
             </tr>
             <tr>
         ';
@@ -37,7 +35,8 @@ class report extends Controller
                         <td style="border: solid black 1px;">' . $reserva['detail'] . '</td>
                         <td id="' . $reserva['id_reservation'] . '" style="border: solid black 1px;"></td>
                         <td style="border: solid black 1px;">' . $reserva['email'] . '</td>
-                        <td style="border: solid black 1px;">Activa</td>
+                        <td style="border: solid black 1px;">
+                        </td>
                     </tr>';
         }
 

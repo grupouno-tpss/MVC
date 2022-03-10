@@ -11,7 +11,6 @@
         body {
             background-image: url(https://fondosmil.com/fondo/11825.jpg);
             color: white;
-            scroll-margin: 100px;
         }
 
         .divCalendar {
@@ -22,7 +21,6 @@
 
         .menuAdmint {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-around;
         }
@@ -182,7 +180,7 @@
         <div class="section">
             <div>
                 <button class="btn btn-primary">
-                    <a class="link-light" href="<?php echo constant('URL') ?>/report/reservations">Descargar informe de reservas (.xml)</a>
+                    <a class="link-light" href="<?php echo constant('URL')?>/report/reservations">Descargar informe de reservas (.xml)</a>
                 </button>
                 <button class="btn btn-primary">Reservaciones</button>
                 <button class="btn btn-primary">Empleados</button>
@@ -200,40 +198,32 @@
             </div>
             <div class="menuAdmint">
                 <div>
-                    <a href="#empleados">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/workers.png" class="imgAdmintMenu" alt="">
-                        <div class="text">Empleados</div>
-                        <div></div>
-                    </a>
+                    <img src="<?php echo constant('URL') ?>/public/multimedia/workers.png" class="imgAdmintMenu" alt="">
+                    <div class="text">Empleados</div>
+                    <div></div>
                 </div>
                 <div>
-                    <a href="#menus">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/menus.png" class="imgAdmintMenu" alt="">
-                        <div class="text">Menus</div>
-                        <div></div>
-                    </a>
+                    <img src="<?php echo constant('URL') ?>/public/multimedia/menus.png" class="imgAdmintMenu" alt="">
+                    <div class="text">Menus</div>
+                    <div></div>
 
                 </div>
                 <div>
-                    <a href="#fechas">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/dates.png" class="imgAdmintMenu" alt="">
-                        <div class="text">Administrar fechas</div>
-                        <div></div>
-                    </a>
+                    <img src="<?php echo constant('URL') ?>/public/multimedia/dates.png" class="imgAdmintMenu" alt="">
+                    <div class="text">Administrar fechas</div>
+                    <div></div>
 
                 </div>
                 <div>
-                    <a href="#horas">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/hours.png" class="imgAdmintMenu" alt="">
-                        <div class="text">Administrar horas</div>
-                        <div></div>
-                    </a>
+                    <img src="<?php echo constant('URL') ?>/public/multimedia/hours.png" class="imgAdmintMenu" alt="">
+                    <div class="text">Administrar horas</div>
+                    <div></div>
 
                 </div>
             </div>
         </div>
         <div class="section">
-            <h2 id="empleados">Empleados</h2>
+            <h2>Empleados</h2>
             <hr><br>
             <table class="table table-dark table-bordered">
                 <thead>
@@ -275,7 +265,7 @@
             </button>
         </div>
         <div class="section">
-            <h2 id="clientes">Clientes</h2>
+            <h2>Clientes</h2>
             <hr><br>
             <table class="table table-dark table-bordered">
                 <thead>
@@ -316,7 +306,7 @@
         </div>
 
         <div class="section">
-            <h2 id="fechas">Administrar fechas</h2>
+            <h2>Administrar fechas</h2>
             <hr><br>
             <div class="alert alert-primary d-flex align-items-center" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -354,7 +344,7 @@
         </div>
 
         <div class="section">
-            <h2 id="horas">Administrar horas</h2>
+            <h2>Administrar horas</h2>
             <hr><br>
             <div class="alert alert-primary d-flex align-items-center" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -388,14 +378,14 @@
                 Añadir hora
             </button>
         </div>
-        <div class="section" style="overflow: auto;" id="menus">
-            <?php
-            require "views/menus.php";
+        <div class="section" style="overflow: auto;">
+            <?php 
+                require "views/menus.php";
             ?>
         </div>
     </div>
     <?php
-    require "layouts/footer.php";
+        require "layouts/footer.php";
     ?>
 </body>
 

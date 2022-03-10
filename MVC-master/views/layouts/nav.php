@@ -5,12 +5,6 @@
         transition-duration: 2s;
     }
 
-    .user:hover::after{
-        content: "<?php echo $_SESSION['user_email'] . ' ('. $_SESSION['user_rol'] . ')'?>";
-        color: #ffffff;
-        transition-duration: 2s;
-    }
-
     .editProfile:hover::after {
         content: "Editar perfil";
         color: #ffffff;
