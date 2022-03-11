@@ -53,7 +53,7 @@ class reservaciones extends Controller
             $_REQUEST['amount_people'],
             $_REQUEST['schedule'],
             $_REQUEST['detail'],
-            $_REQUEST['menu'],
+            $_REQUEST['menu']
         );
     }
 

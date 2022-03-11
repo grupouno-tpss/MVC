@@ -66,7 +66,7 @@ class menusModel extends Model
                 VALUES ($rand, $category)";
                 mysqli_query($this->db, $queryCategories);
             }
-            echo "<script>location.href='" . constant('URL') . "/menus'</script>";
+            echo "<script>location.href='" . constant('URL') . "/admint'</script>";
         }
     }
 

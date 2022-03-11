@@ -35,6 +35,11 @@
             border: solid rgba(0, 0, 0, 0.9) 3px;
             border-radius: 5px;
         }
+
+        body {
+            background-image: url(https://fondosmil.com/fondo/11825.jpg);
+            background-attachment: fixed;
+        }
     </style>
 </head>
 

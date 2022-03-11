@@ -52,7 +52,7 @@ class worker extends Controller
             $_REQUEST['date'],
             $_REQUEST['amount_people'],
             $_REQUEST['schedule'],
-            $_REQUEST['detail'],
+            $_REQUEST['detail']
         );
     }
 

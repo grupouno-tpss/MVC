@@ -1,4 +1,9 @@
 <body>
+    <style>
+        .modal-body{
+            color: black;
+        }
+    </style>
     <!--Ventana modal añadir menus-->
 
     <!-- Modal -->
@@ -9,7 +14,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Añadir menù</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-dark">
                     <form action="<?php echo constant('URL') ?>/menus/addMenu" method="post">
                         <label for="">Ingrese el titulo del menù</label>
                         <input type="text" class="form-control" name="title">
@@ -66,7 +71,7 @@
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-dark">
                     <form action="<?php echo constant('URL') ?>/menus/updateMenu" method="post">
                         <input type="text" id="idMenuInput" name="id" hidden>
                         <label for="">Ingrese el titulo del menú</label>
@@ -90,14 +95,14 @@
     <!--Ventana modal de añadir categorias menu-->
 
     <!-- Modal -->
-    <div class="modal fade" id="addCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade text-dark" id="addCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Añadir categoria de menú</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-dark">
                     <form action="<?php echo constant('URL') ?>/menus/addCategory">
                         <label for="category">Ingrese la categoria</label>
 
