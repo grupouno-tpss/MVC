@@ -6,7 +6,6 @@ class reservaciones extends Controller
     public function __construct()
     {
         $this->verify_session();
-        $this->AuthClient();
     }
     public function getSchedules()
     {
@@ -25,6 +24,8 @@ class reservaciones extends Controller
         $this->view->render('reservaciones', $reserve);
     }
 
+    
+
     public function reservations()
     {
         return $this->nameClass->reservationsUser();
@@ -42,6 +43,8 @@ class reservaciones extends Controller
     {
         return $this->nameClass->getMenus();
     }
+
+    
 
     public function updateReservation()
     {

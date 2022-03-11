@@ -11,6 +11,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <?php
+                        require "views/layouts/reserva/calendario.php";
+                    ?>
                     <input type="text" id="IDreserva" name="IDreserva" hidden>
                     <label for="">Fecha</label>
                     <input type="date" class="form-control" id="date" name="date">
@@ -29,7 +32,7 @@
                     <label for="">Titular de la reserva</label>
                     <input type="text" class="form-control" id="name" name="" disabled>
                     <label for="">Correo electrónico</label>
-                    <input type="text" class="form-control" id="email" name="email">
+                    <input type="text" class="form-control" id="email-c" name="email">
                     <br>
                     <input type="text" id="inputMenu" name="menu" hidden>
                     <label for="">Menus escogidos (opcional)</label>
@@ -52,15 +55,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="d-flex">
+                    <div class="d-flex" style="flex-wrap: wrap;">
                         <?php
                         foreach ($this->value3 as $menu) {
                             echo '
-                            <div class="card w-75 h-50">
-                                <img src="' . $menu['img_menu'] . '" class="card-img-top" alt="...">
+                            <div class="card" style="width: 300px; margin: 10px;">
+                                <img style="width: 300px;" src="' . $menu['img_menu'] . '" class="card-img-top" alt="...">
                                 <div class="card-body">
                                 <h5 class="card-title">' . $menu['title_menu'] . '</h5>
+                                <div style="height: 250px; overflow: auto;">
                                 <p class="card-text">' . $menu['description_menu'] . '</p>
+                                </div>
                             <button type="button" class="btn btn-primary" id="' . $menu['id_menu'] . '" onclick="addMenu(' . $menu['id_menu'] . ')">Añadir al carrito</button>
                              </div>
                             </div>';
@@ -145,8 +150,7 @@
         document.getElementById('name').value = name;
         document.getElementById('amount_people').value = amount_people;
         document.getElementById('date').value = date;
-        document.getElementById('schedule').value = schedule;
-        document.getElementById('email').value = email;
+        document.getElementById('email-c').value = email;
     }
 
     let menus = [];
@@ -159,3 +163,4 @@
         console.log(document.getElementById('inputMenu').value);
     }
 </script>
+<script src="<?php echo constant('URL') ?>/public/js/calendar.js"></script>

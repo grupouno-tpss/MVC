@@ -170,16 +170,21 @@ class reservaModel extends Model
 
         mysqli_query($this->db, $dates);
 
-        mysqli_query($this->db, $deleteMenus);
 
-        foreach ($explodeMenu as $insertMenu) {
-            $queryMenu = "INSERT INTO 
-            `reservations_has_menus`(`reservations_id_reservation`, 
-            `menus_id_menu`) 
-            VALUES ($id, $insertMenu)";
+        if ($menu == "") {
+            echo "no";
+        } else {
+            mysqli_query($this->db, $deleteMenus);
+            foreach ($explodeMenu as $insertMenu) {
+                $queryMenu = "INSERT INTO 
+                `reservations_has_menus`(`reservations_id_reservation`, 
+                `menus_id_menu`) 
+                VALUES ($id, $insertMenu)";
 
-            mysqli_query($this->db, $queryMenu);
+                mysqli_query($this->db, $queryMenu);
+            }
         }
+
         mysqli_query($this->db, $details);
         mysqli_query($this->db, $queryUpdate);
         echo "<script>location.href = '" . constant('URL') . "/reservaciones'</script>";
@@ -202,7 +207,8 @@ class reservaModel extends Model
         return $dateNotAvailable;
     }
 
-    public function getServices () {
+    public function getServices()
+    {
         $query = "SELECT * FROM `services` WHERE 1";
 
         $result = mysqli_query($this->db, $query);

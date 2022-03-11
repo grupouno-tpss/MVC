@@ -7,7 +7,6 @@ class profile extends Controller
     public function __construct()
     {
         $this->verify_session();
-        $this->AuthClient();
     }
 
     public function render()

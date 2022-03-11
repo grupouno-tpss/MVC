@@ -80,8 +80,7 @@ table {
 .loginBody {
     margin: none;
     box-sizing: border-box;
-    background-image: url(https://www.xtrafondos.com/descargar.php?id=3963&resolucion=3840x2160
-);
+    background-image: url("https://www.xtrafondos.com/descargar.php?id=3963&resolucion=3840x2160");
     background-size: 110%;
     background-repeat: no-repeat;
 }
@@ -248,4 +247,13 @@ table {
     content: border-box;
     display: grid;
     grid-template-columns: 30% 70%;
+}
+
+
+/*menus*/
+
+.ramen {
+    background-image: url("https://img.freepik.com/vector-gratis/templo-japones-degradado-lago_52683-45004.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }

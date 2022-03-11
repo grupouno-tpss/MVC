@@ -16,10 +16,6 @@ class login extends Controller
     public function consultUser()
     {
         extract($_REQUEST);
-        $c = password_hash('123', PASSWORD_BCRYPT);
-        $p = password_verify('123', $c);
-        echo $c . "<br>";
-        echo $p;
         //echo "<script>alert('funcion consultar usuario')</script>";
         $this->loadModel('usuario');
         $this->nameClass->login(

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-03-2022 a las 20:44:49
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Tiempo de generación: 11-03-2022 a las 02:06:21
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,10 +38,16 @@ CREATE TABLE `contactos` (
 --
 
 INSERT INTO `contactos` (`id_contacto`, `num_telefono`, `num_celular`) VALUES
-(3289904, '123', '3227519202'),
-(756664359, '123', '123'),
-(1892417910, '32454335', '3227519202'),
-(1901861112, '32454335', '324654');
+(315192503, '32454335', '324654'),
+(621929363, '32454335', '324654'),
+(651235022, '32454335', '324654'),
+(662021904, '2708664', '3212243319'),
+(912701116, '32454335', '324654'),
+(976204529, '32454335', '324654'),
+(997028372, '', '324654'),
+(1842030796, '123', '1223'),
+(1869790832, '32454335', '324654'),
+(2050730869, '32454335', '324654');
 
 -- --------------------------------------------------------
 
@@ -60,89 +66,23 @@ CREATE TABLE `dates` (
 --
 
 INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
-(4522733, '0000-00-00', 'AVAILABLE'),
-(17447870, '2022-02-27', 'AVAILABLE'),
-(33453405, '0000-00-00', 'AVAILABLE'),
+(17447870, '2022-02-27', 'NOT AVAILABLE'),
 (58533182, '0000-00-00', 'AVAILABLE'),
-(72174119, '2022-03-27', 'AVAILABLE'),
-(108280255, '2022-03-31', 'AVAILABLE'),
-(126570817, '2022-03-31', 'AVAILABLE'),
-(140966820, '2022-03-24', 'AVAILABLE'),
-(167721885, '0000-00-00', 'AVAILABLE'),
-(215959958, '2022-03-24', 'AVAILABLE'),
-(242087203, '0000-00-00', 'AVAILABLE'),
-(250289486, '2022-03-31', 'AVAILABLE'),
-(296372277, '0000-00-00', 'AVAILABLE'),
-(297397179, '0000-00-00', 'AVAILABLE'),
-(349592806, '2022-03-23', 'AVAILABLE'),
-(351933612, '2022-03-26', 'AVAILABLE'),
-(372659762, '2022-03-06', 'NOT AVAILABLE'),
-(374289326, '2022-03-27', 'AVAILABLE'),
-(378562580, '2022-03-30', 'AVAILABLE'),
-(430740673, '2022-03-25', 'AVAILABLE'),
-(431346781, '0000-00-00', 'AVAILABLE'),
-(462722013, '2022-03-15', 'AVAILABLE'),
-(465324775, '2022-03-09', 'AVAILABLE'),
-(481711711, '2022-03-27', 'AVAILABLE'),
 (490102472, '2022-02-27', 'AVAILABLE'),
-(513627525, '0000-00-00', 'AVAILABLE'),
-(529075174, '2022-02-06', 'AVAILABLE'),
-(531549844, '2022-02-13', 'AVAILABLE'),
+(529075174, '2022-02-06', 'NOT AVAILABLE'),
+(531549844, '2022-02-13', 'NOT AVAILABLE'),
 (533698196, '2022-02-26', 'AVAILABLE'),
 (536027015, '2022-03-27', 'AVAILABLE'),
-(538975356, '2022-03-27', 'AVAILABLE'),
-(629988144, '0000-00-00', 'AVAILABLE'),
-(677252598, '2022-02-20', 'AVAILABLE'),
-(680730804, '0000-00-00', 'AVAILABLE'),
-(686652933, '2022-03-31', 'AVAILABLE'),
-(734897455, '0000-00-00', 'AVAILABLE'),
-(762189186, '0000-00-00', 'AVAILABLE'),
-(798306034, '0000-00-00', 'AVAILABLE'),
+(648506529, '0000-00-00', 'AVAILABLE'),
+(677252598, '2022-02-20', 'NOT AVAILABLE'),
 (803680268, '0000-00-00', 'AVAILABLE'),
-(841014254, '0000-00-00', 'AVAILABLE'),
-(919533303, '0000-00-00', 'AVAILABLE'),
-(965035691, '2022-03-25', 'AVAILABLE'),
-(969218437, '0000-00-00', 'AVAILABLE'),
-(999788886, '2022-03-27', 'AVAILABLE'),
-(1041314947, '2022-03-27', 'AVAILABLE'),
-(1048496955, '0000-00-00', 'AVAILABLE'),
 (1079693562, '0000-00-00', 'AVAILABLE'),
-(1087014497, '2022-03-31', 'AVAILABLE'),
-(1097710641, '2022-03-26', 'AVAILABLE'),
-(1133141444, '0000-00-00', 'AVAILABLE'),
-(1144656945, '0000-00-00', 'AVAILABLE'),
-(1148284481, '0000-00-00', 'AVAILABLE'),
-(1193455683, '2022-03-27', 'AVAILABLE'),
-(1197495169, '2022-03-27', 'AVAILABLE'),
-(1208164047, '0000-00-00', 'AVAILABLE'),
-(1211372926, '0000-00-00', 'AVAILABLE'),
-(1246486309, '2022-02-16', 'AVAILABLE'),
-(1258317500, '0000-00-00', 'AVAILABLE'),
+(1246486309, '2022-02-16', 'NOT AVAILABLE'),
 (1290826813, '2022-02-27', 'AVAILABLE'),
-(1317351991, '0000-00-00', 'AVAILABLE'),
 (1318382884, '0000-00-00', 'AVAILABLE'),
 (1319721773, '2022-02-28', 'AVAILABLE'),
-(1332569679, '2022-03-27', 'AVAILABLE'),
-(1336729315, '0000-00-00', 'AVAILABLE'),
-(1350724015, '0000-00-00', 'AVAILABLE'),
-(1375451006, '0000-00-00', 'AVAILABLE'),
 (1388331478, '0000-00-00', 'AVAILABLE'),
-(1394942221, '2022-03-27', 'AVAILABLE'),
-(1441543272, '0000-00-00', 'AVAILABLE'),
-(1447829012, '0000-00-00', 'AVAILABLE'),
 (1493414869, '2022-02-24', 'AVAILABLE'),
-(1494522246, '2022-03-31', 'AVAILABLE'),
-(1599352918, '2022-03-30', 'AVAILABLE'),
-(1736129010, '2022-03-27', 'AVAILABLE'),
-(1775966296, '0000-00-00', 'AVAILABLE'),
-(1791347565, '0000-00-00', 'AVAILABLE'),
-(1822941855, '2022-03-30', 'AVAILABLE'),
-(1824430330, '2022-03-31', 'AVAILABLE'),
-(1825881804, '0000-00-00', 'AVAILABLE'),
-(1859285587, '2022-03-27', 'AVAILABLE'),
-(1893501637, '0000-00-00', 'AVAILABLE'),
-(1942912411, '2022-03-15', 'AVAILABLE'),
-(2029577268, '2022-03-31', 'AVAILABLE'),
 (2036968612, '2022-03-27', 'AVAILABLE');
 
 -- --------------------------------------------------------
@@ -161,82 +101,17 @@ CREATE TABLE `details` (
 --
 
 INSERT INTO `details` (`id_detail`, `detail`) VALUES
-(4522733, ''),
-(33453405, ''),
 (58533182, ''),
-(72174119, 'dfasdfas'),
-(108280255, 'dfsasdfasd'),
-(126570817, 'dfasdfas'),
-(140966820, 'fasdfa'),
-(167721885, ''),
-(215959958, 'gsdfgsd'),
-(242087203, ''),
-(250289486, 'vbcj'),
-(296372277, ''),
-(297397179, ''),
-(349592806, 'gsdfgsd'),
-(351933612, 'fasdfa'),
-(374289326, 'dfasdfas'),
-(378562580, 'dfasdfa'),
-(430740673, 'mgj'),
-(431346781, ''),
-(462722013, 'Dos mesas'),
-(465324775, 'dfasdfa'),
-(481711711, 'dfasdfas'),
 (490102472, 'gsdfgsd'),
-(513627525, ''),
 (533698196, ''),
 (536027015, 'gsdfgsd'),
-(538975356, 'fasdfa'),
-(629988144, ''),
-(680730804, ''),
-(686652933, 'fasdfa'),
-(734897455, ''),
-(762189186, ''),
-(798306034, ''),
+(648506529, 'No seleccionada'),
 (803680268, ''),
-(841014254, ''),
-(919533303, ''),
-(965035691, 'sdfas'),
-(969218437, ''),
-(999788886, 'dfasdfas'),
-(1041314947, 'dfasdfas'),
-(1048496955, ''),
 (1079693562, ''),
-(1087014497, 'hola'),
-(1097710641, 'gsfgdf'),
-(1133141444, ''),
-(1144656945, ''),
-(1148284481, ''),
-(1193455683, 'dfasdfas'),
-(1197495169, 'dfsasdfasd'),
-(1208164047, ''),
-(1211372926, ''),
-(1258317500, ''),
 (1290826813, ''),
-(1317351991, ''),
 (1318382884, ''),
-(1332569679, 'dfasdfas'),
-(1336729315, ''),
-(1350724015, ''),
-(1375451006, ''),
 (1388331478, ''),
-(1394942221, 'gsdfgsd'),
-(1441543272, ''),
-(1447829012, ''),
-(1493414869, ''),
-(1494522246, 'gsdfgsd'),
-(1599352918, 'Hola bros'),
-(1736129010, 'fasdfa'),
-(1775966296, ''),
-(1791347565, ''),
-(1822941855, 'Hola bros'),
-(1824430330, 'gsfgdf'),
-(1825881804, ''),
-(1859285587, 'dfasdfas'),
-(1893501637, ''),
-(1942912411, 'x'),
-(2029577268, 'hola');
+(1493414869, '');
 
 -- --------------------------------------------------------
 
@@ -257,7 +132,16 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id_menu`, `title_menu`, `description_menu`, `price_menu`, `img_menu`) VALUES
-(1847997509, 'RAMEN 2', 'Si quisiéramos definirlo de una manera más o menos rápida, podríamos decir que el ramen (ラーメン) es una sopa de fideos, de origen chino, normalmente preparada con una base de caldo de carne, que se sirve con una gran variedad de toppings', 30000, 'https://img.freepik.com/vector-gratis/menu-restaurante-moderno-comida-rapida_52683-48982.jpg?size=626&ext=jpg');
+(603061056, 'Ramen Naruto', 'El ramen es un plato de fideos japonés. Si bien cada región de Japón tiene su propia receta de ramen, la preparación básica consiste en distintos tipos de fideos japoneses servidos en un caldo preparado ', 20000, 'https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/08/origen-del-ramen-portada1.jpg'),
+(1138977219, 'Sushi', 'Sushi es un plato típico de origen japonés basado en arroz aderezado con vinagre de arroz, azúcar y sal y combinado con otros ingredientes como pescados crudos, mariscos, verduras, etc.​​​ Este plato es uno de los más reconocidos de la gastronomía japonesa y uno de los más populares internacionalmente.​', 14000, 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/0749D9BC-260D-40F4-A07F-54814C4A82B4/Derivates/A73A7793-F3EE-4B90-ABA4-1CC1A0C3E18F.jpg'),
+(1153159356, 'Tempura', 'La tempura se refiere a la fritura rápida típica japonesa, en especial a los mariscos y verduras, que fue introducida por los portugueses en el siglo XVI. Cada trozo de comida debe tener el tamaño de un bocado y se fríe en aceite a 180 ℃ tan solo durante dos o tres minutos.', 3500, 'https://www.lavanguardia.com/files/og_thumbnail/uploads/2021/10/20/61701aeb1a33e.jpeg'),
+(1221820592, 'Sushi', 'Sushi es un plato típico de origen japonés basado en arroz aderezado con vinagre de arroz, azúcar y sal y combinado con otros ingredientes como pescados crudos, mariscos, verduras, etc.​​​ Este plato es uno de los más reconocidos de la gastronomía japonesa y uno de los más populares internacionalmente.​', 12000, 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/0749D9BC-260D-40F4-A07F-54814C4A82B4/Derivates/A73A7793-F3EE-4B90-ABA4-1CC1A0C3E18F.jpg'),
+(1294008557, 'Gyozas', 'Un jiaozi y también conocido como mandu, es un tipo de dumpling o ravioli típico de la cocina china muy popular en China, Japón y Corea, así como fuera de Asia. Los jiaozi se elaboran rellenos de carne picada o verduras enrollados en una delgada y fina masa, que se suele sellar con los dedos.', 11000, 'https://www.recetasdesbieta.com/wp-content/uploads/2019/08/gyozas_11.jpg'),
+(1310795764, 'Postobon', 'es una bebida azucarada gaseosa vendida a nivel mundial en tiendas, restaurantes y máquinas expendedoras en más de doscientos países o territorios. Es el principal producto de The Coca-Cola Company, de origen estadounidense.', 3500, 'https://www.postobon.com/sites/default/files/styles/848x600/public/salaprensa/sala_de_prensa_manzana.png?itok=7INXA5eg'),
+(1503906294, 'Ramen Hinata', 'El ramen es un plato de fideos japonés. Si bien cada región de Japón tiene su propia receta de ramen, la preparación básica consiste en distintos tipos de fideos japoneses servidos en un caldo preparado ', 20000, 'https://www.cocinatis.com/media/photologue/photos/cache/huevos-cocidos-escalfado-ramen_desktop_horizontal_full_width.jpg'),
+(1621837392, 'Cococola', 'es una bebida azucarada gaseosa vendida a nivel mundial en tiendas, restaurantes y máquinas expendedoras en más de doscientos países o territorios. Es el principal producto de The Coca-Cola Company, de origen estadounidense.', 3000, 'https://www.eluniverso.com/resizer/XDCSRrWf-mQVhi9fw2igV2hzPg8=/1005x670/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/6O3SHHDC55GTHHHGY4HAWTVD5A.jpg'),
+(1847997509, 'RAMEN', 'la preparación básica consiste en distintos tipos de fideos japoneses servidos en un caldo preparado comúnmente a base de hueso de cerdo o pollo y distintas verduras, sus sabores varían entre la pasta de miso, salsa de soya [Shoyu] o sal [shio], contiene diferentes guarniciones como rebanadas de carne de cerdo', 17600, 'https://laroussecocina.mx/wp-content/uploads/2019/08/S050419-30-RAMEL-0614-1.jpg'),
+(2093422488, 'Onigiri', 'Onigiri también conocido como Omusubi es un plato japonés que consiste en una bola de arroz rellena o mezclada con otros ingredientes. Suele tener forma triangular u oval, y a veces está envuelta en una pequeña tira de alga nori. ', 16500, 'https://www.sal-pimienta.com/wp-content/uploads/2020/05/27_onigiri-blog-500x500.jpg');
 
 -- --------------------------------------------------------
 
@@ -275,8 +159,11 @@ CREATE TABLE `menus_categories` (
 --
 
 INSERT INTO `menus_categories` (`id_category`, `category`) VALUES
+(457346048, 'Pasabocas'),
+(600453791, 'Postres'),
 (1228154616, 'ENTRADAS'),
-(1303517700, 'BEBIDAS');
+(1303517700, 'BEBIDAS'),
+(1518879386, 'Sopas');
 
 -- --------------------------------------------------------
 
@@ -294,7 +181,18 @@ CREATE TABLE `menus_has_menus_categories` (
 --
 
 INSERT INTO `menus_has_menus_categories` (`menus_id_menu`, `menus_categories_id_category`) VALUES
-(1847997509, 1228154616);
+(603061056, 1228154616),
+(603061056, 1518879386),
+(1138977219, 1228154616),
+(1221820592, 457346048),
+(1221820592, 1228154616),
+(1294008557, 1228154616),
+(1310795764, 1303517700),
+(1503906294, 1228154616),
+(1503906294, 1518879386),
+(1621837392, 1303517700),
+(1847997509, 1228154616),
+(2093422488, 1228154616);
 
 -- --------------------------------------------------------
 
@@ -318,13 +216,10 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id_reservation`, `amount_people`, `status`, `dates_id_date`, `details_id_detail`, `services_id_service`, `schedules_id_schedule`, `users_id_users`) VALUES
-(378562580, 3, 'ACTIVE', 378562580, 378562580, 2, 1112181601, 756664359),
-(430740673, 3, 'ACTIVE', 430740673, 430740673, 2, 1980260745, 1901861112),
-(465324775, 3, 'ACTIVE', 465324775, 465324775, 2, 1980260745, 756664359),
-(965035691, 3, 'ACTIVE', 965035691, 965035691, 1, 1112181601, 3289904),
-(1097710641, 3, 'NOT ACTIVE', 1097710641, 1097710641, 2, 1112181601, 3289904),
-(1824430330, 3, 'ACTIVE', 1824430330, 1824430330, 2, 1980260745, 3289904),
-(2029577268, 3, 'NOT ACTIVE', 2029577268, 2029577268, 2, 1112181601, 3289904);
+(533698196, 8, 'NOT ACTIVE', 533698196, 533698196, 2, 460759279, 976204529),
+(536027015, 3, 'ACTIVE', 536027015, 536027015, 2, 1112181601, 651235022),
+(1290826813, 3, 'NOT ACTIVE', 1290826813, 1290826813, 1, 1112181601, 651235022),
+(1493414869, 2, 'ACTIVE', 1493414869, 1493414869, 2, 460759279, 1869790832);
 
 -- --------------------------------------------------------
 
@@ -343,13 +238,10 @@ CREATE TABLE `reservations_has_menus` (
 --
 
 INSERT INTO `reservations_has_menus` (`reservations_id_reservation`, `menus_id_menu`, `user_id`) VALUES
-(378562580, 1847997509, 756664359),
-(430740673, 1847997509, 1901861112),
-(465324775, 1847997509, 756664359),
-(965035691, 1847997509, 3289904),
-(1097710641, 1847997509, 3289904),
-(1824430330, 1847997509, 3289904),
-(2029577268, 1847997509, 3289904);
+(533698196, 1847997509, NULL),
+(536027015, 1847997509, 651235022),
+(1290826813, 1847997509, NULL),
+(1493414869, 1847997509, NULL);
 
 -- --------------------------------------------------------
 
@@ -432,7 +324,7 @@ INSERT INTO `services` (`id_service`, `service`) VALUES
 CREATE TABLE `users` (
   `id_users` int(11) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `password` varchar(75) NOT NULL,
+  `password` varchar(45) NOT NULL,
   `p_nombre` varchar(45) NOT NULL,
   `s_nombre` varchar(45) DEFAULT NULL,
   `p_apellido` varchar(45) NOT NULL,
@@ -446,10 +338,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `email`, `password`, `p_nombre`, `s_nombre`, `p_apellido`, `s_apellido`, `contactos_id_contacto`, `roles_id_rol`) VALUES
-(3289904, 'jhostriana11@misena.edu.co', '$2y$10$OtRWRoSNtnzbiLqPEubtBO9LN.Ae7G4jAEPf9G', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 3289904, 1),
-(756664359, 'andresricaute98@gmail.com', '$2y$10$Wb8bAN4P.ELz4/wsztb.T.yt/SjPD86zy4WrqFu2iGKzxt31Psmvm', 'Andres', 'Felipo', 'Ramos', '', 756664359, 1),
-(1892417910, 'delfina@gmail.com', '$2y$10$5teKGSyUWWaOehQOShoSHeffpPxG7QDy2SIhwQpe9nDU8GeOrCYrK', 'Delfina', 'Quiroga', 'Gualdron', 'Quiroga', 1892417910, 2),
-(1901861112, 'stivenjhojan011@gmail.com', '$2y$10$ewCwYcuOq5/srEXWCpkrbOGRRU2HUw1XAsDi0wmczwGIOUVNgY.CC', 'Jhojann', 'Estiven ', 'Triana', '', 1901861112, 1);
+(315192503, 'diego@gmail.com', '1022322859', 'Diego', 'Andrés', 'Triana', '', 315192503, 2),
+(651235022, 'stivenjhojan011@gmail.com', '1022322859', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 651235022, 1),
+(662021904, 'dieacasallas111@misena.edu.co', 'Diego123', 'Diego ', 'Andrés ', 'Casallas ', 'Suárez', 662021904, 3),
+(912701116, 'estiven@gmail.com', '123', 'estiven', 'Andrés', 'Triana', '', 912701116, 2),
+(976204529, 'pepito@gmail.com', '1022322859', 'Pepito', 'Perez', 'Ortiz', '', 976204529, 1),
+(1842030796, 'ramos@gmail.com', '1022322859', 'Andres', 'Felipe', 'Ramos', 'Ricaurte', 1842030796, 1),
+(1869790832, 'jhostriana11@misena.edu.co', '1022322859', 'Jhojann', 'Estiven ', 'Triana', '', 1869790832, 3),
+(2050730869, 'delfina@gmail.com', '1022322859', 'Delfina', 'Andrés', 'Triana', 'Osorio', 2050730869, 3);
 
 --
 -- Índices para tablas volcadas

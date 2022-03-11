@@ -6,7 +6,6 @@ class options extends Controller
         session_start();
 
         $this->verify_session();
-        $this->AuthClient();
     }
 
     public function render()

@@ -1,11 +1,20 @@
-<body>
+<link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
+<div class="ramen">
     <style>
-        .modal-body{
+        .modal-body {
             color: black;
+        }
+
+        .visible {
+            visibility: hidden;
+        }
+
+        .title-image-menu {
+            background-image: url("https://imagekit.androidphoria.com/wp-content/uploads/como-buscar-una-imagen-en-facebook-con-una-foto.jpg");
+            background-size: 10%;
         }
     </style>
     <!--Ventana modal añadir menus-->
-
     <!-- Modal -->
     <div class="modal fade" style="color: black;" id="menuAdmint" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -117,9 +126,9 @@
         </div>
     </div>
 
-    <div class="container">
+    <div>
         <div>
-            <h1>Menus</h1>
+
             <div class="d-flex" style="flex-wrap: wrap;" id="selectedMenu"></div>
         </div>
         <br>
@@ -155,12 +164,12 @@
             echo "</div>";
             ?>
         </div>
-        <div class="d-flex" style="flex-wrap: wrap; color:black">
+        <div class="d-flex content" style="flex-wrap: wrap;">
             <?php
             foreach ($this->menus as $menu) {
                 echo '
                     
-                    <div class="card m-3 h-50%" style="width: 15rem; height: 500px;">
+                    <div class="card m-3 h-50% text-dark" style="width: 15rem; height: 500px;">
                     <img src="' . $menu['img_menu'] . '" class="card-img-top" style="height: 180px;" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">' . $menu['title_menu'] . '</h5>
@@ -170,7 +179,7 @@
                     </svg>' . $menu['price_menu'] . ' unidad</p>
 
                     <!--Añadir menu-->
-                      <button class="btn btn-primary" id="' . $menu['id_menu'] . '" onclick="addMenu(' . $menu['id_menu'] . ', `' . $menu['title_menu'] . '`)">Añadir al carrito</button>
+                      <button type="button" class="btn btn-primary" id="' . $menu['id_menu'] . '" onclick="addMenu(' . $menu['id_menu'] . ', `' . $menu['title_menu'] . '`)">Añadir al carrito</button>
                       
                       <!--Eliminar-->
                       <button class="btn btn-primary">
@@ -235,4 +244,4 @@
             console.log(categories);
         }
     </script>
-</body>
+</div>
