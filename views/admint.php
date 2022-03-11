@@ -75,7 +75,7 @@
                 <div class="modal-body text-dark">
                     <form action="<?php echo constant('URL') ?>/registrarse/addUser" method="post">
                         <label for="p_nombre">Primer nombre *</label>
-                        <input type="text" class="form-control" id="" name="p_nombre" required>
+                        <input type="text" class="form-control" placeholder="Jhojann" id="" name="p_nombre" required>
                         <label for="s_nombre">Segundo nombre</label>
                         <input type="text" class="form-control" id="s_nombre" name="s_nombre">
                         <label for="p_apellido">Primer apellido *</label>

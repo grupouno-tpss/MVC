@@ -1,9 +1,9 @@
 <?php
-session_start();
 class worker extends Controller
 {
     public function __construct()
     {
+        session_start();
         //$this->verify_session();
         //$this->AuthEmp();
     }

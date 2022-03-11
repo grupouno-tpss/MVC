@@ -2,13 +2,18 @@
 class registrarse extends Controller
 {
 
+    public function __construct()
+    {
+        session_start();
+    }
+
     public function render()
     {
         parent::__construct();
 
         if (isset($_SESSION['user_rolID'])) 
         {
-            header('Location: '.constant('URL').'/options');
+            header('Location: '.constant('URL').'/login');
         }
 
         $this->view->render('registrarse', null);

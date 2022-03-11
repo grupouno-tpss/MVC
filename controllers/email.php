@@ -8,6 +8,7 @@ require  'phpmailer/phpmailer/src/Exception.php';
 require  'phpmailer/phpmailer/src/PHPMailer.php';
 require  'phpmailer/phpmailer/src/SMTP.php';
 
+
 class email extends Controller
 {
 
@@ -16,8 +17,12 @@ class email extends Controller
     private $address;
     private $asunto;
 
-    public function __construct($asunto, $body, $from, $address)
-    {
+    public function __construct(
+        $asunto,
+        $body,
+        $from,
+        $address
+    ) {
         $this->asunto = $asunto;
         $this->bodyMessage = $body;
         $this->from = $from;
@@ -31,8 +36,15 @@ class email extends Controller
         $this->view->render("email", null);
     }
 
-    public function sendEmail()
-    {
+    public function sendEmail(
+        $id,
+        $fecha,
+        $hora,
+        $cantPersonas,
+        $tipoServicio,
+        $especificacion,
+        $menu
+    ) {
         echo "Hola desde el email";
         //Load Composer's autoloader
         require 'vendor/autoload.php';
@@ -65,11 +77,15 @@ class email extends Controller
 
             //Content
 
-            
+            $body =  $id;
+
+
+            include 'views/emails/reservation.php';
+
 
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $this->asunto;
-            $mail->Body    = include("views/emails/reservation.php");
+            $mail->Body    = $reservation;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();

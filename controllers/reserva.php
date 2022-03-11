@@ -1,10 +1,10 @@
 <?php
-session_start();
 class reserva extends Controller
 {
     public $menus;
     public function __construct()
     {
+        session_start();
         $this->verify_session();
     }
 

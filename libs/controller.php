@@ -36,33 +36,36 @@ class Controller
         $href_get = $_GET['url'];
         $error_404 = "<center><h1>No tiene acceso</h1></center>";
 
-        if ($_SESSION['user_rolID'] == 3) {
-            echo '
+        if (isset($_SESSION['user_rolID'])) {
+
+            if ($_SESSION['user_rolID'] == 3) {
+                echo '
                     <script>
                         console.log("Administrador");
                     </script>
                 ';
-        } else if ($_SESSION['user_rolID'] == 2) {
-            if ($href_get == "reserva"  || $href_get == "worker" || $href_get == "options" || $href_get == "reservaciones" || $href_get == "profile" || $href_get == "menus" || $href_get == "login" || $href_get == "registrarse") {
-                echo '
+            } else if ($_SESSION['user_rolID'] == 2) {
+                if ($href_get == "reserva"  || $href_get == "worker" || $href_get == "options" || $href_get == "reservaciones" || $href_get == "profile" || $href_get == "menus" || $href_get == "login" || $href_get == "registrarse") {
+                    echo '
                         <script>
                             console.log("Empleado");
                         </script>
                     ';
-            } else {
-                echo $error_404;
-                die();
-            }
-        } else if ($_SESSION['user_rolID'] == 1) {
-            if ($href_get == "reserva"  || $href_get == "options" || $href_get == "profile" || $href_get == "menus" || $href_get == "reservaciones" || $href_get == "login" || $href_get == "registrarse") {
-                echo '
+                } else {
+                    echo $error_404;
+                    die();
+                }
+            } else if ($_SESSION['user_rolID'] == 1) {
+                if ($href_get == "reserva"  || $href_get == "options" || $href_get == "profile" || $href_get == "menus" || $href_get == "reservaciones" || $href_get == "login" || $href_get == "registrarse") {
+                    echo '
                         <script>
                             console.log("Cliente");
                         </script>
                     ';
-            } else {
-                echo $error_404;
-                die();
+                } else {
+                    echo $error_404;
+                    die();
+                }
             }
         }
     }

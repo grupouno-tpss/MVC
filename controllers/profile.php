@@ -1,11 +1,9 @@
 <?php
-
-session_start();
-error_reporting(0);
 class profile extends Controller
 {
     public function __construct()
     {
+        session_start();
         $this->verify_session();
     }
 

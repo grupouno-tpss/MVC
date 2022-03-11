@@ -1,10 +1,10 @@
 <?php
-session_start();
 
 class reservaciones extends Controller
 {
     public function __construct()
     {
+        session_start();
         $this->verify_session();
     }
     public function getSchedules()
