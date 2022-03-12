@@ -63,11 +63,11 @@
             <div style="background-color: rgba(0,0,0,0.5); padding: 10px; border-radius:5px; padding-bottom: 30px;">
                 <center>
                     <table style="width: 80%;  border-radius: 5px;">
-                        <caption>Datos de usuario</caption>
+                        <h3>Datos de usuario</h3>
                         <br>
                         <tr>
                             <td>Titular de la reserva <br> '.$_SESSION['user_pNombre']. " " . $_SESSION['user_pApellido'].'</td>
-                            <td>Correo electrónico <br> jhostriana11@misena.edu.co</td>
+                            <td>Correo electrónico <br> '.$_SESSION['user_email']. '</td>
                         </tr>
                         <tr>
                             <td>Numero Celular <br> 3227519202</td>
@@ -76,7 +76,7 @@
                     </table>
                     <br>
                     <table style="width: 80%;  border-radius: 5px;">
-                        <caption>Datos de reservación</caption>
+                        <h3>Datos de reservación</h3>
                         <br>
                         <tr>
                             <td>ID de la reserva <br> '.$id.'</td>

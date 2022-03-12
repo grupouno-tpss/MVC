@@ -60,8 +60,38 @@ class reservaModel extends Model
         }
         echo "Reservación hecha";
 
+        $query_confirm = "SELECT id_reservation, amount_people, date, 
+        schedule, p_nombre, p_apellido, email, detail, service FROM reservations R 
+        INNER JOIN users U ON U.id_users =  766599481 INNER JOIN dates D 
+        ON D.id_date = R.dates_id_date INNER JOIN schedules S 
+        ON S.id_schedule = R.schedules_id_schedule INNER JOIN details E 
+        ON E.id_detail = R.details_id_detail 
+        INNER JOIN services SR ON SR.id_service = R.services_id_service 
+        WHERE R.users_id_users = 766599481 AND R.status = 'ACTIVE' AND R.id_reservation = 32532954 ";
+
+        $query_confirm_menu = "SELECT title_menu FROM menus M INNER JOIN reservations_has_menus R ON R.reservations_id_reservation = 32532954 WHERE M.id_menu = R.menus_id_menu";
+
+        $confirm = mysqli_query($this->db, $query_confirm);
+        $confirm_menu = mysqli_query($this->db, $query_confirm_menu);
+
+        while ($row = mysqli_fetch_assoc($confirm)) {
+            $id = $row['id_reservation'];
+            $fecha =  $row['date'];
+            $hora = $row['schedule'];
+            $cantPersonas = $row['amount_people'];
+            $especificacion = $row['detail'];
+            $tipoServicio = $row['service'];
+            //$menu  = $row[''];
+        }
+
+        $arr_menu = [];
+
+        while ($row = mysqli_fetch_assoc($confirm_menu)) {
+            array_push($arr_menu, $row['title_menu']);
+        }
+
+        $menu = implode(',', $arr_menu);
         $email = new email("CONFIRMACIÓN DE RESERVA ICHIRAKU RAMEN", 
-        "AQUI LA INFORMACIÓN DE RESERVA", 
         "stivenjhojan011@gmail.com",
          $_SESSION['user_email']);
         $email->sendEmail(
