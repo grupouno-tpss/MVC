@@ -22,24 +22,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText navLogin">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    <img src="
-https://ichirakuramenco.com/wp-content/uploads/2020/05/cropped-Logo1-1-1-4.png
-" width="100px" />
-                    <img src="
-https://ichirakuramenco.com/wp-content/uploads/elementor/thumbs/LOGO-CHI-GRAN-p9tyk7dshpshzgdlw2r1j5budzbjvxszg3avmoxhu0.png
-" alt="" width="100px" />
+                    <img src="https://ichirakuramenco.com/wp-content/uploads/2020/05/cropped-Logo1-1-1-4.png" width="100px" />
+                    <img src="https://ichirakuramenco.com/wp-content/uploads/elementor/thumbs/LOGO-CHI-GRAN-p9tyk7dshpshzgdlw2r1j5budzbjvxszg3avmoxhu0.png" alt="" width="100px" />
                 </ul>
                 <span class="navbar-text">
                     <button class="btn btn-dark">
-                        <img class="dlc" src="
-https://aux.iconspalace.com/uploads/209736328409232067.png
-" alt="">
+                        <img class="dlc" src="https://aux.iconspalace.com/uploads/209736328409232067.png" alt="">
                         <a href="<?php echo constant('URL') ?>/registrarse">Registrarse</a>
                     </button>
                 </span>
             </div>
         </div>
     </nav>
+
+    <!--Modal google-->
+   <div class="p-3 bg-secondary text-white" id="direct_login" hidden>Se ha iniciado sesión con su cuenta de google, por favor presione "Ingresar"</div>
 
     <div class="d-flex align-items-center justify-content-center m-1 p-4" style="height: 100vh;">
 
@@ -52,11 +49,11 @@ https://aux.iconspalace.com/uploads/209736328409232067.png
                     </svg>
                     <form action="<?php echo constant('URL') ?>/login/consultUser" method="post">
                         <label for="">Ingrese el correo electrónico</label>
-                        <input type="email" class="form-control" id="" name="user" placeholder="example@gmail.com" required>
+                        <input type="email" class="form-control" id="email" name="user" placeholder="example@gmail.com" required>
                         <label for="">Ingrese la contraseña</label>
-                        <input type="password" class="form-control" id="" name="password" required>
+                        <input type="password" class="form-control" id="password" name="password" required>
                         <br>
-                        <input type="submit" class="btn btn-primary" value="Ingresar">
+                        <input type="submit" class="btn btn-primary" id="send_login" value="Ingresar">
                         <br><br>
                         <div class="g-signin2" data-onsuccess="onSignIn"></div>
                         <br>
@@ -82,11 +79,27 @@ https://aux.iconspalace.com/uploads/209736328409232067.png
 
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
-            alert(profile.getEmail());
+            dataGoogle(profile.getEmail(), profile.getName());
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+
+        //user google 
+
+        function dataGoogle (email, name) {
+            let email_input = document.getElementById('email');
+            let password = document.getElementById('password');
+            let send_login = document.getElementById('send_login');
+            let direct_login = document.getElementById('direct_login');
+
+            email_input.value = email;
+            email_input.hidden = true;
+            email_input.required = false;
+            password.required = false;
+            password.hidden = true;
+            direct_login.hidden = false;
         }
     </script>
 </body>

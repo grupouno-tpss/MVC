@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../css/reserva.css">
     <title>Reservar</title>
     <style>
+        body{
+            background-color: rgb(54 51 51 / 90%);
+        }
         .disabled {
             background-color: rgba(0, 0, 0, 0.5);
             pointer-events: none;
@@ -91,7 +94,6 @@
             font-size: 325%;
         }
 
-        .divisores+h3 {}
     </style>
     <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
 </head>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-03-2022 a las 02:06:21
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 14-03-2022 a las 21:55:27
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,13 +38,25 @@ CREATE TABLE `contactos` (
 --
 
 INSERT INTO `contactos` (`id_contacto`, `num_telefono`, `num_celular`) VALUES
+(129346812, '6987457', '3168594859'),
+(194491129, '6987457', '3168594859'),
 (315192503, '32454335', '324654'),
+(427318569, '6487911', '3158965827'),
+(441616206, '6958742', '3489657814'),
+(459769172, '32454335', '324654'),
 (621929363, '32454335', '324654'),
 (651235022, '32454335', '324654'),
 (662021904, '2708664', '3212243319'),
+(709096698, '6489754', '3194896507'),
+(739496694, '6478597', '3133059806'),
+(739544277, '32454335', '324654'),
+(889996061, '6498754', '3156984729'),
 (912701116, '32454335', '324654'),
 (976204529, '32454335', '324654'),
 (997028372, '', '324654'),
+(1319186859, '3214027931', '3214027931'),
+(1661447119, '3214027931', '3214027931'),
+(1765021230, '3214027931', '3214027931'),
 (1842030796, '123', '1223'),
 (1869790832, '32454335', '324654'),
 (2050730869, '32454335', '324654');
@@ -66,24 +78,77 @@ CREATE TABLE `dates` (
 --
 
 INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
-(17447870, '2022-02-27', 'NOT AVAILABLE'),
+(17447870, '2022-02-27', 'AVAILABLE'),
+(32532954, '2022-03-31', 'AVAILABLE'),
 (58533182, '0000-00-00', 'AVAILABLE'),
+(74266449, '2022-03-31', 'AVAILABLE'),
+(87055488, '0000-00-00', 'AVAILABLE'),
+(104431665, '0000-00-00', 'AVAILABLE'),
+(163530864, '0000-00-00', 'AVAILABLE'),
+(215194570, '2022-03-31', 'AVAILABLE'),
+(227302909, '0000-00-00', 'AVAILABLE'),
+(305811520, '0000-00-00', 'AVAILABLE'),
+(323115418, '0000-00-00', 'AVAILABLE'),
+(400611039, '0000-00-00', 'AVAILABLE'),
+(442197623, '2022-03-31', 'AVAILABLE'),
+(453660749, '0000-00-00', 'AVAILABLE'),
+(484824005, '2022-03-31', 'AVAILABLE'),
 (490102472, '2022-02-27', 'AVAILABLE'),
-(529075174, '2022-02-06', 'NOT AVAILABLE'),
-(531549844, '2022-02-13', 'NOT AVAILABLE'),
+(515934618, '0000-00-00', 'AVAILABLE'),
+(520508722, '2022-03-15', 'AVAILABLE'),
+(529075174, '2022-02-06', 'AVAILABLE'),
+(531549844, '2022-02-13', 'AVAILABLE'),
 (533698196, '2022-02-26', 'AVAILABLE'),
 (536027015, '2022-03-27', 'AVAILABLE'),
+(567821724, '0000-00-00', 'AVAILABLE'),
 (648506529, '0000-00-00', 'AVAILABLE'),
-(677252598, '2022-02-20', 'NOT AVAILABLE'),
+(661304800, '0000-00-00', 'AVAILABLE'),
+(677252598, '2022-02-20', 'AVAILABLE'),
+(682384857, '0000-00-00', 'AVAILABLE'),
+(683020007, '2022-03-31', 'AVAILABLE'),
+(684964767, '0000-00-00', 'AVAILABLE'),
 (803680268, '0000-00-00', 'AVAILABLE'),
+(808787465, '2022-03-31', 'AVAILABLE'),
+(833458360, '0000-00-00', 'AVAILABLE'),
+(860383811, '0000-00-00', 'AVAILABLE'),
+(936660714, '0000-00-00', 'AVAILABLE'),
+(980978703, '2022-03-31', 'AVAILABLE'),
+(1025743293, '0000-00-00', 'AVAILABLE'),
+(1071668742, '0000-00-00', 'AVAILABLE'),
 (1079693562, '0000-00-00', 'AVAILABLE'),
-(1246486309, '2022-02-16', 'NOT AVAILABLE'),
+(1144562970, '0000-00-00', 'AVAILABLE'),
+(1208951457, '2022-03-24', 'AVAILABLE'),
+(1246486309, '2022-02-16', 'AVAILABLE'),
+(1255668367, '2022-03-31', 'AVAILABLE'),
+(1258752099, '2022-03-31', 'AVAILABLE'),
 (1290826813, '2022-02-27', 'AVAILABLE'),
+(1291807934, '2022-03-31', 'AVAILABLE'),
+(1292555103, '0000-00-00', 'AVAILABLE'),
+(1297160061, '2022-03-31', 'AVAILABLE'),
+(1309399576, '2022-03-31', 'AVAILABLE'),
 (1318382884, '0000-00-00', 'AVAILABLE'),
 (1319721773, '2022-02-28', 'AVAILABLE'),
+(1328233687, '0000-00-00', 'AVAILABLE'),
+(1354630722, '2022-03-31', 'AVAILABLE'),
 (1388331478, '0000-00-00', 'AVAILABLE'),
+(1398514154, '2022-03-31', 'AVAILABLE'),
+(1442574503, '2022-03-12', 'NOT AVAILABLE'),
+(1474078413, '0000-00-00', 'AVAILABLE'),
 (1493414869, '2022-02-24', 'AVAILABLE'),
-(2036968612, '2022-03-27', 'AVAILABLE');
+(1528952008, '0000-00-00', 'AVAILABLE'),
+(1548166819, '2022-04-02', 'NOT AVAILABLE'),
+(1617803991, '2022-03-31', 'AVAILABLE'),
+(1705788854, '2022-03-31', 'AVAILABLE'),
+(1743342533, '2022-03-31', 'AVAILABLE'),
+(1772079363, '2022-03-31', 'AVAILABLE'),
+(1774803533, '2022-05-13', 'NOT AVAILABLE'),
+(1782964961, '0000-00-00', 'AVAILABLE'),
+(1809640900, '2022-03-31', 'AVAILABLE'),
+(1861766844, '2022-03-31', 'AVAILABLE'),
+(1983815842, '2022-03-31', 'AVAILABLE'),
+(2036968612, '2022-03-27', 'AVAILABLE'),
+(2052633810, '0000-00-00', 'AVAILABLE'),
+(2095147553, '2022-03-31', 'AVAILABLE');
 
 -- --------------------------------------------------------
 
@@ -101,17 +166,67 @@ CREATE TABLE `details` (
 --
 
 INSERT INTO `details` (`id_detail`, `detail`) VALUES
+(32532954, 'sfdgsdf'),
 (58533182, ''),
+(74266449, 'sfdgsdf'),
+(87055488, ''),
+(104431665, ''),
+(163530864, ''),
+(215194570, 'gsdfg'),
+(227302909, ''),
+(305811520, ''),
+(323115418, ''),
+(400611039, ''),
+(442197623, 'sfdgsdf'),
+(453660749, ''),
+(484824005, 'gsdfg'),
 (490102472, 'gsdfgsd'),
+(515934618, ''),
+(520508722, ''),
 (533698196, ''),
 (536027015, 'gsdfgsd'),
+(567821724, ''),
 (648506529, 'No seleccionada'),
+(661304800, ''),
+(682384857, ''),
+(683020007, 'sfdgsdf'),
+(684964767, ''),
 (803680268, ''),
+(808787465, 'sfdgsdf'),
+(833458360, ''),
+(860383811, ''),
+(936660714, ''),
+(980978703, 'fsasdfa'),
+(1025743293, ''),
+(1071668742, ''),
 (1079693562, ''),
+(1144562970, ''),
+(1208951457, 'fsadf'),
+(1255668367, 'sfdgsdf'),
+(1258752099, 'sfdgsdf'),
 (1290826813, ''),
+(1291807934, 'sfdgsdf'),
+(1292555103, ''),
+(1297160061, 'fasdf'),
+(1309399576, ''),
 (1318382884, ''),
+(1328233687, ''),
+(1354630722, 'Hola Mundo'),
 (1388331478, ''),
-(1493414869, '');
+(1398514154, 'gfdsfg'),
+(1474078413, ''),
+(1493414869, ''),
+(1528952008, ''),
+(1617803991, 'fasdf'),
+(1705788854, 'fasdf'),
+(1743342533, 'sfdgsdf'),
+(1772079363, 'sfdgsdf'),
+(1782964961, ''),
+(1809640900, 'fasdf'),
+(1861766844, 'gsdfg'),
+(1983815842, 'sfdgsdf'),
+(2052633810, ''),
+(2095147553, 'fasdf');
 
 -- --------------------------------------------------------
 
@@ -216,10 +331,9 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id_reservation`, `amount_people`, `status`, `dates_id_date`, `details_id_detail`, `services_id_service`, `schedules_id_schedule`, `users_id_users`) VALUES
-(533698196, 8, 'NOT ACTIVE', 533698196, 533698196, 2, 460759279, 976204529),
-(536027015, 3, 'ACTIVE', 536027015, 536027015, 2, 1112181601, 651235022),
-(1290826813, 3, 'NOT ACTIVE', 1290826813, 1290826813, 1, 1112181601, 651235022),
-(1493414869, 2, 'ACTIVE', 1493414869, 1493414869, 2, 460759279, 1869790832);
+(520508722, 3, 'ACTIVE', 520508722, 520508722, 3, 460759279, 739544277),
+(1208951457, 3, 'ACTIVE', 1208951457, 1208951457, 2, 1112181601, 739544277),
+(1354630722, 3, 'ACTIVE', 1354630722, 1354630722, 3, 1112181601, 739544277);
 
 -- --------------------------------------------------------
 
@@ -238,21 +352,9 @@ CREATE TABLE `reservations_has_menus` (
 --
 
 INSERT INTO `reservations_has_menus` (`reservations_id_reservation`, `menus_id_menu`, `user_id`) VALUES
-(533698196, 1847997509, NULL),
-(536027015, 1847997509, 651235022),
-(1290826813, 1847997509, NULL),
-(1493414869, 1847997509, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reservations_has_menus1`
---
-
-CREATE TABLE `reservations_has_menus1` (
-  `reservations_id_reservation` int(11) NOT NULL,
-  `menus_id_menu` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(520508722, 603061056, NULL),
+(1354630722, 1221820592, 739544277),
+(1354630722, 1310795764, 739544277);
 
 -- --------------------------------------------------------
 
@@ -324,28 +426,37 @@ INSERT INTO `services` (`id_service`, `service`) VALUES
 CREATE TABLE `users` (
   `id_users` int(11) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(75) NOT NULL,
   `p_nombre` varchar(45) NOT NULL,
   `s_nombre` varchar(45) DEFAULT NULL,
   `p_apellido` varchar(45) NOT NULL,
   `s_apellido` varchar(45) DEFAULT NULL,
   `contactos_id_contacto` int(11) NOT NULL,
-  `roles_id_rol` int(11) NOT NULL
+  `roles_id_rol` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `token` varchar(75) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id_users`, `email`, `password`, `p_nombre`, `s_nombre`, `p_apellido`, `s_apellido`, `contactos_id_contacto`, `roles_id_rol`) VALUES
-(315192503, 'diego@gmail.com', '1022322859', 'Diego', 'Andrés', 'Triana', '', 315192503, 2),
-(651235022, 'stivenjhojan011@gmail.com', '1022322859', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 651235022, 1),
-(662021904, 'dieacasallas111@misena.edu.co', 'Diego123', 'Diego ', 'Andrés ', 'Casallas ', 'Suárez', 662021904, 3),
-(912701116, 'estiven@gmail.com', '123', 'estiven', 'Andrés', 'Triana', '', 912701116, 2),
-(976204529, 'pepito@gmail.com', '1022322859', 'Pepito', 'Perez', 'Ortiz', '', 976204529, 1),
-(1842030796, 'ramos@gmail.com', '1022322859', 'Andres', 'Felipe', 'Ramos', 'Ricaurte', 1842030796, 1),
-(1869790832, 'jhostriana11@misena.edu.co', '1022322859', 'Jhojann', 'Estiven ', 'Triana', '', 1869790832, 3),
-(2050730869, 'delfina@gmail.com', '1022322859', 'Delfina', 'Andrés', 'Triana', 'Osorio', 2050730869, 3);
+INSERT INTO `users` (`id_users`, `email`, `password`, `p_nombre`, `s_nombre`, `p_apellido`, `s_apellido`, `contactos_id_contacto`, `roles_id_rol`, `created_at`, `token`) VALUES
+(194491129, 'Mariagomez12@gmail.com', '$2y$10$xKlmmN4Vbt/NEfOoBXG3DuaTZVkTvCmczF2L1T', 'Maria', 'Alejandra', 'Gomez ', '', 194491129, 1, '2022-03-14 17:24:32', NULL),
+(315192503, 'diego@gmail.com', '1022322859', 'Diego', 'Andrés', 'Triana', '', 315192503, 2, '2022-03-14 17:24:32', NULL),
+(427318569, 'camilorodriguez@gmail.com', '$2y$10$XiL/muAS/1MK4nkOS7sLTuYxC/A24T.vXh1pev', 'camilo ', 'Andres', 'Saenz ', 'rodriguez ', 427318569, 1, '2022-03-14 17:24:32', NULL),
+(441616206, 'marcelaGgozo@gmail.com', '$2y$10$bUJgIuMV7OZgeFVSUsFVgubPyg2.Ipn0PWBhEF', 'Alma ', 'Marcela', 'Gozo', 'Areas', 441616206, 1, '2022-03-14 17:24:32', NULL),
+(459769172, 'stivenjhojan011@gmail.com', '$2y$10$YmU.kdcOnu1Qz0880E4SVOh2MQE6UGheFx2RJlxETM6bBugA7xla2', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 459769172, 1, '2022-03-14 19:17:45', NULL),
+(662021904, 'dieacasallas111@misena.edu.co', 'Diego123', 'Diego ', 'Andrés ', 'Casallas ', 'Suárez', 662021904, 3, '2022-03-14 17:24:32', NULL),
+(709096698, 'danielserrano@gmail.com', '$2y$10$Or82.VgZhm3p.wjEiUdj3.rp8RaseoAHsDDHY0', 'Daniel ', 'Santiago ', 'Serrano ', 'Bohorquez ', 709096698, 1, '2022-03-14 17:24:32', NULL),
+(739496694, 'solgama12@gmail.com', '$2y$10$V0cgGg6tB/f1s1bM1SrWRe2ho6Qmda4sXuDN4T', 'Sol', 'Anne', 'Gama', 'Roso', 739496694, 1, '2022-03-14 17:24:32', NULL),
+(739544277, 'jhostriana11@misena.edu.co', '$2y$10$UIBLZJj/Mps.8QhRGvNIjeKzJnimiQPJiBx641H8IdBe.jTmvxb.a', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 739544277, 3, '2022-03-14 20:02:43', 'ac45a291991abeb6779dc34d9b98c56b1621933018'),
+(889996061, 'julianagaitan@gmail.com', '$2y$10$nnSeQzP1YyBL.HHDpxAUNO455vaBJfnWltvCFi', 'Deysi ', 'Juliana ', 'Gaitan ', 'Florez', 889996061, 1, '2022-03-14 17:24:32', NULL),
+(912701116, 'estiven@gmail.com', '123', 'estiven', 'Andrés', 'Triana', '', 912701116, 2, '2022-03-14 17:24:32', NULL),
+(976204529, 'pepito@gmail.com', '1022322859', 'Pepito', 'Perez', 'Ortiz', '', 976204529, 1, '2022-03-14 17:24:32', NULL),
+(1319186859, 'andresricaute98@gmail.com', '$2y$10$7JPvbjDDbFYEd54aFoI9e.Kbc0yueo7JCNlZpr', 'andres ', 'felipe', 'ramos', 'ricaurte', 1319186859, 1, '2022-03-14 17:24:32', NULL),
+(1842030796, 'ramos@gmail.com', '1022322859', 'Andres', 'Felipe', 'Ramos', 'Ricaurte', 1842030796, 1, '2022-03-14 17:24:32', NULL),
+(2050730869, 'delfina@gmail.com', '1022322859', 'Delfina', 'Andrés', 'Triana', 'Osorio', 2050730869, 3, '2022-03-14 17:24:32', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -409,14 +520,6 @@ ALTER TABLE `reservations_has_menus`
   ADD KEY `fk_reservations_has_menus_reservations1_idx` (`reservations_id_reservation`);
 
 --
--- Indices de la tabla `reservations_has_menus1`
---
-ALTER TABLE `reservations_has_menus1`
-  ADD PRIMARY KEY (`reservations_id_reservation`,`menus_id_menu`),
-  ADD KEY `fk_reservations_has_menus1_menus1_idx` (`menus_id_menu`),
-  ADD KEY `fk_reservations_has_menus1_reservations1_idx` (`reservations_id_reservation`);
-
---
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -469,13 +572,6 @@ ALTER TABLE `reservations`
 ALTER TABLE `reservations_has_menus`
   ADD CONSTRAINT `fk_reservations_has_menus_menus1` FOREIGN KEY (`menus_id_menu`) REFERENCES `menus` (`id_menu`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_reservations_has_menus_reservations1` FOREIGN KEY (`reservations_id_reservation`) REFERENCES `reservations` (`id_reservation`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `reservations_has_menus1`
---
-ALTER TABLE `reservations_has_menus1`
-  ADD CONSTRAINT `fk_reservations_has_menus1_menus1` FOREIGN KEY (`menus_id_menu`) REFERENCES `menus` (`id_menu`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_reservations_has_menus1_reservations1` FOREIGN KEY (`reservations_id_reservation`) REFERENCES `reservations` (`id_reservation`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `users`
