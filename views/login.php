@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="400330881700-gvo8e5jgrp6dr9opebnpkmdhl2qsoovg.apps.googleusercontent.com">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
     <title>Login</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body class="loginBody">
@@ -55,6 +57,11 @@ https://aux.iconspalace.com/uploads/209736328409232067.png
                         <input type="password" class="form-control" id="" name="password" required>
                         <br>
                         <input type="submit" class="btn btn-primary" value="Ingresar">
+                        <br><br>
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <br>
+                        <a href="<?php echo constant('URL') ?>/password_reset">¿Olvidaste tu contraseña?</a>
+
                     </form>
                 </div>
             </center>
@@ -68,6 +75,18 @@ https://aux.iconspalace.com/uploads/209736328409232067.png
     <script>
         window.onload = function() {
             document.getElementById("loading").hidden = true;
+        }
+
+
+        //session google
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            alert(profile.getEmail());
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
     </script>
 </body>

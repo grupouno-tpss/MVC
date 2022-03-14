@@ -14,6 +14,7 @@ class login extends Controller
     public function consultUser()
     {
         extract($_REQUEST);
+        echo "<br>" . $_REQUEST['password'] . "<br>";
         //echo "<script>alert('funcion consultar usuario')</script>";
         $this->loadModel('usuario');
         $this->nameClass->login(

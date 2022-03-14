@@ -8,49 +8,26 @@ require  'phpmailer/phpmailer/src/Exception.php';
 require  'phpmailer/phpmailer/src/PHPMailer.php';
 require  'phpmailer/phpmailer/src/SMTP.php';
 
-extract($_REQUEST);
-
-if (isset($_REQUEST['message'])) {
-    session_start();
-    $init = new email("RESERVACIÓN ICHIRAKU", $_SESSION['user_email'], $_REQUEST['email'],);
-    $init->contact();
-}
-
 class email extends Controller
 {
-
-    private $bodyMessage;
-    private $from;
+    private $from_name;
     private $address;
     private $asunto;
+    private $body;
 
-    public function __construct(
-        $asunto,
-        $from,
-        $address
-    ) {
-        $this->asunto = $asunto;
-        $this->from = $from;
+    public function __construct($from_name, $address, $asunto, $body)
+    {
+        $this->from_name = $from_name;
         $this->address = $address;
+        $this->asunto = $asunto;
+        $this->body = $body;
+
+        $this->send();
     }
 
-    public function render()
+    public function send()
     {
-        parent::__construct();
-
-        $this->view->render("email", null);
-    }
-
-    public function sendEmail(
-        $id,
-        $fecha,
-        $hora,
-        $cantPersonas,
-        $tipoServicio,
-        $especificacion,
-        $menu
-    ) {
-        echo "Hola desde el email";
+        require 'vendor/autoload.php';
         //Load Composer's autoloader
         require 'vendor/autoload.php';
 
@@ -69,12 +46,8 @@ class email extends Controller
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom(constant('MAIL-FROM'), 'Ichiraku Ramen');
-            $mail->addAddress($_SESSION['user_email'], 'Jhojan');     //Add a recipient
-            // $mail->addAddress('ellen@example.com');               //Name is optional
-            // $mail->addReplyTo('info@example.com', 'Information');
-            // $mail->addCC('cc@example.com');
-            // $mail->addBCC('bcc@example.com');-
+            $mail->setFrom(constant('MAIL-FROM'), "ICHIRAKU RAMEN");
+            $mail->addAddress($this->address, $this->from_name);     //Add a recipient
 
             //Attachments
             // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
@@ -82,66 +55,9 @@ class email extends Controller
 
             //Content
 
-            $body =  $id;
-
-
-            include 'views/emails/reservation.php';
-
-
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $this->asunto;
-            $mail->Body    = $reservation;
-            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-            $mail->send();
-            echo 'El mensaje ha sido enviado';
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }
-    }
-
-    //CONTACT
-
-    public function contact()
-    {
-        $text = $_REQUEST['message'];
-        echo "Hola desde el email";
-        //Load Composer's autoloader
-        require 'vendor/autoload.php';
-
-        //Create an instance; passing `true` enables exceptions
-        $mail = new PHPMailer(true);
-
-        try {
-            //Server settings
-            $mail->SMTPDebug = 0;                      //Enable verbose debug output
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'stivenjhojan011@gmail.com';                     //SMTP username
-            $mail->Password   = constant('MAIL-PASSWORD');                               //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-            //Recipients
-            $mail->setFrom(constant('MAIL-FROM'), 'Ichiraku Ramen');
-            $mail->addAddress($_REQUEST['email'], $_SESSION['user_pNombre'] . " " . $_SESSION['user_pApellido'] . " - " . $_SESSION['user_id']);     //Add a recipient
-            // $mail->addAddress('ellen@example.com');               //Name is optional
-            // $mail->addReplyTo('info@example.com', 'Information');
-            // $mail->addCC('cc@example.com');
-            // $mail->addBCC('bcc@example.com');-
-
-            //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-            //Content
-
-            include 'views/emails/contact.php';
-
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = $this->asunto;
-            $mail->Body    = $contact;
+            $mail->Body    = $this->body;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();

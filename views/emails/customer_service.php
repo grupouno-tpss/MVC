@@ -1,5 +1,5 @@
 <?php
-    $contact = '
+    $customer_service_plant = '
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -63,26 +63,10 @@
             <h3 style="font-size: 200%; color: white;">Ichiraku Ramen</h3>
           </div>
         </nav>
-    
         <div>
-          <center>
-            <table style="width: 80%; border-radius: 5px;">
-              <br />
-              <tr>
-                <td>
-                  Enviado por: <br />
-                  '.$_SESSION['user_pNombre']. " " . $_SESSION['user_pApellido'].'
-                </td>
-                <td>
-                  Correo electrónico <br />
-                  '. $_SESSION['user_email'].'
-                </td>
-              </tr>
-            </table>
-            <br />
-          </center>
+          <h3>Atención al usuario</h3>
         </div>
-    
+        <hr><br>
         <div>
           <div
             style="
@@ -93,7 +77,7 @@
               color: #141619;
             "
           >
-            '.$text.'
+            '.$message_service.'
         </div>
         <br /><br />
         <a href="#">Terminos y condiciones</a>

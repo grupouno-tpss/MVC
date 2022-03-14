@@ -11,22 +11,30 @@
     <link rel="stylesheet" href="../css/reserva.css">
     <title>Reservar</title>
     <style>
+
+        .disabled{
+            background-color: rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
         .sect_reservation {
             padding-top: 5%;
         }
 
         .r_calendar {
-            background-color: powderblue;
+            background-image: url("https://i.pinimg.com/originals/ac/02/9d/ac029d2b5e611fba3ce3df97aff53ff4.jpg");
         }
 
         .r_info {
-            background-color: teal;
-            color: white;
+            background-image: url("https://i.pinimg.com/originals/7e/60/ef/7e60eff171c903078ed8c67f2d1c69ce.jpg");
+            background-position: center;
+            color: black;
         }
 
         .r_menu {
-            background-color: rosybrown;
+            background-image: url("https://i.pinimg.com/736x/58/50/79/585079969fc38f71e24ceb22beb7f395.jpg");
             color: white;
+            background-position: center;
+            background-size: 100% 100%;
         }
 
         .r_data {
@@ -37,9 +45,53 @@
             padding: 30px;
         }
 
-        .r_send{
+        .r_send {
             background-color: teal;
         }
+
+        #calendarioTitle {
+            background-image: url("https://scontent.fbog12-1.fna.fbcdn.net/v/t39.30808-6/275448094_937848416934059_1168542618981823411_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_eui2=AeGQNcxQROY390MM9tktsc3BGGbac6ickygYZtpzqJyTKCEwGasuMRH3XlmM4wcGuIY&_nc_ohc=HXZ6-RA7RPkAX8iBVwJ&_nc_oc=AQmLp2kqjK-sLkV2gl6l0SazKN4tzIOTcu8jRfS_wzS_SyFdo9G2Wde0iTFFu232_TI&_nc_ht=scontent.fbog12-1.fna&oh=00_AT_M3oPVWXtYhoW8_E6Gh5mmvdpg-ZUT_jAPDN0TlFUuQA&oe=623080DC");
+            background-attachment: fixed;
+            background-position-y: 20px;
+            height: 160px;
+            color: white;
+            padding-left: 5%;
+            padding-top: 20px;
+        }
+
+        #menusTitle {
+            background-image: url("https://scontent.fbog9-1.fna.fbcdn.net/v/t39.30808-6/275385022_936820563703511_76851392572587784_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_ohc=AAah9Bv5m1cAX8W90Lg&_nc_ht=scontent.fbog9-1.fna&oh=00_AT9h8TEYr_FBVeP-W3pxi9xUl8-7pxClfvwgBWFVygHy6w&oe=622F77A1");
+            background-attachment: fixed;
+            background-position-y: -80px;
+            top: 10px;
+            height: 160px;
+            color: white;
+            padding-left: 45%;
+            padding-top: 20px;
+            align-content: center;
+            opacity: 80%
+        }
+
+        #datosTitle {
+            background-image: url("https://scontent.fbog12-1.fna.fbcdn.net/v/t39.30808-6/275448094_937848416934059_1168542618981823411_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_eui2=AeGQNcxQROY390MM9tktsc3BGGbac6ickygYZtpzqJyTKCEwGasuMRH3XlmM4wcGuIY&_nc_ohc=HXZ6-RA7RPkAX8iBVwJ&_nc_oc=AQmLp2kqjK-sLkV2gl6l0SazKN4tzIOTcu8jRfS_wzS_SyFdo9G2Wde0iTFFu232_TI&_nc_ht=scontent.fbog12-1.fna&oh=00_AT_M3oPVWXtYhoW8_E6Gh5mmvdpg-ZUT_jAPDN0TlFUuQA&oe=623080DC");
+            background-attachment: fixed;
+            background-position-y: -480px;
+            bottom: -100px;
+            height: 160px;
+            color: white;
+            padding-left: 5%;
+            padding-top: 20px;
+            align-content: center;
+            opacity: 80%;
+        }
+
+        .divisores {
+            display: inline-block;
+            color: white;
+            font-size: 325%;
+        }
+
+        .divisores+h3 {}
     </style>
     <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
 </head>
@@ -61,18 +113,33 @@
             <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
         </svg>
     </button>
+    <div id=calendarioTitle>
+        <h1 class="divisores">Calendario</h1>
+        <h3>Selecciona el dia</h3>
+    </div>
     <section class="sect_reservation r_calendar">
         <?php
 
         include "layouts/reserva/calendario.php";
         ?>
     </section>
+    <div id=datosTitle>
+        <h1 class="divisores">Datos adicionales</h1>
+        <h3>Ingresa la información de la reserva</h3>
+    </div>
     <section class="sect_reservation r_info">
-        <?php
+        <div class="content">
+            <?php
 
-        include "layouts/reserva/datos.php";
-        ?>
+            include "layouts/reserva/datos.php";
+            ?>
+        </div>
+        <br>
     </section>
+    <div id=menusTitle>
+        <h1 class="divisores">Menú</h1>
+        <h3>selecciona tu pedido</h3>
+    </div>
     <section class="sect_reservation r_menu">
         <?php
 
@@ -80,6 +147,7 @@
         ?>
     </section>
     <br>
+
 
     <!-- Modal de hora fecha -->
 
@@ -237,10 +305,31 @@
             <script>
                 function blockDates () {
                 if(document.getElementById("' . $dateID . '")) {
-                document.getElementById("' . $dateID . '").style.background= "gray";
-                document.getElementById("' . $dateID . '").id = "not";
+                //document.getElementById("' . $dateID . '").style.background= "gray";
+                document.getElementById("' . $dateID . '").classList.add("disabled");
+                document.getElementById("' . $dateID . '").name="disabled";
+                }else{
+                    alert("No existe");
                 }
-                }
+            }
+
+            function backMonth() {
+                deleteItemsCalendar(month);
+                month = month - 1;
+                loadItemsCalendar(month);
+                inner(month);
+                blockDates();
+                console.log(month);
+            }
+            
+            function nextMonth() {
+                deleteItemsCalendar(month);
+                month = month + 1;
+                loadItemsCalendar(month);
+                inner(month);
+                blockDates();
+                console.log(month);
+            }
                 blockDates();
             </script>
         ';

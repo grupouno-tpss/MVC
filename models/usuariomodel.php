@@ -1,4 +1,7 @@
 <?php
+
+require 'controllers/email.php';
+
 class usuarioModel extends Model
 {
 
@@ -15,14 +18,15 @@ class usuarioModel extends Model
 
         while ($row = mysqli_fetch_assoc($cresult)) {
             if ($row) {
-                $password = $row['password'];
+                $password_en = $row['password'];
             }
         }
         //consultar usuario
         $usuario = "SELECT id_users, p_nombre, s_nombre, p_apellido, s_apellido, 
         password, email, rol, id_rol, num_telefono, num_celular FROM users U INNER JOIN roles 
         ON roles.id_rol = U.roles_id_rol INNER JOIN contactos C ON C.id_contacto =U.id_users
-        WHERE email = '$email' AND password = '$password'";
+        WHERE email = '$email' AND U.password = '$password_en'";
+        echo $password_en;
 
         $result = mysqli_query($this->db, $usuario);
 
@@ -33,9 +37,10 @@ class usuarioModel extends Model
         while ($row = mysqli_fetch_assoc($result)) {
 
             $verify = password_verify($password, $row['password']);
-            echo $verify;
+            echo "<br> Verify: " . $verify . "<br>";
 
-                if ($row) {
+            if ($row) {
+                if ($verify) {
                     echo $row['password'] . "<br>";
                     $_SESSION['user_pNombre'] = $row['p_nombre'];
                     $_SESSION['user_sNombre'] = $row['s_nombre'];
@@ -48,12 +53,73 @@ class usuarioModel extends Model
                     $_SESSION['user_rolID'] = $row['id_rol'];
                     $_SESSION['user_celular'] = $row['num_celular'];
                     $_SESSION['user_telefono'] = $row['num_telefono'];
-                } else {
-                    session_destroy();
-                    echo "no hay usuario";
-                    //echo "<script>location.href ='" . constant('URL') . "/login'</script>";
                 }
+            } else {
+                session_destroy();
+                echo "no hay usuario";
+                //echo "<script>location.href ='" . constant('URL') . "/login'</script>";
             }
+        }
+    }
+
+    public function verify_email($email)
+    {
+        $token = md5($email) . rand();
+
+        echo $token;
+
+        $query_verify_email = "SELECT email FROM users WHERE email = '$email'";
+        $query_token = "UPDATE users SET token='$token' WHERE email = '$email'";
+
+        $result_email = mysqli_query($this->db, $query_verify_email);
+
+        if (mysqli_fetch_assoc($result_email)) {
+            echo "yea";
+            // mysqli_query($this->db, $query_token);
+        } else {
+            echo "<script>alert('No se ha encontrado un usuario con este correo registrador en nuestra base de datos.');</script>";
+        }
+        mysqli_query($this->db, $query_token);
+
+        $query_consult_token = "SELECT token FROM users WHERE token = '$token'";
+        $result_token = mysqli_query($this->db, $query_consult_token);
+
+        while ($row = mysqli_fetch_assoc($result_token)) {
+            $c = new email(
+                'CLIENTE ICHIRAKU',
+                $email,
+                "RECUPERAR CONTRASEÑA",
+                "Para cambiar su contraseña porfavor ingrese al siguiente enlace: " . constant('URL') . "/password_reset/verify?t=" . $token . ""
+            );
+        }
+    }
+
+    public function verify_token($token)
+    {
+        $query = "SELECT token FROM users WHERE token = '$token'";
+        $result = mysqli_query($this->db, $query);
+
+        if (mysqli_fetch_assoc($result)) {
+            echo "Eres el usuario";
+            return true;
+        } else {
+            echo "No eres el usuario, mentiroso :|";
+            return false;
+        }
+    }
+
+    public function change_password($token, $password)
+    {
+        echo $token . "<br>";
+
+        $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        $query = mysqli_query($this->db, "UPDATE `users` SET `password`='$password_hash' WHERE token = '$token'");
+
+        if ($query) {
+            echo "<script>alert('Se ha cambiado la contraseña 😀')</script>";
+        } else {
+            echo "ha ocurrido un error";
+        }
     }
 
     public function insertar(

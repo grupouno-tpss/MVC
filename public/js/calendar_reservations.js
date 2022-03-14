@@ -32,12 +32,11 @@ function loadItemsCalendar(m) {
         document.getElementById("calendar").appendChild(div);
 
         div.addEventListener("click", (e) => {
-            if (e.target.name == "disabled") {
+            if (e.target.id == "not") {
                 alert("Fecha no disponible");
             } else {
-                document.getElementById("modalCalendar").hidden = false;
-                document.getElementById("dateModal").value = e.target.id;
-                dataReserva[0] = e.target.id;
+                document.getElementById('date').value = e.target.id;
+                e.target.classList.add('bg-primary');
             }
         });
     }
@@ -50,6 +49,7 @@ function deleteItemsCalendar(m) {
 
     for (let index = 1; index <= new Date(year, month, 0).getDate(); index++) {
         console.log(year + "/" + m + "/" + index);
+        document.getElementById("calendar").removeChild(document.getElementById("not"));
         if (document.getElementById(year + "/" + m + "/" + index)) {
             document.getElementById("calendar").removeChild(document.getElementById(year + "/" + m + "/" + index));
         }
@@ -64,33 +64,23 @@ function inner(m) {
     }
 }
 
-// function backMonth() {
-//     deleteItemsCalendar(month);
-//     month = month - 1;
-//     loadItemsCalendar(month);
-//     inner(month);
-//     blockDates();
-//     console.log(month);
-// }
+function backMonth() {
+    deleteItemsCalendar(month);
+    month = month - 1;
+    loadItemsCalendar(month);
+    inner(month);
+    blockDates();
+    console.log(month);
+}
 
-// function nextMonth() {
-//     deleteItemsCalendar(month);
-//     month = month + 1;
-//     loadItemsCalendar(month);
-//     inner(month);
-//     blockDates();
-//     console.log(month);
-// }
+function nextMonth() {
+    deleteItemsCalendar(month);
+    month = month + 1;
+    loadItemsCalendar(month);
+    inner(month);
+    blockDates();
+    console.log(month);
+}
 
 loadItemsCalendar(month);
 inner(month);
-
-//close, select modal
-
-document.getElementById("closeModal").addEventListener("click", () => {
-    document.getElementById("modalCalendar").hidden = true;
-});
-document.getElementById("selectModal").addEventListener("click", () => {
-    document.getElementById("modalCalendar").hidden = true;
-    dataReserva[1] = document.getElementById("hourR").value;
-});

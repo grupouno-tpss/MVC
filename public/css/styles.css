@@ -2,6 +2,12 @@ table {
     overflow: auto;
 }
 
+.root {
+    background-image: url("https://fondosmil.com/fondo/11825.jpg");
+    color: white;
+    scroll-margin: 100px;
+}
+
 
 /*RESERVA*/
 

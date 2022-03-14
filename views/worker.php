@@ -26,7 +26,7 @@
     include "layouts/nav.php";
     ?>
     <div class="content">
-        <div class="section">
+        <div class="section overflow-auto">
             <a href="<?php echo constant('URL') ?>/report/reservations" class="btn btn-primary">Descargar informe (.xml)</a>
             <?php
             require "layouts/reservaciones.php";

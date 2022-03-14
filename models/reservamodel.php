@@ -91,18 +91,18 @@ class reservaModel extends Model
         }
 
         $menu = implode(',', $arr_menu);
-        $email = new email("CONFIRMACIÓN DE RESERVA ICHIRAKU RAMEN", 
-        "stivenjhojan011@gmail.com",
-         $_SESSION['user_email']);
-        $email->sendEmail(
-            $id,
-            $fecha,
-            $hora,
-            $cantPersonas,
-            $tipoServicio,
-            $especificacion,
-            $menu
-        );
+        // $email = new email("CONFIRMACIÓN DE RESERVA ICHIRAKU RAMEN", 
+        // "stivenjhojan011@gmail.com",
+        //  $_SESSION['user_email']);
+        // $email->sendEmail(
+        //     $id,
+        //     $fecha,
+        //     $hora,
+        //     $cantPersonas,
+        //     $tipoServicio,
+        //     $especificacion,
+        //     $menu
+        // );
 
         //echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
@@ -183,7 +183,8 @@ class reservaModel extends Model
 
     public function updateReservation($id, $date, $amount_people, $hour, $detail, $menu)
     {
-        $dateExplode = explode('-', $date);
+        echo $date;
+        $dateExplode = explode('/', $date);
         echo $dateExplode[2] . '/' . $dateExplode[1] . '/' . $dateExplode[0];
         $dates = "UPDATE `dates` SET `date`='" . $dateExplode[0] . '/' . $dateExplode[1] . '/' . $dateExplode[2] . "' 
         WHERE id_date = $id";
@@ -228,7 +229,7 @@ class reservaModel extends Model
 
         mysqli_query($this->db, $details);
         mysqli_query($this->db, $queryUpdate);
-        echo "<script>location.href = '" . constant('URL') . "/reservaciones'</script>";
+        //echo "<script>location.href = '" . constant('URL') . "/reservaciones'</script>";
     }
 
     public function changeStatus($id)

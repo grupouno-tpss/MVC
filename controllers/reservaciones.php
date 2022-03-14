@@ -49,6 +49,8 @@ class reservaciones extends Controller
     public function updateReservation()
     {
         extract($_REQUEST);
+
+        echo $_REQUEST['date'];
         $this->loadModel('reserva');
         $this->nameClass->updateReservation(
             $_REQUEST['IDreserva'],

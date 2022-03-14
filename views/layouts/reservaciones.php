@@ -2,7 +2,7 @@
 
 
 <!--Modal de "modificar reserva"-->
-<form action="<?php echo constant('URL') ?>/reservaciones/updateReservation" method="post">
+<form action="<?php echo constant('URL') ?>/reservaciones/updateReservation">
     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -11,12 +11,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <label for="">Fecha</label>
+                    <input type="text" class="form-control" id="date" name="date">
                     <?php
                     require "views/layouts/reserva/calendario.php";
                     ?>
                     <input type="text" id="IDreserva" name="IDreserva" hidden>
-                    <label for="">Fecha</label>
-                    <input type="date" class="form-control" id="date" name="date">
                     <label for="">Hora</label>
                     <select class="form-select" aria-label="Default select example" name="schedule">
                         <?php
@@ -94,7 +94,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?php echo constant('URL') ?>/email/contact" method="post">
-                    <input type="text" id="email_contact"  name="email" hidden>
+                    <input type="text" id="email_contact" name="email" hidden>
                     <label for="message">Ingrese el mensaje</label>
                     <textarea name="message" id="message" class="form-control"></textarea>
                     <div class="modal-footer">
@@ -142,7 +142,7 @@
                         <td id="' . $reserve['id_reservation'] . '"></td>
                         <td>' . $reserve['email'] . ' <br>
                         <!-- Button trigger modal -->
-                        <button type="button" onclick="email(`' . $reserve['email'] . '`)" class="btn" data-bs-toggle="modal" data-bs-target="#contact">
+                        <button type="button" onclick="email(`' . $reserve['email'] . '`)" class="btn text-light" style="text-decoration: underline;" data-bs-toggle="modal" data-bs-target="#contact">
                             Escribir mensaje
                         </button></td>
                         <td>
@@ -196,4 +196,4 @@
         document.getElementById('email_contact').value = email;
     }
 </script>
-<script src="<?php echo constant('URL') ?>/public/js/calendar.js"></script>
+<script src="<?php echo constant('URL') ?>/public/js/calendar_reservations.js"></script>
