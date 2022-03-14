@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="../css/reserva.css">
     <title>Reservar</title>
     <style>
-
-        .disabled{
-            background-color: rgba(0,0,0,0.5);
+        .disabled {
+            background-color: rgba(0, 0, 0, 0.5);
             pointer-events: none;
         }
+
         .sect_reservation {
             padding-top: 5%;
         }
@@ -298,39 +298,13 @@
     <script src="<?php echo constant('URL') ?>/public/js/calendar.js"></script>
 
     <?php
+    echo "<script> let invalid_dates = []; </script>";
     foreach ($this->value2 as $date) {
         $dateExplode = explode('-', $date['date']);
         $dateID = $dateExplode[0] . "/" . intval($dateExplode[1]) . "/" . intval($dateExplode[2]);
         echo '
             <script>
-                function blockDates () {
-                if(document.getElementById("' . $dateID . '")) {
-                //document.getElementById("' . $dateID . '").style.background= "gray";
-                document.getElementById("' . $dateID . '").classList.add("disabled");
-                document.getElementById("' . $dateID . '").name="disabled";
-                }else{
-                    alert("No existe");
-                }
-            }
-
-            function backMonth() {
-                deleteItemsCalendar(month);
-                month = month - 1;
-                loadItemsCalendar(month);
-                inner(month);
-                blockDates();
-                console.log(month);
-            }
-            
-            function nextMonth() {
-                deleteItemsCalendar(month);
-                month = month + 1;
-                loadItemsCalendar(month);
-                inner(month);
-                blockDates();
-                console.log(month);
-            }
-                blockDates();
+                invalid_dates.push("' . $dateID . '");
             </script>
         ';
     }
@@ -338,6 +312,22 @@
     <?php
     require "layouts/footer.php";
     ?>
+
+    <!--INVALID DATES-->
+
+    <script>
+        console.log("INVALID DATES");
+
+        function blockDates() {
+            invalid_dates.forEach(element => {
+                console.log(element);
+                if (document.getElementById(element)) {
+                    document.getElementById(element).classList.add("disabled");
+                }
+            });
+        }
+        blockDates();
+    </script>
 
 
     <!--RESERVACIONES-->

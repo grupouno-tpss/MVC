@@ -64,23 +64,23 @@ function inner(m) {
     }
 }
 
-// function backMonth() {
-//     deleteItemsCalendar(month);
-//     month = month - 1;
-//     loadItemsCalendar(month);
-//     inner(month);
-//     blockDates();
-//     console.log(month);
-// }
+function backMonth() {
+    deleteItemsCalendar(month);
+    month = month - 1;
+    loadItemsCalendar(month);
+    inner(month);
+    blockDates();
+    console.log(month);
+}
 
-// function nextMonth() {
-//     deleteItemsCalendar(month);
-//     month = month + 1;
-//     loadItemsCalendar(month);
-//     inner(month);
-//     blockDates();
-//     console.log(month);
-// }
+function nextMonth() {
+    deleteItemsCalendar(month);
+    month = month + 1;
+    loadItemsCalendar(month);
+    inner(month);
+    blockDates();
+    console.log(month);
+}
 
 loadItemsCalendar(month);
 inner(month);
