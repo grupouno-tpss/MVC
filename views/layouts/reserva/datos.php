@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" id="dates_r">
     <h2>2. Datos adicionales</h2>
     <div>
         <form id="datosAdicionales">

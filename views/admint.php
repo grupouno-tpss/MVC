@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
     <style>
         body {
-            background-image: url(https://fondosmil.com/fondo/11825.jpg);
+            background-image: url("https://fondosmil.com/fondo/11825.jpg"); /*//!tomado de Fondos mil*/ 
             color: white;
             scroll-margin: 100px;
         }
@@ -63,7 +63,7 @@
     require "layouts/nav.php";
     ?>
 
-    <!--Ventana modal "añadir usuario"-->
+    <!--//*Ventana modal "añadir usuario"-->
 
     <div class="modal fade" style="color: black;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

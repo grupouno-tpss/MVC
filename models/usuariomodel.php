@@ -1,7 +1,5 @@
 <?php
 
-require 'controllers/email.php';
-
 class usuarioModel extends Model
 {
 
@@ -64,6 +62,11 @@ class usuarioModel extends Model
 
     public function verify_email($email)
     {
+
+        //EMAIL CONTROLLER
+
+        require "controllers/email.php";
+
         $token = md5($email) . rand();
 
         echo $token;

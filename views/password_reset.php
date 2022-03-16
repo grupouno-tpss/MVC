@@ -19,11 +19,14 @@
             <div class="collapse navbar-collapse" id="navbarText navLogin">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <img src="https://ichirakuramenco.com/wp-content/uploads/2020/05/cropped-Logo1-1-1-4.png" width="100px" />
+                    <!--//!Tomado de Ichirakuramenco-->
                     <img src="https://ichirakuramenco.com/wp-content/uploads/elementor/thumbs/LOGO-CHI-GRAN-p9tyk7dshpshzgdlw2r1j5budzbjvxszg3avmoxhu0.png" alt="" width="100px" />
+                    <!--//!Tomado de Ichirakuramenco-->
                 </ul>
                 <span class="navbar-text">
                     <button class="btn btn-dark">
                         <img class="dlc" src="https://aux.iconspalace.com/uploads/209736328409232067.png" alt="">
+                        <!-- /!tomado de icons palace -->
                         <a href="<?php echo constant('URL') ?>/registrarse">Registrarse</a>
                     </button>
                 </span>

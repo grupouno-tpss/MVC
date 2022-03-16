@@ -24,16 +24,19 @@
         }
 
         .r_calendar {
+            /*//!tomado de pin img*/
             background-image: url("https://i.pinimg.com/originals/ac/02/9d/ac029d2b5e611fba3ce3df97aff53ff4.jpg");
         }
 
         .r_info {
+            /*//!tomado de pin img*/
             background-image: url("https://i.pinimg.com/originals/7e/60/ef/7e60eff171c903078ed8c67f2d1c69ce.jpg");
             background-position: center;
             color: black;
         }
 
         .r_menu {
+            /*//!tomado de pin img*/
             background-image: url("https://i.pinimg.com/736x/58/50/79/585079969fc38f71e24ceb22beb7f395.jpg");
             color: white;
             background-position: center;
@@ -53,6 +56,7 @@
         }
 
         #calendarioTitle {
+            /*//!tomado de scontentk.com/ichirakuramenco/*/
             background-image: url("https://scontent.fbog12-1.fna.fbcdn.net/v/t39.30808-6/275448094_937848416934059_1168542618981823411_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_eui2=AeGQNcxQROY390MM9tktsc3BGGbac6ickygYZtpzqJyTKCEwGasuMRH3XlmM4wcGuIY&_nc_ohc=HXZ6-RA7RPkAX8iBVwJ&_nc_oc=AQmLp2kqjK-sLkV2gl6l0SazKN4tzIOTcu8jRfS_wzS_SyFdo9G2Wde0iTFFu232_TI&_nc_ht=scontent.fbog12-1.fna&oh=00_AT_M3oPVWXtYhoW8_E6Gh5mmvdpg-ZUT_jAPDN0TlFUuQA&oe=623080DC");
             background-attachment: fixed;
             background-position-y: 20px;
@@ -62,7 +66,9 @@
             padding-top: 20px;
         }
 
+            /*//!tomado de scontent*/
         #menusTitle {
+            /*//!tomado de facebook.com/ichirakuramenco/*/
             background-image: url("https://scontent.fbog9-1.fna.fbcdn.net/v/t39.30808-6/275385022_936820563703511_76851392572587784_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_ohc=AAah9Bv5m1cAX8W90Lg&_nc_ht=scontent.fbog9-1.fna&oh=00_AT9h8TEYr_FBVeP-W3pxi9xUl8-7pxClfvwgBWFVygHy6w&oe=622F77A1");
             background-attachment: fixed;
             background-position-y: -80px;
@@ -71,11 +77,13 @@
             color: white;
             padding-left: 45%;
             padding-top: 20px;
-            align-content: center;
+           
+            /*//!tomado de scontent*/ align-content: center;
             opacity: 80%
         }
 
         #datosTitle {
+            /*//!tomado de facebook.com/ichirakuramenco/*/
             background-image: url("https://scontent.fbog12-1.fna.fbcdn.net/v/t39.30808-6/275448094_937848416934059_1168542618981823411_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=a26aad&_nc_eui2=AeGQNcxQROY390MM9tktsc3BGGbac6ickygYZtpzqJyTKCEwGasuMRH3XlmM4wcGuIY&_nc_ohc=HXZ6-RA7RPkAX8iBVwJ&_nc_oc=AQmLp2kqjK-sLkV2gl6l0SazKN4tzIOTcu8jRfS_wzS_SyFdo9G2Wde0iTFFu232_TI&_nc_ht=scontent.fbog12-1.fna&oh=00_AT_M3oPVWXtYhoW8_E6Gh5mmvdpg-ZUT_jAPDN0TlFUuQA&oe=623080DC");
             background-attachment: fixed;
             background-position-y: -480px;
@@ -175,7 +183,7 @@
                 </select>
                 <br>
                 <button class="btn btn-secondary" id="closeModal">Cancelar</button>
-                <button class="btn btn-success" id="selectModal">Seleccionar fecha</button>
+                <button class="btn btn-success" id="selectModal">Seleccionar hora</button>
             </div>
         </div>
     </div>
@@ -214,7 +222,8 @@
     </section>
     </div>
     <!-- FORMULARIO RESERVA -->
-    <section class="sect_reservation r_send">
+    <section clas
+            /*//!tomado de upload wikipedia*/s="sect_reservation r_send">
         <div class="container">
             <center>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/2048px-Yes_Check_Circle.svg.png" alt="" width="200px" </center>
@@ -297,7 +306,6 @@
             document.getElementById("loading").hidden = true;
         }
     </script>
-    <script src="<?php echo constant('URL') ?>/public/js/calendar.js"></script>
 
     <?php
     echo "<script> let invalid_dates = []; </script>";
@@ -347,6 +355,7 @@
             }
         }
     </script>
+    <script src="<?php echo constant('URL') ?>/public/js/calendar.js"></script>
 </body>
 
 </html>

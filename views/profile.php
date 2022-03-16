@@ -19,6 +19,7 @@
     <div class="abs contentProfile co">
         <div>
             <br>
+            <!-- //!tomado de wallpaperaccess -->
             <img src="https://wallpaperaccess.com/full/5335569.jpg" class="pro" alt="">
             <h2 class="nameProfile"><?php echo $_SESSION['user_pNombre'] ?></h2>
         </div>

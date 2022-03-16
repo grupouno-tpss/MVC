@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
     <style>
         body {
-            background-image: url(https://fondosmil.com/fondo/11825.jpg);
+            /*//!tomado de fondos mil*/
+            background-image: url("https://fondosmil.com/fondo/11825.jpg");
             color: white;
         }
 

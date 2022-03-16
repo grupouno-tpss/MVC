@@ -21,7 +21,7 @@ class worker extends Controller
 
         $this->view->value2 = $this->getMenusReservations();
         $this->view->value3 = $this->getMenus();
-        $this->view->value5 = $this->users(1);
+        $this->view->value5 = $this->getUsers(1);
         $this->view->render('worker', $reserve);
     }
 
@@ -64,10 +64,9 @@ class worker extends Controller
         echo "<script>alert('status')</script>";
     }
 
-    public function users($rol)
+    public function getUsers($rol)
     {
         $this->loadModel('usuario');
-        $data = $this->nameClass->users($rol);
-        return $data;
+        return $this->nameClass->users(1);
     }
 }

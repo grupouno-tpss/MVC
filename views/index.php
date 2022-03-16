@@ -15,6 +15,7 @@
 <body>
     <nav>
         <img src="https://ichirakuramenco.com/wp-content/uploads/2020/07/cropped-Logo1-1-1-300x287.png" width="100">
+        <!--//!Tomado de Ichirakuramenco-->
         <p>Restaurantes</p>
         <p>Ichiraku</p>
         <p>Ichiland</p>
@@ -27,7 +28,9 @@
         <h1>¿Cual restaurante desea visitar?</h1>
         <div class="img">
             <img src="https://ichirakuramenco.com/wp-content/uploads/2020/07/cropped-Logo1-1-1-300x287.png" onclick="redirect(0)">
+            <!--//!Tomado de Ichirakuramenco-->
             <img src="https://ichirakuramenco.com/wp-content/uploads/2021/07/LOGO-CHI-GRAN-300x300.png" alt="">
+            <!--//!Tomado de Ichirakuramenco-->
         </div>
     </div>
     <div class="footer">

@@ -172,6 +172,7 @@
                     
                     <div class="card m-3 h-50% text-dark" style="width: 15rem; height: 500px;">
                     <img src="' . $menu['img_menu'] . '" class="card-img-top" style="height: 180px;" alt="...">
+                    <!--//!Imagen tomada de '.$menu['img_menu'].'-->
                     <div class="card-body">
                       <h5 class="card-title">' . $menu['title_menu'] . '</h5>
                       <p class="card-text h-10" style="overflow: auto; height: 150px;">' . $menu['description_menu'] . '</p>

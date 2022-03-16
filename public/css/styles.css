@@ -3,6 +3,7 @@ table {
 }
 
 .root {
+    /*//!Tomado de Fondos*/
     background-image: url("https://fondosmil.com/fondo/11825.jpg");
     color: white;
     scroll-margin: 100px;
@@ -112,7 +113,7 @@ table {
     background: linear-gradient(100deg, rgba(31, 0, 0, 1) 0%, rgba(161, 36, 36, 1) 52%, rgba(194, 1, 1, 1) 100%);
 }
 
-.btn-secondary {
+.btn -secondary {
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(18, 13, 13, 1) 52%);
     color: white;
     font-size: 130%;
@@ -131,6 +132,7 @@ table {
 /*Registrarse*/
 
 .ichi {
+    /*//!tomado de xtrafondos*/
     background-image: url("https://www.xtrafondos.com/wallpapers/one-piece-artwork-4011.jpg");
     background-repeat: no-repeat;
     background-size: 150%;
@@ -156,6 +158,7 @@ table {
 
 .bodyProfile {
     border: none;
+    /*//!tomado de wallpaper better*/
     background-image: url("https://p4.wallpaperbetter.com/wallpaper/265/279/817/anime-sky-cityscape-clouds-wallpaper-preview.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -247,7 +250,7 @@ table {
 /* .content {
     display: flex;
     align-items: center;
-} */
+   } */
 
 .contentProfile {
     content: border-box;
@@ -259,6 +262,7 @@ table {
 /*menus*/
 
 .ramen {
+    /*//!tomado de Fondos mil*/
     background-image: url("https://fondosmil.com/fondo/11825.jpg");
     color: white;
     scroll-margin: 100px;

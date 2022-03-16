@@ -37,7 +37,8 @@
         }
 
         body {
-            background-image: url(https://fondosmil.com/fondo/11825.jpg);
+            /*//!tomado de Fondos mil*/ 
+            background-image: url(https://fondosmil.com/fondo/11825.jpg); /*//!Tomado de Ichirakuramenco*/
             background-attachment: fixed;
         }
     </style>
@@ -49,6 +50,7 @@
     include "layouts/nav.php";
     ?>
     <div class="container">
+    <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
         <div class="alert alert-primary alert-dismissible fade show" role="alert">
             <?php echo $_SESSION['user_pNombre'] . " , bienvenid@. Nos alegra que estes aqui." ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -70,6 +72,13 @@
     <?php
     require "layouts/footer.php";
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+    </script>
 </body>
 
 </html>

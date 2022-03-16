@@ -27,17 +27,17 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `contactos`
 --
 
-CREATE TABLE `contactos` (
-  `id_contacto` int(11) NOT NULL,
-  `num_telefono` varchar(45) DEFAULT NULL,
-  `num_celular` varchar(45) NOT NULL
+CREATE TABLE contactos (
+  id_contacto int NOT NULL,
+  num_telefono varchar(45) DEFAULT NULL,
+  num_celular varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `contactos`
 --
 
-INSERT INTO `contactos` (`id_contacto`, `num_telefono`, `num_celular`) VALUES
+INSERT INTO contactos (id_contacto, num_telefono, num_celular) VALUES
 (129346812, '6987457', '3168594859'),
 (194491129, '6987457', '3168594859'),
 (315192503, '32454335', '324654'),
@@ -423,18 +423,18 @@ INSERT INTO `services` (`id_service`, `service`) VALUES
 -- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `users` (
-  `id_users` int(11) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `password` varchar(75) NOT NULL,
-  `p_nombre` varchar(45) NOT NULL,
-  `s_nombre` varchar(45) DEFAULT NULL,
-  `p_apellido` varchar(45) NOT NULL,
-  `s_apellido` varchar(45) DEFAULT NULL,
-  `contactos_id_contacto` int(11) NOT NULL,
-  `roles_id_rol` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `token` varchar(75) DEFAULT NULL
+CREATE TABLE users (
+  id_users int NOT NULL,
+  email varchar(45) NOT NULL,
+  password varchar(75) NOT NULL,
+  p_nombre varchar(45) NOT NULL,
+  s_nombre varchar(45) DEFAULT NULL,
+  p_apellido varchar(45) NOT NULL,
+  s_apellido varchar(45) DEFAULT NULL,
+  contactos_id_contacto int(11) NOT NULL,
+  roles_id_rol int(11) NOT NULL,
+  created_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  token varchar(75) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
