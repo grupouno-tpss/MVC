@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
     <title>Login</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 
 <body class="loginBody">
@@ -22,8 +23,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText navLogin">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    <img src="https://ichirakuramenco.com/wp-content/uploads/2020/05/cropped-Logo1-1-1-4.png" width="100px" />
-                    <img src="https://ichirakuramenco.com/wp-content/uploads/elementor/thumbs/LOGO-CHI-GRAN-p9tyk7dshpshzgdlw2r1j5budzbjvxszg3avmoxhu0.png" alt="" width="100px" />
+                    <img src="https://ichirakuramenco.com/wp-content/uploads/2020/05/cropped-Logo1-1-1-4.png" width="100px" / class="logo">
+                    <img src="https://ichirakuramenco.com/wp-content/uploads/elementor/thumbs/LOGO-CHI-GRAN-p9tyk7dshpshzgdlw2r1j5budzbjvxszg3avmoxhu0.png" alt="" width="100px" / class="logo">
                 </ul>
                 <span class="navbar-text">
                     <button class="btn btn-dark">
@@ -40,7 +41,7 @@
 
     <div class="d-flex align-items-center justify-content-center m-1 p-4" style="height: 100vh;">
 
-        <div class="loginForm d-flex align-items-center justify-content-center text-white">
+        <div class="loginForm d-flex align-items-center justify-content-center text-white item hover">
             <center>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
@@ -102,6 +103,13 @@
             direct_login.hidden = false;
         }
     </script>
+    <script src="<?php echo constant('URL')?>/public/js/animations_gsap.js"></script>
+
+    <script>
+        let logo = new animations();
+        logo.logo();
+    </script>
+
 </body>
 
 </html>

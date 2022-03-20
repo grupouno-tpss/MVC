@@ -26,7 +26,8 @@ class login extends Controller
             $this->redirect();
         } else {
             echo "<script>alert('No se ha encontrado el usuario con esas credenciales')</script>";
-            header('Location: ' . constant('URL') . '/login');
+            //header('Location: ' . constant('URL') . '/login');
+            echo '<script>location.href = "' . constant('URL') . '/login"</script>';
         }
     }
 
@@ -37,13 +38,16 @@ class login extends Controller
         switch ($rol) {
             case 3:
                 # code...
-                header('Location: ' . constant('URL') . '/admint');
+                //header('Location: ' . constant('URL') . '/admint');
+                echo '<script>location.href = "' . constant('URL') . '/admint"</script>';
                 break;
             case 2:
-                header('Location: ' . constant('URL') . '/worker');
+                //header('Location: ' . constant('URL') . '/worker');
+                echo '<script>location.href = "' . constant('URL') . '/worker"</script>';
                 break;
             case 1:
-                header('Location: ' . constant('URL') . '/options');
+                //header('Location: ' . constant('URL') . '/options');
+                echo '<script>location.href = "' . constant('URL') . '/options"</script>';
                 break;
 
             default:
@@ -52,7 +56,8 @@ class login extends Controller
         }
     }
 
-    public function session() { //Confirmar si existe una session con un usuario
+    public function session()
+    { //Confirmar si existe una session con un usuario
         if (isset($_SESSION['user_rolID'])) {
             $this->redirect();
         }
@@ -61,6 +66,7 @@ class login extends Controller
     public function close_session()
     {
         session_destroy();
-        header('Location: ' . constant('URL') . '/login');
+        //header('Location: ' . constant('URL') . '/login');
+        echo '<script>location.href = "'.constant('URL').'/login"</script>';
     }
 }

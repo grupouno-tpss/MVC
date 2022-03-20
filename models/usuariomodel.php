@@ -1,6 +1,5 @@
 <?php
 
-require 'controllers/email.php';
 
 class usuarioModel extends Model
 {
@@ -64,6 +63,8 @@ class usuarioModel extends Model
 
     public function verify_email($email)
     {
+        require 'controllers/email.php';
+
         $token = md5($email) . rand();
 
         echo $token;
@@ -161,9 +162,11 @@ class usuarioModel extends Model
 
         echo "<script>alert('Se ha registrado el usuario')</script>";
         if ($rol == 1) {
-            header('Location: ' . constant('URL') . '/login');
+            //header('Location: ' . constant('URL') . '/login');
+            echo '<script>location.href = "' . constant('URL') . '/login"</script>';
         } else {
-            header('Location: ' . constant('URL') . '/admint');
+            //header('Location: ' . constant('URL') . '/admint');
+            echo '<script>location.href = "' . constant('URL') . '/admint"</script>';
         }
     }
 

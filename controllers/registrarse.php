@@ -13,7 +13,8 @@ class registrarse extends Controller
 
         if (isset($_SESSION['user_rolID'])) 
         {
-            header('Location: '.constant('URL').'/login');
+            //header('Location: '.constant('URL').'/login');
+            echo '<script>location.href = "'.constant('URL').'/login"</script>';
         }
 
         $this->view->render('registrarse', null);

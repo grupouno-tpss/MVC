@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-    <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <style>
         body {
             background-image: url(https://fondosmil.com/fondo/11825.jpg);
@@ -201,14 +201,14 @@
             <div class="menuAdmint">
                 <div>
                     <a href="#empleados">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/workers.png" class="imgAdmintMenu" alt="">
+                        <img src="<?php echo constant('URL') ?>/public/multimedia/workers.png" class="imgAdmintMenu item" alt="">
                         <div class="text">Empleados</div>
                         <div></div>
                     </a>
                 </div>
                 <div>
                     <a href="#menus">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/menus.png" class="imgAdmintMenu" alt="">
+                        <img src="<?php echo constant('URL') ?>/public/multimedia/menus.png" class="imgAdmintMenu item" alt="">
                         <div class="text">Menus</div>
                         <div></div>
                     </a>
@@ -216,7 +216,7 @@
                 </div>
                 <div>
                     <a href="#fechas">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/dates.png" class="imgAdmintMenu" alt="">
+                        <img src="<?php echo constant('URL') ?>/public/multimedia/dates.png" class="imgAdmintMenu item" alt="">
                         <div class="text">Administrar fechas</div>
                         <div></div>
                     </a>
@@ -224,7 +224,7 @@
                 </div>
                 <div>
                     <a href="#horas">
-                        <img src="<?php echo constant('URL') ?>/public/multimedia/hours.png" class="imgAdmintMenu" alt="">
+                        <img src="<?php echo constant('URL') ?>/public/multimedia/hours.png" class="imgAdmintMenu item" alt="">
                         <div class="text">Administrar horas</div>
                         <div></div>
                     </a>
@@ -397,6 +397,8 @@
     <?php
     require "layouts/footer.php";
     ?>
+    <script src="<?php echo constant('URL')?>/public/js/animations_gsap.js"></script>
+
 </body>
 
 </html>
