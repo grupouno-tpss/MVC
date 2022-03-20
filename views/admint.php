@@ -232,7 +232,7 @@
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section overflow-auto">
             <h2 id="empleados">Empleados</h2>
             <hr><br>
             <table class="table table-dark table-bordered">
@@ -274,7 +274,7 @@
                 Agregar usuario
             </button>
         </div>
-        <div class="section">
+        <div class="section overflow-auto">
             <h2 id="clientes">Clientes</h2>
             <hr><br>
             <table class="table table-dark table-bordered">
@@ -315,7 +315,7 @@
             <a href="<?php echo constant('URL') ?>/worker" class="btn btn-primary">Vista de empleado</a>
         </div>
 
-        <div class="section">
+        <div class="section overflow-auto">
             <h2 id="fechas">Administrar fechas</h2>
             <hr><br>
             <div class="alert alert-primary d-flex align-items-center" role="alert">
@@ -353,7 +353,7 @@
             </button>
         </div>
 
-        <div class="section">
+        <div class="section overflow-auto">
             <h2 id="horas">Administrar horas</h2>
             <hr><br>
             <div class="alert alert-primary d-flex align-items-center" role="alert">

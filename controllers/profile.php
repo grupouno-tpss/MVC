@@ -38,7 +38,7 @@ class profile extends Controller
             $_REQUEST['email'],
             $_REQUEST['password'],
             $_REQUEST['num_celular'],
-            $_REQUEST['num_telefono'],
+            $_REQUEST['num_telefono']
         );
         echo "Actualizar usuario";
 

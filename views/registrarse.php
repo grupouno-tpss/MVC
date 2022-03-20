@@ -80,11 +80,12 @@
         let v = document.getElementById('register');
 
         v.addEventListener('submit', (e) => {
-            if (v.contraseña != v.comfirm_password) {
+            if (v.contraseña.value !== v.comfirm_password.value) {
                 alert('Las contraseñas no coinciden');
                 e.preventDefault();
             }
         });
+        
     </script>
 </body>
 

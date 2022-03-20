@@ -148,6 +148,15 @@ class usuarioModel extends Model
         echo $_tel_celular . "<br>";
         echo $contraseña . "<br>";
 
+        //Verify email
+
+        $verify_email = mysqli_query($this->db, "SELECT email FROM users WHERE email = '$_email'");
+
+        if (mysqli_fetch_assoc($verify_email)) {
+            echo "<script>alert('Ya existe un usuario con este correo en nuestra base de datos')</script>";
+            echo '<script>location.href="'.constant('URL').'/registrarse"</script>';
+        }
+
         $contacto = "INSERT INTO `contactos`(`id_contacto`, `num_telefono`, 
         `num_celular`) VALUES ($id, $_telefono, $_tel_celular)";
 
