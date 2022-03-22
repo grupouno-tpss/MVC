@@ -100,7 +100,6 @@
             email_input.required = false;
             password.required = false;
             password.hidden = true;
-            password.value = "google";
             direct_login.hidden = false;
         }
     </script>

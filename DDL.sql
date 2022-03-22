@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-03-2022 a las 21:55:27
+-- Tiempo de generación: 22-03-2022 a las 05:34:38
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -40,6 +40,7 @@ CREATE TABLE `contactos` (
 INSERT INTO `contactos` (`id_contacto`, `num_telefono`, `num_celular`) VALUES
 (129346812, '6987457', '3168594859'),
 (194491129, '6987457', '3168594859'),
+(259148754, '123', '123'),
 (315192503, '32454335', '324654'),
 (427318569, '6487911', '3158965827'),
 (441616206, '6958742', '3489657814'),
@@ -47,18 +48,25 @@ INSERT INTO `contactos` (`id_contacto`, `num_telefono`, `num_celular`) VALUES
 (621929363, '32454335', '324654'),
 (651235022, '32454335', '324654'),
 (662021904, '2708664', '3212243319'),
+(668867888, '123', '123'),
 (709096698, '6489754', '3194896507'),
 (739496694, '6478597', '3133059806'),
 (739544277, '32454335', '324654'),
+(804405266, '123', '123'),
 (889996061, '6498754', '3156984729'),
 (912701116, '32454335', '324654'),
 (976204529, '32454335', '324654'),
 (997028372, '', '324654'),
+(1233729450, '123', '123'),
 (1319186859, '3214027931', '3214027931'),
 (1661447119, '3214027931', '3214027931'),
+(1680489021, '123', '123'),
+(1700901304, '32454335', '324654'),
 (1765021230, '3214027931', '3214027931'),
 (1842030796, '123', '1223'),
 (1869790832, '32454335', '324654'),
+(1916212122, '123', '123'),
+(1924203008, '32454335', '324654'),
 (2050730869, '32454335', '324654');
 
 -- --------------------------------------------------------
@@ -95,7 +103,7 @@ INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
 (484824005, '2022-03-31', 'AVAILABLE'),
 (490102472, '2022-02-27', 'AVAILABLE'),
 (515934618, '0000-00-00', 'AVAILABLE'),
-(520508722, '2022-03-15', 'AVAILABLE'),
+(520508722, '2022-03-11', 'AVAILABLE'),
 (529075174, '2022-02-06', 'AVAILABLE'),
 (531549844, '2022-02-13', 'AVAILABLE'),
 (533698196, '2022-02-26', 'AVAILABLE'),
@@ -116,6 +124,8 @@ INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
 (1025743293, '0000-00-00', 'AVAILABLE'),
 (1071668742, '0000-00-00', 'AVAILABLE'),
 (1079693562, '0000-00-00', 'AVAILABLE'),
+(1110623232, '0000-00-00', 'AVAILABLE'),
+(1115987094, '2022-03-31', 'AVAILABLE'),
 (1144562970, '0000-00-00', 'AVAILABLE'),
 (1208951457, '2022-03-24', 'AVAILABLE'),
 (1246486309, '2022-02-16', 'AVAILABLE'),
@@ -125,6 +135,7 @@ INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
 (1291807934, '2022-03-31', 'AVAILABLE'),
 (1292555103, '0000-00-00', 'AVAILABLE'),
 (1297160061, '2022-03-31', 'AVAILABLE'),
+(1309134954, '0000-00-00', 'AVAILABLE'),
 (1309399576, '2022-03-31', 'AVAILABLE'),
 (1318382884, '0000-00-00', 'AVAILABLE'),
 (1319721773, '2022-02-28', 'AVAILABLE'),
@@ -138,6 +149,7 @@ INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
 (1528952008, '0000-00-00', 'AVAILABLE'),
 (1548166819, '2022-04-02', 'NOT AVAILABLE'),
 (1617803991, '2022-03-31', 'AVAILABLE'),
+(1620154488, '2022-03-31', 'AVAILABLE'),
 (1705788854, '2022-03-31', 'AVAILABLE'),
 (1743342533, '2022-03-31', 'AVAILABLE'),
 (1772079363, '2022-03-31', 'AVAILABLE'),
@@ -145,10 +157,12 @@ INSERT INTO `dates` (`id_date`, `date`, `status`) VALUES
 (1782964961, '0000-00-00', 'AVAILABLE'),
 (1809640900, '2022-03-31', 'AVAILABLE'),
 (1861766844, '2022-03-31', 'AVAILABLE'),
+(1895700965, '2022-03-07', 'AVAILABLE'),
 (1983815842, '2022-03-31', 'AVAILABLE'),
 (2036968612, '2022-03-27', 'AVAILABLE'),
 (2052633810, '0000-00-00', 'AVAILABLE'),
-(2095147553, '2022-03-31', 'AVAILABLE');
+(2095147553, '2022-03-31', 'AVAILABLE'),
+(2102259737, '0000-00-00', 'AVAILABLE');
 
 -- --------------------------------------------------------
 
@@ -200,6 +214,8 @@ INSERT INTO `details` (`id_detail`, `detail`) VALUES
 (1025743293, ''),
 (1071668742, ''),
 (1079693562, ''),
+(1110623232, ''),
+(1115987094, 'bbcvx'),
 (1144562970, ''),
 (1208951457, 'fsadf'),
 (1255668367, 'sfdgsdf'),
@@ -208,6 +224,7 @@ INSERT INTO `details` (`id_detail`, `detail`) VALUES
 (1291807934, 'sfdgsdf'),
 (1292555103, ''),
 (1297160061, 'fasdf'),
+(1309134954, ''),
 (1309399576, ''),
 (1318382884, ''),
 (1328233687, ''),
@@ -218,15 +235,18 @@ INSERT INTO `details` (`id_detail`, `detail`) VALUES
 (1493414869, ''),
 (1528952008, ''),
 (1617803991, 'fasdf'),
+(1620154488, 'fdgwasdg'),
 (1705788854, 'fasdf'),
 (1743342533, 'sfdgsdf'),
 (1772079363, 'sfdgsdf'),
 (1782964961, ''),
 (1809640900, 'fasdf'),
 (1861766844, 'gsdfg'),
+(1895700965, ''),
 (1983815842, 'sfdgsdf'),
 (2052633810, ''),
-(2095147553, 'fasdf');
+(2095147553, 'fasdf'),
+(2102259737, '');
 
 -- --------------------------------------------------------
 
@@ -331,9 +351,12 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id_reservation`, `amount_people`, `status`, `dates_id_date`, `details_id_detail`, `services_id_service`, `schedules_id_schedule`, `users_id_users`) VALUES
-(520508722, 3, 'ACTIVE', 520508722, 520508722, 3, 460759279, 739544277),
-(1208951457, 3, 'ACTIVE', 1208951457, 1208951457, 2, 1112181601, 739544277),
-(1354630722, 3, 'ACTIVE', 1354630722, 1354630722, 3, 1112181601, 739544277);
+(520508722, 3, 'NOT ACTIVE', 520508722, 520508722, 3, 460759279, 739544277),
+(1115987094, 3, 'ACTIVE', 1115987094, 1115987094, 2, 1112181601, 459769172),
+(1208951457, 3, 'NOT ACTIVE', 1208951457, 1208951457, 2, 1112181601, 739544277),
+(1354630722, 3, 'NOT ACTIVE', 1354630722, 1354630722, 3, 1112181601, 739544277),
+(1620154488, 3, 'NOT ACTIVE', 1620154488, 1620154488, 2, 1112181601, 739544277),
+(1895700965, 3, 'ACTIVE', 1895700965, 1895700965, 2, 460759279, 739544277);
 
 -- --------------------------------------------------------
 
@@ -353,6 +376,8 @@ CREATE TABLE `reservations_has_menus` (
 
 INSERT INTO `reservations_has_menus` (`reservations_id_reservation`, `menus_id_menu`, `user_id`) VALUES
 (520508722, 603061056, NULL),
+(1115987094, 1153159356, 459769172),
+(1115987094, 1294008557, 459769172),
 (1354630722, 1221820592, 739544277),
 (1354630722, 1310795764, 739544277);
 
@@ -447,16 +472,12 @@ INSERT INTO `users` (`id_users`, `email`, `password`, `p_nombre`, `s_nombre`, `p
 (427318569, 'camilorodriguez@gmail.com', '$2y$10$XiL/muAS/1MK4nkOS7sLTuYxC/A24T.vXh1pev', 'camilo ', 'Andres', 'Saenz ', 'rodriguez ', 427318569, 1, '2022-03-14 17:24:32', NULL),
 (441616206, 'marcelaGgozo@gmail.com', '$2y$10$bUJgIuMV7OZgeFVSUsFVgubPyg2.Ipn0PWBhEF', 'Alma ', 'Marcela', 'Gozo', 'Areas', 441616206, 1, '2022-03-14 17:24:32', NULL),
 (459769172, 'stivenjhojan011@gmail.com', '$2y$10$YmU.kdcOnu1Qz0880E4SVOh2MQE6UGheFx2RJlxETM6bBugA7xla2', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 459769172, 1, '2022-03-14 19:17:45', NULL),
-(662021904, 'dieacasallas111@misena.edu.co', 'Diego123', 'Diego ', 'Andrés ', 'Casallas ', 'Suárez', 662021904, 3, '2022-03-14 17:24:32', NULL),
 (709096698, 'danielserrano@gmail.com', '$2y$10$Or82.VgZhm3p.wjEiUdj3.rp8RaseoAHsDDHY0', 'Daniel ', 'Santiago ', 'Serrano ', 'Bohorquez ', 709096698, 1, '2022-03-14 17:24:32', NULL),
 (739496694, 'solgama12@gmail.com', '$2y$10$V0cgGg6tB/f1s1bM1SrWRe2ho6Qmda4sXuDN4T', 'Sol', 'Anne', 'Gama', 'Roso', 739496694, 1, '2022-03-14 17:24:32', NULL),
-(739544277, 'jhostriana11@misena.edu.co', '$2y$10$UIBLZJj/Mps.8QhRGvNIjeKzJnimiQPJiBx641H8IdBe.jTmvxb.a', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 739544277, 3, '2022-03-14 20:02:43', 'ac45a291991abeb6779dc34d9b98c56b1621933018'),
+(739544277, 'jhostriana11@misena.edu.co', '$2y$10$UIBLZJj/Mps.8QhRGvNIjeKzJnimiQPJiBx641H8IdBe.jTmvxb.a', 'Jhojann', 'Estiven ', 'Triana', 'Quiroga', 739544277, 3, '2022-03-16 02:48:56', 'ac45a291991abeb6779dc34d9b98c56b1858188140'),
 (889996061, 'julianagaitan@gmail.com', '$2y$10$nnSeQzP1YyBL.HHDpxAUNO455vaBJfnWltvCFi', 'Deysi ', 'Juliana ', 'Gaitan ', 'Florez', 889996061, 1, '2022-03-14 17:24:32', NULL),
-(912701116, 'estiven@gmail.com', '123', 'estiven', 'Andrés', 'Triana', '', 912701116, 2, '2022-03-14 17:24:32', NULL),
-(976204529, 'pepito@gmail.com', '1022322859', 'Pepito', 'Perez', 'Ortiz', '', 976204529, 1, '2022-03-14 17:24:32', NULL),
 (1319186859, 'andresricaute98@gmail.com', '$2y$10$7JPvbjDDbFYEd54aFoI9e.Kbc0yueo7JCNlZpr', 'andres ', 'felipe', 'ramos', 'ricaurte', 1319186859, 1, '2022-03-14 17:24:32', NULL),
-(1842030796, 'ramos@gmail.com', '1022322859', 'Andres', 'Felipe', 'Ramos', 'Ricaurte', 1842030796, 1, '2022-03-14 17:24:32', NULL),
-(2050730869, 'delfina@gmail.com', '1022322859', 'Delfina', 'Andrés', 'Triana', 'Osorio', 2050730869, 3, '2022-03-14 17:24:32', NULL);
+(1924203008, 'sora@gmail.com', '$2y$10$MIzzY79XXlGhN1ElC8V4L.RBjcUnI1Exg9t7jzYXshF3IfruE5NQC', 'sora', 'Estiven ', 'Gualdron', 'Quiroga', 1924203008, 1, '2022-03-16 21:42:24', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -542,6 +563,8 @@ ALTER TABLE `services`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_users`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `email_2` (`email`),
   ADD KEY `fk_users_contactos1_idx` (`contactos_id_contacto`),
   ADD KEY `fk_users_roles1_idx` (`roles_id_rol`);
 
