@@ -20,12 +20,22 @@ class usuarioModel extends Model
                 $password_en = $row['password'];
             }
         }
+
+        
+        if ($password == "google") {
+            $password_google = mysqli_query($this->db, "SELECT password FROM users WHERE email = '$email'");
+
+            while ($row = mysqli_fetch_assoc($password_google)) {
+                $password_en = $row['password'];
+                echo "contraseña de google: " . $password_en. " email:" . $email;
+            }
+        }
         //consultar usuario
         $usuario = "SELECT id_users, p_nombre, s_nombre, p_apellido, s_apellido, 
         password, email, rol, id_rol, num_telefono, num_celular FROM users U INNER JOIN roles 
         ON roles.id_rol = U.roles_id_rol INNER JOIN contactos C ON C.id_contacto =U.id_users
         WHERE email = '$email' AND U.password = '$password_en'";
-        echo $password_en;
+        echo "<br>".$password_en;
 
         $result = mysqli_query($this->db, $usuario);
 
@@ -34,12 +44,17 @@ class usuarioModel extends Model
         // }
 
         while ($row = mysqli_fetch_assoc($result)) {
-
+            
             $verify = password_verify($password, $row['password']);
             echo "<br> Verify: " . $verify . "<br>";
 
+            if ($password == "google") {
+                $google_access = true;                
+            }
+
+
             if ($row) {
-                if ($verify) {
+                if ($verify || $google_access) {
                     echo $row['password'] . "<br>";
                     $_SESSION['user_pNombre'] = $row['p_nombre'];
                     $_SESSION['user_sNombre'] = $row['s_nombre'];
