@@ -56,7 +56,7 @@
                         <br>
                         <input type="submit" class="btn btn-primary" id="send_login" value="Ingresar">
                         <br><br>
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <div class="g-signin2" data-onsuccess="onSignIn" disabled title="En desarrollo"></div>
                         <br>
                         <a href="<?php echo constant('URL') ?>/password_reset">¿Olvidaste tu contraseña?</a>
 

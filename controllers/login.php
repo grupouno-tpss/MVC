@@ -27,7 +27,7 @@ class login extends Controller
         } else {
             echo "<script>alert('No se ha encontrado el usuario con esas credenciales')</script>";
             //header('Location: ' . constant('URL') . '/login');
-            echo '<script>location.href = "' . constant('URL') . '/login"</script>';
+            echo '<script>location.href = "'.constant('URL').'/login"</script>';
         }
     }
 
@@ -39,15 +39,15 @@ class login extends Controller
             case 3:
                 # code...
                 //header('Location: ' . constant('URL') . '/admint');
-                echo '<script>location.href = "' . constant('URL') . '/admint"</script>';
+                echo '<script>location.href = "'.constant('URL').'/admint"</script>';
                 break;
             case 2:
                 //header('Location: ' . constant('URL') . '/worker');
-                echo '<script>location.href = "' . constant('URL') . '/worker"</script>';
+                echo '<script>location.href = "'.constant('URL').'/worker"</script>';
                 break;
             case 1:
                 //header('Location: ' . constant('URL') . '/options');
-                echo '<script>location.href = "' . constant('URL') . '/options"</script>';
+                echo '<script>location.href = "'.constant('URL').'/options"</script>';
                 break;
 
             default:
@@ -56,8 +56,7 @@ class login extends Controller
         }
     }
 
-    public function session()
-    { //Confirmar si existe una session con un usuario
+    public function session() { //Confirmar si existe una session con un usuario
         if (isset($_SESSION['user_rolID'])) {
             $this->redirect();
         }

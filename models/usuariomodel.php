@@ -1,5 +1,6 @@
 <?php
 
+require 'controllers/email.php';
 
 class usuarioModel extends Model
 {
@@ -63,8 +64,6 @@ class usuarioModel extends Model
 
     public function verify_email($email)
     {
-        require 'controllers/email.php';
-
         $token = md5($email) . rand();
 
         echo $token;
@@ -135,6 +134,15 @@ class usuarioModel extends Model
         $_tel_celular,
         $contraseña
     ) {
+        
+        $exist_email = mysqli_query($this->db, "SELECT email FROM users WHERE email = '$_email'");
+        
+        if (mysqli_fetch_assoc($exist_email)) {
+            echo '<script>alert("Ya existe un usuario con este correo electrónico en nuestra base de datos")</script>';
+            
+            echo '<script>location.href = "'.constant('URL').'/registrarse"</script>';
+            die();
+        }
 
         echo "Hey, el modelo de usuario esta presente jsjs" . "<br>";
         echo $id . "<br>";
@@ -147,15 +155,6 @@ class usuarioModel extends Model
         echo $_telefono . "<br>";
         echo $_tel_celular . "<br>";
         echo $contraseña . "<br>";
-
-        //Verify email
-
-        $verify_email = mysqli_query($this->db, "SELECT email FROM users WHERE email = '$_email'");
-
-        if (mysqli_fetch_assoc($verify_email)) {
-            echo "<script>alert('Ya existe un usuario con este correo en nuestra base de datos')</script>";
-            echo '<script>location.href="'.constant('URL').'/registrarse"</script>';
-        }
 
         $contacto = "INSERT INTO `contactos`(`id_contacto`, `num_telefono`, 
         `num_celular`) VALUES ($id, $_telefono, $_tel_celular)";
@@ -172,10 +171,10 @@ class usuarioModel extends Model
         echo "<script>alert('Se ha registrado el usuario')</script>";
         if ($rol == 1) {
             //header('Location: ' . constant('URL') . '/login');
-            echo '<script>location.href = "' . constant('URL') . '/login"</script>';
+            echo '<script>location.href = "'.constant('URL').'/login"</script>';
         } else {
             //header('Location: ' . constant('URL') . '/admint');
-            echo '<script>location.href = "' . constant('URL') . '/admint"</script>';
+            echo '<script>location.href = "'.constant('URL').'/admint"</script>';
         }
     }
 

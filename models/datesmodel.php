@@ -34,7 +34,7 @@ class datesModel extends Model
         }else{
             mysqli_query($this->db, $query);
             //header("Location: ".constant('URL')."/admint");
-            echo '<script>location.href = "'.constant('URL').'/header"</script>';
+            echo '<script>location.href = "'.constant('URL').'/admint"</script>';
         }
         echo $date;
     }

@@ -19,16 +19,16 @@ class reservaModel extends Model
         $especificacion,
         $menu
     ) {
-        //echo "Jpñaflaksdlñfkasd";
+        echo "Jpñaflaksdlñfkasd";
 
         $menuExplode = explode(',', $menu);
 
-        // echo $id . "<br>";
-        // echo $fecha . "<br>";
-        // echo $hora . "<br>";
-        // echo $cantPersonas . "<br>";
-        // echo $tipoServicio . "<br>";
-        // echo $especificacion . "<br>";
+        echo $id . "<br>";
+        echo $fecha . "<br>";
+        echo $hora . "<br>";
+        echo $cantPersonas . "<br>";
+        echo $tipoServicio . "<br>";
+        echo $especificacion . "<br>";
 
         echo $menuExplode[0];
         $date = "INSERT INTO `dates`(`id_date`, `date`, `status`) 
@@ -49,8 +49,7 @@ class reservaModel extends Model
         mysqli_query($this->db, $reserve);
 
         if ($menu == "") {
-            //echo "no hay menus escogidos";
-            echo '<script>location.href = "'.constant('URL').'/reservaciones"</script>';
+            echo "no hay menus escogidos";
         } else {
             foreach ($menuExplode as $menus) {
                 $query = "INSERT INTO `reservations_has_menus`(`reservations_id_reservation`, `menus_id_menu`, `user_id`)
@@ -105,7 +104,7 @@ class reservaModel extends Model
         //     $menu
         // );
 
-        //echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
+        echo "<script>location.href ='" . constant('URL') . "/reservaciones'</script>";
     }
 
     public function statusReserve($id)

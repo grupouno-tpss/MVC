@@ -1,5 +1,4 @@
 <style>
-
     .user::after {
         content: "<?php echo $_SESSION['user_email'] ?>";
         color: #ffffff;

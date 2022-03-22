@@ -145,7 +145,6 @@ table {
 .lut {
     background: rgba(0, 0, 0, 0.5);
     margin: 10px;
-    color: white;
 }
 
 .ak {
@@ -264,15 +263,3 @@ table {
     color: white;
     scroll-margin: 100px;
 }
-
-
-/*ANIMATIONS*/
-
-
-/* .item {
-    transition: 2s;
-}
-
-.item:hover {
-    transform: rotate(50deg);
-} */
