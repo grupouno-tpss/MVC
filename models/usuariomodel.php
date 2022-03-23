@@ -1,6 +1,5 @@
 <?php
 
-require 'controllers/email.php';
 
 class usuarioModel extends Model
 {
@@ -64,6 +63,7 @@ class usuarioModel extends Model
 
     public function verify_email($email)
     {
+        require 'controllers/email.php';
         $token = md5($email) . rand();
 
         echo $token;
@@ -219,6 +219,8 @@ class usuarioModel extends Model
 
         $user = $_SESSION['user_id'];
         $p = $password;
+        
+        $password = password_hash($password, PASSWORD_BCRYPT);
 
         $queryUpdate = "UPDATE `users` SET `id_users`=$id,
         `email`='$email',`password`='$password',`p_nombre`='$p_nombre',

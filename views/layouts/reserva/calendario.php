@@ -10,7 +10,7 @@
         <div id="year"></div>
         <div class="btn-light" id="nameMonth"></div>
         <div>
-            <button class="btn btn-primary" onclick="backMonth()">
+            <button type="button" class="btn btn-primary" onclick="backMonth()">
                 Atras
                 <i class="bi bi-chevron-compact-left">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
@@ -18,7 +18,7 @@
                     </svg>
                 </i>
             </button>
-            <button class="btn btn-primary" onclick="nextMonth()">
+            <button type="button" class="btn btn-primary" onclick="nextMonth()">
                 Adelante
                 <i class="bi bi-chevron-compact-right">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">

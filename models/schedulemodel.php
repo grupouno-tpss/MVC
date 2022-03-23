@@ -33,6 +33,7 @@ class scheduleModel extends Model
         } else {
             mysqli_query($this->db, $query);
             echo "Se ha agregado una hora";
+            echo '<script>location.href = "'.constant('URL').'/admint"</script>';
         }
     }
 }

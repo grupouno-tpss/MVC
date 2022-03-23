@@ -34,7 +34,7 @@
                     <?php foreach ($this->value2 as $user) {
                         echo $user['p_nombre'];
                         echo ' <label for="">ID usuario</label>
-                         <input type="text" class="form-control" value="' . $user['id_users'] . '" id="" name="id_usuario"> 
+                         <input type="text" class="form-control" readonly="readonly" value="' . $user['id_users'] . '" id="" name="id_usuario"> 
                          <label for="">Primer nombre</label> 
                          <input type="text" class="form-control" value="' . $user['p_nombre'] . '" id="" name="p_nombre">
                         <label for="">Segundo nombre</label>
@@ -48,7 +48,7 @@
                           <label for="">Contraseña</label>
                            <input type="password" class="form-control" value="' . $user['password'] . '" id="" name="password">
                             <label for="">Rol</label>
-                             <input type="text" class="form-control" value="' . $user['rol'] . '" id="" name="rol">
+                             <input type="text" class="form-control" readonly="readonly" value="' . $user['rol'] . '" id="" name="rol">
                               <label for="">Numero Celular</label> 
                               <input type="text" class="form-control" value="' . $user['num_celular'] . '" id="" name="num_celular">
                                <label for="">Numero telefonico</label>

@@ -179,6 +179,11 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('selectModal').addEventListener("click", () => {
+            location.href = "#datosAdicionales";
+        });
+    </script>
 
 
     <section id="cargarReserva" class="container spinners" hidden>

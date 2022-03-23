@@ -66,16 +66,29 @@
             <div class="item"><a href="<?php echo constant('URL') ?>/profile">Actualizar perfil</a></div>
         </div>
     </div>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body bg-success text-white">
+                Inicio de sesión exitoso
+            </div>
+        </div>
+    </div>
     <script>
         window.onload = function() {
+            var toastTrigger = document.getElementById('liveToastBtn')
+            var toastLiveExample = document.getElementById('liveToast')
             document.getElementById("loading").hidden = true;
+            var toast = new bootstrap.Toast(toastLiveExample)
+            toast.show()
         }
     </script>
-    <script src="<?php echo constant('URL')?>/public/js/animations_gsap.js"></script>
+    <script src="<?php echo constant('URL') ?>/public/js/animations_gsap.js"></script>
     <?php
     require "layouts/footer.php";
     ?>
-    
+
 </body>
 
 </html>

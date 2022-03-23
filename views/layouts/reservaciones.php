@@ -12,7 +12,7 @@
                 </div>
                 <div class="modal-body">
                     <label for="">Fecha</label>
-                    <input type="text" class="form-control" id="date" name="date">
+                    <input type="text" class="form-control" id="date" name="date" readonly="readonly">
                     <?php
                     require "views/layouts/reserva/calendario.php";
                     ?>
@@ -32,7 +32,7 @@
                     <label for="">Titular de la reserva</label>
                     <input type="text" class="form-control" id="name" name="" disabled>
                     <label for="">Correo electrónico</label>
-                    <input type="text" class="form-control" id="email-c" name="email">
+                    <input type="text" class="form-control" id="email-c" name="email" readonly="readonly">
                     <br>
                     <input type="text" id="inputMenu" name="menu" hidden>
                     <label for="">Menus escogidos (opcional)</label>

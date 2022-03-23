@@ -61,7 +61,7 @@
                     <br>
                     <input type="password" id="comfirm_password" class="lut form-control" placeholder="Confirme su contraseña" required>
                     <br>
-                    <center><input type="submit" class="btn btn-primary" name="registrar"></center>
+                    <center><input type="submit" class="btn btn-primary" name="registrar" value="Registrarse"></center>
                 </form>
             </div>
         </div>
