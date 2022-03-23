@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Qué desea hacer?</title>
+    <?php require 'views/layouts/resources/styles.php'?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
     <style>
         * {
             font-family: cursive;

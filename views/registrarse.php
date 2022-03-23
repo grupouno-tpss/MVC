@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
+    <?php require 'views/layouts/resources/styles.php'?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <title>Registrarse</title>
 </head>
@@ -36,7 +36,7 @@
             <br>
             <div class="moon w-50 mx-auto p-4 rounded item">
                 <form action="<?php echo constant('URL') ?>/registrarse/addUser" method="post" id="register">
-                    <h1 class="text-center">
+                    <h1 class="text-center" id="title_register">
                         Registrarse
                     </h1>
                     <label for="p_nombre">Primer nombre *</label>
@@ -70,6 +70,7 @@
     require "layouts/footer.php";
     ?>
     <script src="<?php echo constant('URL') ?>/public/js/animations_gsap.js"></script>
+    <script src="<?php echo constant('URL') ?>/public/js/tutorial.js"></script>
 
     <script>
         let logo = new animations();

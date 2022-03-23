@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worker</title>
-    <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
+    <?php require 'views/layouts/resources/styles.php'?>
     <style>
         body {
             background-image: url(https://fondosmil.com/fondo/11825.jpg);

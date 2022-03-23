@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambiar contraseña</title>
-    <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
+    <?php require 'views/layouts/resources/styles.php'?>
 </head>
 <body class="root">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

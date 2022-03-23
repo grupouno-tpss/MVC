@@ -11,6 +11,7 @@ class admint extends Controller
     public function render()
     {
         parent::__construct();
+        $this->view->value5 = $this->getServices();
         $this->loadModel('usuario');
         $this->view->value3 = $this->users(1);
         $users = $this->users(2);
@@ -96,5 +97,27 @@ class admint extends Controller
     public function getCategories()
     {
         return $this->nameClass->getCategories();
+    }
+
+    public function getServices () {
+        $this->loadModel('services');
+        return $this->nameClass->getServices();
+    }
+
+    public function deleteService () {
+        $id_service = $_GET['service'];
+        $this->loadModel('services');
+        $this->nameClass->deleteService($id_service);
+    }
+
+    public function addService () {
+        extract($_REQUEST);
+
+        $this->loadModel('services');
+
+        $this->nameClass->addService(
+            $_REQUEST['title_service'],
+            $_REQUEST['description_service']
+        );
     }
 }

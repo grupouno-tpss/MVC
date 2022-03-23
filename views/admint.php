@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
+    <?php require 'views/layouts/resources/styles.php' ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <style>
         body {
@@ -62,6 +63,37 @@
     <?php
     require "layouts/nav.php";
     ?>
+
+    <!--VENTANA MODAL DE "AÑADIR SERVICIO"-->
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addService">
+        Añadir servicio
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addService" tabindex="-1" aria-labelledby="addService" aria-hidden="true">
+        <div class="modal-dialog text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Añadir servicio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo constant('URL')?>/admint/addService" method="post">
+                        <label for="title_service">Ingrese el titulo del servicio</label>
+                        <input type="text" class="form-control" id="title_service" name="title_service" required>
+                        <label for="description_service">Ingrese la descripción del servicio</label>
+                        <input type="text" class="form-control" id="description_service" name="description_service" required>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Añadir servicio</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Ventana modal "añadir usuario"-->
 
@@ -388,6 +420,32 @@
                 Añadir hora
             </button>
         </div>
+
+        <!--CRUD SERVICIOS-->
+
+        <div class="section">
+            <h2>Servicios</h2>
+            <hr><br>
+            <div class="d-flex">
+                <?php
+                foreach ($this->value5 as $service) {
+                    echo '
+                        <div class="card" style="width: 18rem; margin: 10px;">
+                        <div class="card-body text-dark">
+                          <h5 class="card-title">' . $service['service'] . '</h5>
+                          <br>
+                          <h6 class="card-subtitle mb-2 text-muted">Descripción: </h6>
+                          <p class="card-text" style="height: 20vh; overflow: auto;">' . $service['description_service'] . '</p>
+                          <a href="#" class="card-link">Editar</a>
+                          <a href="' . constant('URL') . '/admint/deleteService?service=' . $service['id_service'] . '" class="card-link link-danger">Eliminar</a>
+                        </div>
+                      </div>
+                        ';
+                }
+                ?>
+            </div>
+        </div>
+
         <div class="section" style="overflow: auto;" id="menus">
             <?php
             require "views/menus.php";
@@ -397,7 +455,7 @@
     <?php
     require "layouts/footer.php";
     ?>
-    <script src="<?php echo constant('URL')?>/public/js/animations_gsap.js"></script>
+    <script src="<?php echo constant('URL') ?>/public/js/animations_gsap.js"></script>
 
 </body>
 

@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-signin-client_id" content="400330881700-gvo8e5jgrp6dr9opebnpkmdhl2qsoovg.apps.googleusercontent.com">
-    <link rel="stylesheet" href="<?php echo constant('URL') ?>/public/css/styles.css">
     <title>Login</title>
+    <?php require 'views/layouts/resources/styles.php'?>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
