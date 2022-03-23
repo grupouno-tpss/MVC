@@ -5,10 +5,28 @@ function tutorial() {
 
     this.container('title_register', 'Este es el titulo para el formulario de registrarse');
 
+    setTimeout(() => {
+        this.close('title_register'); // elemento a eliminar de pantalla
+        this.container('register_nombre', 'Aqui se ingresa el primer nombre'); // elemento para agregar o mostrar en pantalla
+    }, timer);
+
+    setTimeout(() => {
+        this.close('register_nombre'); // elemento a eliminar de pantalla
+        this.container('register_sNombre', 'Aqui se ingresa el segundo nombre'); // elemento para agregar o mostrar en pantalla
+    }, timer * 2);
+
+    setTimeout(() => {
+        this.close('register_nombre'); // elemento a eliminar de pantalla
+        this.container('register_sNombre', 'Aqui se ingresa el segundo nombre'); // elemento para agregar o mostrar en pantalla
+    }, timer * 3);
+
     document.getElementById('btn_tutorial_close').addEventListener('click', () => {
         timer = 500;
     });
 }
+
+
+//NO TOCAR ABSOLUTAMENTE NADA
 
 tutorial.prototype.close = (id) => {
     document.getElementById(id).removeAttribute('style', 'box-shadow');
@@ -57,4 +75,8 @@ tutorial.prototype.container = (id, text) => {
     }
 }
 
-//let init_tutorial = new tutorial();
+let init_tutorial = new tutorial();
+
+document.getElementById('init').addEventListener('click', () => {
+    let init_tutorial_r = new tutorial();
+});

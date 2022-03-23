@@ -40,9 +40,9 @@
                         Registrarse
                     </h1>
                     <label for="p_nombre">Primer nombre *</label>
-                    <input type="text" class="lut form-control" id="p_nombre" name="p_nombre" placeholder="Ingrese su primer nombre" required>
+                    <input type="text"  id="register_nombre" class="lut form-control" id="p_nombre" name="p_nombre" placeholder="Ingrese su primer nombre" required>
                     <label for="s_nombre">Segundo nombre</label>
-                    <input type="text" class="lut form-control" id="s_nombre" name="s_nombre" placeholder="Ingrese su primer nombre">
+                    <input type="text" id="register_sNombre" class="lut form-control" id="s_nombre" name="s_nombre" placeholder="Ingrese su primer nombre">
                     <label for="p_apellido">Primer apellido *</label>
                     <input type="text" class="lut form-control" id="p_apellido" name="p_apellido" placeholder="Ingrese su primer apellido" required>
                     <label for="s_apellido">Segundo apellido</label>
